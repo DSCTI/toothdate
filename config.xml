@@ -61,7 +61,10 @@
 <icon src="icons/ios/120.png" gap:platform="ios" width="120" height="120"/>
 <icon src="icons/ios/152.png" gap:platform="ios" width="152" height="152"/>
 
+<access origin="*://*.googleapis.com/*" subdomains="true" />
+<access origin="*://*.gstatic.com/*" subdomains="true" />
+<access origin="*://*.google.com/*" subdomains="true" />
+<access origin="*://*.googleusercontent.com/*" subdomains="true" />
 <access origin="*" /> - a wildcard access tag allows access to all external resource.
-<access origin="*.google.com" />
 
 </widget>
