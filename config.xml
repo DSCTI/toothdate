@@ -62,5 +62,6 @@
 <icon src="icons/ios/152.png" gap:platform="ios" width="152" height="152"/>
 
 <access origin="*" /> - a wildcard access tag allows access to all external resource.
+<access origin="*.google.com" />
 
 </widget>
