@@ -33,6 +33,8 @@
     <gap:plugin name="org.apache.cordova.file-transfer" />
     <gap:plugin name="com.simplec.plugins.localnotification" version="0.3.5" />
     <gap:plugin name="de.appplant.cordova.plugin.local-notification" version="0.7.4" />
+    <gap:plugin name="org.li8.inappbrowser" version="0.1" />
+
 
     <!-- Core plugins -->
 
