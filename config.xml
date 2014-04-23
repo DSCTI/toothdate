@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
@@ -33,9 +33,6 @@
     <gap:plugin name="org.apache.cordova.file-transfer" />
     <gap:plugin name="com.simplec.plugins.localnotification" version="0.3.5" />
     <gap:plugin name="de.appplant.cordova.plugin.local-notification" version="0.7.4" />
-    <gap:plugin name="org.li8.inappbrowser" version="0.1" />
-
-
     <!-- Core plugins -->
 
 <icon src="icons/android/36.png"  gap:platform="android" gap:density="ldpi"  />
