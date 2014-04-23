@@ -4,8 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.toothdate.dscti2"
-	version   = "1.0.0"
->
+	version   = "1.0.0">
 
     <name>Tooth Date</name>
 
@@ -17,7 +16,7 @@
     <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
     <preference name="ios-statusbarstyle"         value="black-opaque" />   <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
     <preference name="detect-data-types"          value=“true />           <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
-    <preference name="BackgroundColor" value="#F9F9F9"/>
+    <preference name="BackgroundColor" 		  value="#F9F9F9"/>
     <preference name="exit-on-suspend"            value="false" />          <!-- ios: if set to true, app will terminate when home button is pressed -->
     <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
     <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
@@ -58,10 +57,7 @@
 <icon src="icons/ios/120.png" gap:platform="ios" width="120" height="120"/>
 <icon src="icons/ios/152.png" gap:platform="ios" width="152" height="152"/>
 
-<access origin="*://*.googleapis.com/*" subdomains="true" />
-<access origin="*://*.gstatic.com/*" subdomains="true" />
-<access origin="*://*.google.com/*" subdomains="true" />
-<access origin="*://*.googleusercontent.com/*" subdomains="true" />
+
 <access origin="*" /> - a wildcard access tag allows access to all external resource.
 
 </widget>
