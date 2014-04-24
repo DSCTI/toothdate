@@ -57,6 +57,8 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.camera" />
     <gap:plugin name="org.apache.cordova.file" />
+<gap:plugin name="de.appplant.cordova.plugin.local-notification"/>
+<gap:plugin name="com.localnotification.gotcakes" version="0.1.0" />
     <!--
 
         Define access to external domains.
