@@ -3,7 +3,7 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.toothdate.dscti"
+        id        = "com.toothdate.dscti2"
 	version   = "1.0.1">
 
     <name>Tooth Date</name>
@@ -25,6 +25,7 @@
     <preference name="DisallowOverscroll" value="true"/>
     <preference name="splash-screen-duration" value="2000" />
     <preference name="HideKeyboardFormAccessoryBar" value="true"/>
+    <preference name="webviewbounce" value="false" />
 
 <icon src="icons/android/36.png"  gap:platform="android" gap:density="ldpi"  />
 <icon src="icons/android/48.png"  gap:platform="android" gap:density="mdpi"  />
