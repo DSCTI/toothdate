@@ -2,15 +2,14 @@
 
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.toothdate.dscti2" version="1.0.1">
 
-<name>Tooth Date</name>
+<name>Tooth Date Clínicas</name>
 
-<preference name="splash-screen-duration" value="2000" />
+<preference name="splash-screen-duration" value="2500" />
 <preference name="HideKeyboardFormAccessoryBar" value="true" />
 <preference name="webviewbounce" value="false" />
 <preference name="DisallowOverscroll" value="true" />
 <preference name="phonegap-version" value="3.3.0" />
-<preference name="orientation" value="portrait" />
-<preference name="target-device" value="universal" />
+<preference name="target-device" value="tablet" />
 <preference name="fullscreen" value="false" />
 <preference name="prerendered-icon" value="true" />
 <preference name="detect-data-types" value="true" />
