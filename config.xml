@@ -52,7 +52,6 @@
 <gap:plugin name="org.apache.cordova.file" />
 <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
 
-
 <access origin="*" />
 
 </widget>
