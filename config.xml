@@ -2,14 +2,15 @@
 
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.toothdate.dscti2" version="1.0.1">
 
-<name>Tooth Date Clínicas</name>
+<name>Tooth Date</name>
 
-<preference name="splash-screen-duration" value="2500" />
+<preference name="splash-screen-duration" value="2000" />
 <preference name="HideKeyboardFormAccessoryBar" value="true" />
 <preference name="webviewbounce" value="false" />
 <preference name="DisallowOverscroll" value="true" />
 <preference name="phonegap-version" value="3.3.0" />
-<preference name="target-device" value="tablet" />
+<preference name="orientation" value="portrait" />
+<preference name="target-device" value="universal" />
 <preference name="fullscreen" value="false" />
 <preference name="prerendered-icon" value="true" />
 <preference name="detect-data-types" value="true" />
@@ -42,6 +43,7 @@
 <icon src="icons/ios/120.png" gap:platform="ios" width="120" height="120" />
 <icon src="icons/ios/152.png" gap:platform="ios" width="152" height="152" />
 
+<gap:plugin name="org.apache.cordova.media" />
 <gap:plugin name="org.apache.cordova.device" />
 <gap:plugin name="org.apache.cordova.device-motion" />
 <gap:plugin name="org.apache.cordova.file-transfer" />
