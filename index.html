@@ -10,6 +10,14 @@
     //
     document.addEventListener("deviceready", onDeviceReady, false);
 
+navigator.notification.alert(
+    'You are the winner!',  // message
+    alertDismissed,         // callback
+    'Game Over',            // title
+    'Done'                  // buttonName
+);
+
+
     // device APIs are available
     //
     function onDeviceReady() {
