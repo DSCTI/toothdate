@@ -1,22 +1,22 @@
-
 <html>
-    <script type="text/javascript" src="LocalNotification.js"></script>
+
 <head>
-    <script type="text/javascript">
-  localNotifier.addNotification({
-    fireDate        : Math.round(new Date().getTime()/1000 + 5),
-    alertBody       : "This is a new local notification.",
-    repeatInterval  : "daily",
-    soundName       : "horn.caf",
-    badge           : 0,
-    notificationId  : 123,
-    foreground      : function(notificationId){ 
-        alert("Hello World! This alert was triggered by notification " + notificationId); 
-    },
-    background  : function(notificationId){
-        alert("Hello World! This alert was triggered by notification " + notificationId);
-    }           
-});
-    </script>
+
+<script type='application/javascript' src='fastclick.js'></script>
+<script type="application/javascript">
+	window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script> 
+<title>toothdate</title>
 </head>
-<body>
+
+<frameset framespacing="0" border="0" frameborder="0" rows="59,*">
+	<frame name="header" scrolling="no" noresize target="main" src="top.html">
+	<frame name="meio" marginwidth="0" marginheight="0" scrolling="auto" noresize src="meio.html">
+
+</frameset>
+
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0">
+
+</html>
