@@ -101,39 +101,4 @@ window.location = "no2.html";
   }
     </script>
 
-<script>
 
-function () {
-var displayOnlineStatus = document.getElementById("online-status"),
-isOnline = function () {
-
-
-displayOnlineStatus.innerHTML = "Online";
-displayOnlineStatus.className = "online";
-},
-.
-isOffline = function () {
-
-window.location = "no2.html";
-
-displayOnlineStatus.innerHTML = "Offline";
-displayOnlineStatus.className = "offline";
-
-};
-
-if (window.addEventListener) {
-
-window.addEventListener("online", isOnline, false);
-window.addEventListener("offline", isOffline, false);
-
-}
-
-else {
-
-document.body.ononline = isOnline;
-document.body.onoffline = isOffline;
-
-}
-
-})();
-</script>
