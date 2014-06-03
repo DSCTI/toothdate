@@ -1,26 +1,20 @@
 
-<html>
+<html><script>
+
+if(navigator.onLine)
+  {
+window.location = "http://dscti.com.br/dr/home.php";
+  }
+  else
+  {
+window.location = "no2.html";
+  }
+
+    </script>
 <link rel="stylesheet" type="text/css" href="estilos2.css">
 <link rel="stylesheet" href="animate.css">
 <meta http-equiv="refresh" content="30; url=http://dscti.com.br/dr/home.php">
 <head>
-
-<script>
-function doConnectFunction() {
-}
-function doNotConnectFunction() {
-window.location = "no.html"
-}
-
-var i = new Image();
-i.onload = doConnectFunction;
-i.onerror = doNotConnectFunction;
-// CHANGE IMAGE URL TO ANY IMAGE YOU KNOW IS LIVE
-i.src = 'http://dscti.com.br/dr/lg2.png' + escape(Date());
-// escape(Date()) is necessary to override possibility of image coming from cache
-</script>
-
-
 
 <body bgcolor="#E6F2F7">
 <body class="animated bounceInDown">
