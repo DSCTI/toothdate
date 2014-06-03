@@ -1,11 +1,17 @@
 
-<html>
+<html><script>
+window.addEventListener('online', function() {
+});
+window.addEventListener('offline', function() {
+window.location = "no2.html";
+});
+</script>
+</html>
+
 <link rel="stylesheet" type="text/css" href="estilos2.css">
 <link rel="stylesheet" href="animate.css">
 <meta http-equiv="refresh" content="30; url=http://dscti.com.br/dr/home.php">
 <head>
-
-<script src="html5shiv.js"></script>
 
 <body bgcolor="#E6F2F7">
 <body class="animated bounceInDown">
@@ -84,7 +90,8 @@ $.mobile.loading( 'show', {
 .on( "click", ".hide-page-loading-msg", function() {
   $.mobile.loading( "hide" );
 });
-</script><script>
+</script>
+<script>
 
 if(navigator.onLine)
   {}
@@ -93,4 +100,4 @@ if(navigator.onLine)
 window.location = "no2.html";
   }
     </script>
-</html>
+

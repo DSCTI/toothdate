@@ -1,6 +1,11 @@
 <body bgcolor="#F9F9F9">
-
-<script src="html5shiv.js"></script>
+<script>
+window.addEventListener('online', function() {
+});
+window.addEventListener('offline', function() {
+window.location = "no2.html";
+});
+</script>
 
 <script>
 
@@ -18,16 +23,3 @@ window.location = "no.html";
 <div align=center><img src="load2.gif" width="32" height="32"></div>
 
 <!doctype html>
-<html>
-<head>
-
-
-</head>
-<body onload="Pageloaded()">
-    <div id="status">
-        <p id="state">
-        </p>
-    </div>  
-</body>
-</html>
-</html>
