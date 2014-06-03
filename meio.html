@@ -1,54 +1,29 @@
-<body bgcolor="#F9F9F9">
+<body bgcolor="#F9F9F9">    <script>
+
+if(navigator.onLine)
+  {
+window.location = "http://dscti.com.br/dr/home.php";
+  }
+  else
+  {
+window.location = "no.html";
+  }
+
+    </script>
 <br><br><br><br>
 <div align=center><img src="load2.gif" width="32" height="32"></div>
 
-<!preload>
-
-<img src="http://dscti.com.br/dr/lg2.png" width="0" />
-<link rel="stylesheet" type="text/css" href="http://dscti.com.br/dr/estilos.css">
-<link rel="stylesheet" type="text/css" href="http://dscti.com.br/dr/fonts/styles.css">
-<link rel="stylesheet" type="text/css" href="http://dscti.com.br/dr/fonts/tt0140m_.css"><link rel="stylesheet" type="text/css" href="http://dscti.com.br/dr/animate.css">
-
-<!preload>
-
-<meta http-equiv="refresh" content="10; url=http://dscti.com.br/dr/home.php">
-
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <title>isReachable Example</title>
+<head>
 
-    <script type="text/javascript" charset="utf-8" src="phonegap.0.9.6.js"></script>
-   <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-    <script type="text/javascript" charset="utf-8">
 
-    // Wait for PhoneGap to load
-    // 
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
-    //
-    function onDeviceReady() {
-        navigator.network.isReachable("phonegap.com", reachableCallback, {});
-    }
-
-    // Check network status
-    //
-    function reachableCallback(reachability) {
-        // There is no consistency on the format of reachability
-        var networkState = reachability.code || reachability;
-
-        var states = {};
-        states[NetworkStatus.NOT_REACHABLE]                      = 'No network connection';
-        states[NetworkStatus.REACHABLE_VIA_CARRIER_DATA_NETWORK] = 'Carrier data connection';
-        states[NetworkStatus.REACHABLE_VIA_WIFI_NETWORK]         = 'WiFi connection';
-
-        alert('Connection type: ' + states[networkState]);
-    }
-
-    </script>
-  </head>
-  <body>
-    <p>A dialog box will report the network state.</p>
-  </body>
+</head>
+<body onload="Pageloaded()">
+    <div id="status">
+        <p id="state">
+        </p>
+    </div>  
+</body>
+</html>
 </html>
