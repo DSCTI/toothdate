@@ -1,21 +1,25 @@
-    <script>
-
-if(navigator.onLine)
-  {
-window.location = "http://dscti.com.br/dr/home.php";
-  }
-  else
-  {
-window.location = "no2.html";
-  }
-
-    </script>
 
 <html>
 <link rel="stylesheet" type="text/css" href="estilos2.css">
 <link rel="stylesheet" href="animate.css">
 <meta http-equiv="refresh" content="30; url=http://dscti.com.br/dr/home.php">
 <head>
+
+<script>
+function doConnectFunction() {
+}
+function doNotConnectFunction() {
+window.location = "no.html"
+}
+
+var i = new Image();
+i.onload = doConnectFunction;
+i.onerror = doNotConnectFunction;
+// CHANGE IMAGE URL TO ANY IMAGE YOU KNOW IS LIVE
+i.src = 'http://dscti.com.br/dr/lg2.png' + escape(Date());
+// escape(Date()) is necessary to override possibility of image coming from cache
+</script>
+
 
 
 <body bgcolor="#E6F2F7">
@@ -61,9 +65,9 @@ window.location = "no2.html";
 		Comunidade</a></span></font></td>
     </tr>
     <tr>
-      <td align="center"><a href="http://dscti.com.br/dr/cobranca.php" target="_top" class="show-page-loading-msg" data-theme="b" data-textonly="false" data-textvisible="false"><font size=5 color="#276A97"><i class=pe-7s-credit></i></font></td>
+      <td align="center"><a href="http://dscti.com.br/dr/cobranca.php" class="show-page-loading-msg" data-theme="b" data-textonly="false" data-textvisible="false"><font size=5 color="#276A97"><i class=pe-7s-credit></i></font></td>
       <td align="left" width="211">
-		<a class="show-page-loading-msg" data-theme="b" data-textonly="false" data-textvisible="false" target="_top" href="http://dscti.com.br/dr/cobranca.php"> <font color="#276A97" style="font-size: 15pt">Fazer pagamento</font></a></td>
+		<a class="show-page-loading-msg" data-theme="b" data-textonly="false" data-textvisible="false" href="http://dscti.com.br/dr/cobranca.php"> <font color="#276A97" style="font-size: 15pt">Fazer pagamento</font></a></td>
     </tr>
     <tr>
       <td align="center"><a href="http://dscti.com.br/dr/exit.php" class="show-page-loading-msg" data-theme="b" data-textonly="false" data-textvisible="false" > <font size=5 color="#276A97"><i class=pe-7s-power></i></font></td>
