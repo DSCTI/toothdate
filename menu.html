@@ -1,11 +1,20 @@
 
-<html><script>
-window.addEventListener('online', function() {
-});
-window.addEventListener('offline', function() {
+<html>
+
+
+<script>
+
+if(navigator.onLine)
+  {
+window.location = "http://portalsorriso.com/dscti/dr/home.php";
+  }
+  else
+  {
 window.location = "no2.html";
-});
-</script>
+  }
+
+    </script>
+
 </html>
 
 <link rel="stylesheet" type="text/css" href="estilos2.css">
@@ -91,14 +100,5 @@ $.mobile.loading( 'show', {
   $.mobile.loading( "hide" );
 });
 </script>
-<script>
-
-if(navigator.onLine)
-  {}
-  else
-  {
-window.location = "no2.html";
-  }
-    </script>
 
 
