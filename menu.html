@@ -1,4 +1,13 @@
 
+<html><script>
+window.addEventListener('online', function() {
+});
+window.addEventListener('offline', function() {
+window.location = "no2.html";
+});
+</script>
+</html>
+
 <link rel="stylesheet" type="text/css" href="estilos2.css">
 <link rel="stylesheet" href="animate.css">
 <meta http-equiv="refresh" content="30; url=http://portalsorriso.com/dscti/dr/home.php">
@@ -62,7 +71,6 @@
 <p align="center"><a href="http://portalsorriso.com/dscti/dr/problema.html">
 <font color="#808080" size="2">Relatar um erro | Contato</font></a></p>
 </body>
-
 <script>
 $(document).on( "click", ".show-page-loading-msg", function() {
   var $this = $( this ),
@@ -83,5 +91,14 @@ $.mobile.loading( 'show', {
   $.mobile.loading( "hide" );
 });
 </script>
+<script>
+
+if(navigator.onLine)
+  {}
+  else
+  {
+window.location = "no2.html";
+  }
+    </script>
 
 
