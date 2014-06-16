@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.toothdate.dscti" version="1.0.3">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.toothdate.dscti2" version="1.0.2">
 
 <name>Tooth Date</name>
 
@@ -52,6 +52,8 @@
 <gap:plugin name="org.apache.cordova.camera" />
 <gap:plugin name="org.apache.cordova.file" />
 <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
+<gap:plugin name="org.li8.inappbrowser" />
+<gap:plugin name="de.appplant.cordova.plugin.background-mode" />
 
 <access origin="*" />
 
