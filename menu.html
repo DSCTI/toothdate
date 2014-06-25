@@ -8,6 +8,29 @@
 <body class="animated bounceInDown">
 
 <script type="application/javascript">
+
+
+
+function checkConnection() {
+    network = navigator.network.connection.type;
+
+
+    states[Connection.UNKNOWN] = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI] = 'WiFi connection';
+    states[Connection.CELL_2G] = 'Cell 2G connection';
+    states[Connection.CELL_3G] = 'Cell 3G connection';
+    states[Connection.CELL_4G] = 'Cell 4G connection';
+    states[Connection.NONE] = 'No network connection';
+    // alert('Connection type: ' + states[network]);
+    return states[network];
+}
+     if (states[network] == 'No network connection')
+{
+  window.location = "no2.html";
+}
+
+
 	window.addEventListener('load', function () {
 		FastClick.attach(document.body);
 	}, false);
@@ -69,25 +92,3 @@
 <font color="#808080" size="2">Relatar um erro&nbsp; |&nbsp; Contato&nbsp; | </font></a>
 <font color="#808080" size="2">&nbsp;<a href="http://portalsorriso.com/dscti/dr/exit.php"><font color="#808080">Sair</font></a></font></p>
 </body>
-
-<script>
-$(document).on( "click", ".show-page-loading-msg", function() {
-  var $this = $( this ),
-  theme = $this.jqmData( "theme" ) || $.mobile.loader.prototype.options.theme,
-  msgText = $this.jqmData( "msgtext" ) || $.mobile.loader.prototype.options.text,
-  textVisible = $this.jqmData( "textvisible" ) || $.mobile.loader.prototype.options.textVisible,
-  textonly = !!$this.jqmData( "textonly" );
-  html = $this.jqmData( "html" ) || "";
-$.mobile.loading( 'show', {
-  text: msgText,
-  textVisible: textVisible,
-  theme: theme,
-  textonly: textonly,
-  html: html
-  });
-})
-.on( "click", ".hide-page-loading-msg", function() {
-  $.mobile.loading( "hide" );
-});
-</script>
-
