@@ -20,6 +20,25 @@
 
 window.plugin.backgroundMode.enable();
 
+// prep some variables
+  var startDate = new Date(2014,2,15,18,30,0,0,0); // beware: month 0 = january, 11 = december
+  var endDate = new Date(2015,2,15,19,30,0,0,0);
+  var title = "My nice event";
+  var location = "Home";
+  var notes = "Some notes about this event.";
+  var calendarName = "Tooth Date";
+  var success = function(message) { alert("Success: " + JSON.stringify(message)); };
+  var error = function(message) { alert("Error: " + message); };
+
+  // create a calendar (iOS only for now)
+  window.plugins.calendar.createCalendar(calendarName,success,error);
+  window.plugins.calendar.createEventInNamedCalendar(title,location,notes,startDate,endDate,calendarName,success,error);
+
+
+
+
+
+
     }
 
     </script>
