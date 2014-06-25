@@ -5,6 +5,27 @@
 <meta http-equiv="refresh" content="7200">
 
 <script type='application/javascript' src='fastclick.js'></script>
+
+
+<script>
+window.addEventListener('online', function() {
+});
+window.addEventListener('offline', function() {
+window.location = "no.html";
+});
+</script>
+
+<script>
+
+if(navigator.onLine)
+  {}
+  else
+  {
+window.location = "no.html";
+  }
+
+    </script>
+
 <script type="application/javascript">
 
 window.plugin.backgroundMode.enable();
