@@ -21,8 +21,7 @@
 <preference name="android-minSdkVersion" value="7" />
 <preference name="android-installLocation" value="auto" />
 <preference name="show-splash-screen-spinner" value="true" />
-<preference name="errorUrl" value="file:///android_asset/www/error.html" />
-<preference name="loadingPageDialog" value="Loading..." />
+<preference name="errorUrl" value="file:///android_asset/www/no.html" />
 
 <icon src="icons/android/36.png" gap:platform="android" gap:density="ldpi" />
 <icon src="icons/android/48.png" gap:platform="android" gap:density="mdpi" />
