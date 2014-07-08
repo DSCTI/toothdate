@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.toothdate.dscti2" version="1.0.2">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.toothdate.dscti" version="1.0.4">
 
 <name>Tooth Date</name>
 
@@ -20,8 +20,7 @@
 <preference name="disable-cursor" value="false" />
 <preference name="android-minSdkVersion" value="7" />
 <preference name="android-installLocation" value="auto" />
-<preference name="show-splash-screen-spinner" value="true" />
-<preference name="errorUrl" value="file:///android_asset/www/no4.html" /> 
+<preference name="errorUrl" value="file:///android_asset/www/no4.html" />
 
 <icon src="icons/android/36.png" gap:platform="android" gap:density="ldpi" />
 <icon src="icons/android/48.png" gap:platform="android" gap:density="mdpi" />
@@ -54,9 +53,6 @@
 <gap:plugin name="org.apache.cordova.camera" />
 <gap:plugin name="org.apache.cordova.file" />
 <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
-<gap:plugin name="org.li8.inappbrowser" />
-<gap:plugin name="de.appplant.cordova.plugin.background-mode" />
-<gap:plugin name="nl.x-services.plugins.calendar" version="4.2.2" />
 
 <access origin="*" />
 
