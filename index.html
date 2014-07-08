@@ -1,103 +1,63 @@
-      <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-   <script type="text/javascript" charset="utf-8">
-
-    // Wait for Cordova to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // Cordova is ready
-    //
-    function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    }
-
-    function gotFS(fileSystem) {
-        fileSystem.root.getFile("log.txt", {create: true, exclusive: false}, gotFileEntry, fail);
-    }
-
-    function gotFileEntry(fileEntry) {
-        fileEntry.createWriter(gotFileWriter, fail);
-    }
-
-    function gotFileWriter(writer) {
-        writer.onwriteend = function(evt) {
-            console.log("contents of file now 'some sample text'");
-            writer.truncate(11);  
-            writer.onwriteend = function(evt) {
-                console.log("contents of file now 'some sample'");
-                writer.seek(4);
-                writer.write(" different text");
-                writer.onwriteend = function(evt){
-                    console.log("contents of file now 'some different text'");
-                }
-            };
-        };
-        writer.write("some sample text");
-    }
-
-    function fail(error) {
-        console.log(error.code);
-    }
-
-    </script>
- <!DOCTYPE html>
-<html>
-  <head>
-    <title>FileReader Example</title>
-  <script type="text/javascript" charset="utf-8">
-
-
-    // Wait for Cordova to load
-    //
-    function onLoad() {
+<body>
+    <h1>CRUD no Phonegap</h1>
+    <form>
+        <p>Insira um nome: <input type="text" name="InsiraNome" id="idInsiraNome"></p>
+        <input type="submit" value="Insira" onclick="inseriNome()">
+    </form>
+    <form>
+        <p>Delete um nome: <input type="text" name="DeleteNome" id="idDeleteNome"></p>
+        <input type="submit" value="Deletar" onclick="deleteNome()">
+    </form>
+    </br>
+    <form>
+        <input type="submit" value="Buscar nomes" onclick="buscaNomes()">
+     </form>
+        </br>
+    <form>
+        <p>Qual o NOVO nome: <input type="text" name="AlteraNome" id="idAlteraNome"></p>
+        <p>Qual o ANTIGO nome: <input type="text" name="AntigoNome" id="idAntigoNome"></p>
+        <input type="submit" value="Alterar" onclick="altereNome()">
+     </form>
+  </body><script type="text/javascript" charset="utf-8" src="cordova-2.3.0.js"></script>
+ <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script>
+ 
         document.addEventListener("deviceready", onDeviceReady, false);
-    }
-
-    // Cordova is ready
-    //
-    function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    }
-
-    function gotFS(fileSystem) {
-        fileSystem.root.getFile("log.txt", null, gotFileEntry, fail);
-    }
-
-    function gotFileEntry(fileEntry) {
-        fileEntry.file(gotFile, fail);
-    }
-
-    function gotFile(file){
-        readDataUrl(file);
-        readAsText(file);
-    }
-
-    function readDataUrl(file) {
-        var reader = new FileReader();
-        reader.onloadend = function(evt) {
-            console.log("Read as data URL");
-            console.log(evt.target.result);
-        };
-        reader.readAsDataURL(file);
-    }
-
-    function readAsText(file) {
-        var reader = new FileReader();
-        reader.onloadend = function(evt) {
-            console.log("Read as text");
-            console.log(evt.target.result);
-        };
-        reader.readAsText(file);
-    }
-
-    function fail(evt) {
-        console.log(evt.target.error.code);
-    }
-
-    </script>
-  </head>
-  <body>
-    <h1>Example</h1>
-    <p>Read File</p>
-  </body>
-</html>
+        var db;
+        function onDeviceReady() {
+            db = window.openDatabase("Teste", "1.0", "Phonegap DB", 20000);
+        }function inseriNome() {
+            db.transaction(geraNomeDB, errorCB, successCB);
+            }
+function geraNomeDB(tx) {
+            var nomeInserido = new String(document.getElementById('idInsiraNome').value);
+            tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (data)');
+            tx.executeSql('INSERT INTO DEMO (data) VALUES ("'+nomeInserido+'")');
+        }function altereNome() {
+            db.transaction(alteraNome, errorCB, successCB);
+        }
+        function alteraNome(tx) {
+            var nomeAlterado = new String(document.getElementById('idAlteraNome').value);
+            var nomeAntigo = new String(document.getElementById('idAntigoNome').value);
+            tx.executeSql('UPDATE DEMO SET data = "'+nomeAlterado+'" WHERE data = "'+nomeAntigo+'";');
+        }function buscaNomes() {
+            db.transaction(queryDB, errorCB);
+        }
+        function queryDB(tx) {
+            tx.executeSql('SELECT * FROM DEMO', [], querySuccess, errorCB);
+        }
+ 
+        function querySuccess(tx, results) {
+            var len = results.rows.length;
+            console.log("DEMO table: " + len + " rows found.");
+            for (var i=0; i<len; i++){
+                console.log("Row = " + i + " Data =  " + results.rows.item(i).data);
+                alert("Row = " + i + " Nome =  " + results.rows.item(i).data);
+            }
+        }
+        function errorCB(err) {
+            console.log("Error processing SQL: "+err.code);
+        }
+        function successCB() {
+            alert("Executado com sucesso!");
+        }</script>
