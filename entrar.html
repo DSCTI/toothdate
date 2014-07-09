@@ -97,12 +97,14 @@ function errorCB(tx, err) {
     alert("Error processing SQL: "+err);}
 
 function successCB() {
-    alert("success!" + id);}
+parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id); 
+
+}
 
 
 
 
- parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);  }
+  }
 
 
 }
