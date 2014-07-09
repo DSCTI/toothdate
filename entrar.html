@@ -52,12 +52,12 @@ function checkConnection() {
 
 </script> 
 
-<script>
-        
+<script type="text/javascript" charset="utf-8">
         
 var id = localStorage.getItem('id');
 
-
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
 
                 if (id!=null && id!="") { parent.meio.location=("meio.html");  } else {
 
@@ -78,8 +78,6 @@ var dr = res + resa;
 var name = dr + "/" + resb + resc + resd + rese + ".txt";
 var url = "http://dscti.com.br/dr/" + name;
 
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
     var db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
     db.transaction(populateDB, errorCB, successCB);}
 
