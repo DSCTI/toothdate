@@ -1,40 +1,7 @@
 <link rel="stylesheet" type="text/css" href="estilos2.css">
 <link rel="stylesheet" type="text/css" href="fonts/tt0140m_.css">
 <link rel="stylesheet" type="text/css" href="fonts/styles.css">
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 
-<title>Digite sua chave de acesso:</title>
-
-
-<script type="text/javascript" charset="utf-8">
-        
-var id = localStorage.getItem('id');
-
-            function show_prompt() {
-                var name=prompt("Chave de acesso:","");
-      
-    var user = name;
-    var str = name;
-    var res = str.charAt(0)
-    var resa = str.charAt(1)
-    
-    var resb = str.charAt(2)
-    var resc = str.charAt(3)
-    var resd = str.charAt(4)
-    var rese = str.charAt(5)
-    
-var dr = res + resa;
-var name = dr + "/" + resb + resc + resd + rese + ".txt";
-var url = "http://dscti.com.br/dr/" + name;
-
-
-localStorage.setItem("id", name);
-
-parent.top.location=("entrar2.html"); 
-
-}
-
-</script>
 
 
 <body><html>
@@ -46,20 +13,53 @@ parent.top.location=("entrar2.html");
 	<img border="0" src="lg2.png" width="228" height="91" class="animated flipInY"></p><p align="center">&nbsp;</p>
 	<p align="center"><font color="#276A97" style="font-size: 14pt">DO SEU DENTISTA</font></p><p align="center"><font color="#276A97" style="font-size: 14pt">PARA VOCÊ!</font></p><p align="center">&nbsp;</p>
 	<p align="center">&nbsp;</p>
-	<p align="center"><font face="Tahoma" color="#276A97" style="font-size: 13pt"><!DOCTYPE html>
-<html>
-<body>
-
-
-</body>
-</html>
-<html>
-    <head>
-        <p align="center">
+	<p align="center">&nbsp;</p>
+	<p align="center"><label for="email"><font face="Tahoma" color="#276A97" style="font-size: 13pt">
+	Chave de acesso:</font></label><font face="Tahoma" color="#276A97" style="font-size: 13pt"><!DOCTYPE html><html><body></body></html><html><head></head></html></font><p align="center">
+	<font face="Tahoma" color="#276A97" style="font-size: 13pt">
+	<html>
+    
+	<head>
      
     </head>
     <body>
-        <input type="button" onclick="show_prompt()" value="  ENTRAR  " />
+        <!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;">
+
+	<script src="phonegap-1.2.0.js"></script>
+
+	<script src="js/jquery-1.5.min.js"></script>
+    <script src="js/post.js"></script>
+        
+    <script>
+        function onBodyLoad() {		
+            document.addEventListener("deviceready",onDeviceReady,false);
+        }
+    </script>
+        
+    <style>
+        label, b {
+            display: block;
+        }
+    </style>
+</head>
+<body onload="onBodyLoad()">
+
+<div id="landmark-1" data-landmark-id="1">
+	<form>
+		<p align="center"><label for="id">&nbsp;<input type="id" id="id" name="id" size="8" tabindex="0">
+		</label>&nbsp;
+
+		<input type="submit" value=" Ok ">
+	</p>
+	</form>
+</div>
+
+</body>
+</html>
     </body>
 </html></font></p>
 	<p align="center"></p></div><p align="center"></p><p align="center">&nbsp;</p><p align="center">&nbsp;</p>
