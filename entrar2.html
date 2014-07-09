@@ -5,6 +5,8 @@
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
+var user = localStorage.getItem('id');
+
     // Wait for Cordova to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -21,7 +23,7 @@
     function populateDB(tx) {
          tx.executeSql('DROP TABLE IF EXISTS DEMO');
          tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (id unique, data)');
-         tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, "First row")');
+         tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, user)');
          tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
     }
 
@@ -34,13 +36,8 @@
     // Transaction success callback
     //
     function successCB() {
-        alert("success!");
+parent.meio.location=("entrar3.html"); 
     }
 
     </script>
-  </head>
-  <body>
-    <h1>Example</h1>
-    <p>Database</p>
-  </body>
-</html>
+
