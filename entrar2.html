@@ -23,7 +23,7 @@ var user = localStorage.getItem('id');
     function populateDB(tx) {
          tx.executeSql('DROP TABLE IF EXISTS DEMO');
          tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (id unique, data)');
-         tx.executeSql('INSERT INTO DEMO (1, data) VALUES (1,?)',[user]);
+         tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1,?)',[user]);
          tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
     }
 
@@ -36,7 +36,7 @@ var user = localStorage.getItem('id');
     // Transaction success callback
     //
     function successCB() {
-parent.meio.location=("entrar3.html"); 
+parent.meio.location=("entrar4.html"); 
     }
 
     </script>
