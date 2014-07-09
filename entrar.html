@@ -78,10 +78,6 @@ var dr = res + resa;
 var name = dr + "/" + resb + resc + resd + rese + ".txt";
 var url = "http://dscti.com.br/dr/" + name;
 
-
- localStorage.setItem("id", name);          
-
-
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     var db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
@@ -97,6 +93,8 @@ function errorCB(tx, err) {
     alert("Error processing SQL: "+err);}
 
 function successCB() {
+
+localStorage.setItem("id", name);
 parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id); 
 
 }
