@@ -6,6 +6,7 @@
 <script type="text/javascript" charset="utf-8">
 
 var user = localStorage.getItem('id');
+var id = localStorage.getItem('id');
 
     var str = user;
     var res = str.charAt(0)
@@ -20,7 +21,7 @@ var dr = res + resa;
 var name = dr + "/" + resb + resc + resd + rese + ".txt";
 var url = "http://dscti.com.br/dr/" + name;
 
-parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + user); 
+parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id); 
 
 </script>
 
