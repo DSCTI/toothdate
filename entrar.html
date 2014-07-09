@@ -56,14 +56,14 @@ function checkConnection() {
         
 var id = localStorage.getItem('id');
 
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-
                 if (id!=null && id!="") { parent.meio.location=("meio.html");  } else {
 
             function show_prompt() {
                 var name=prompt("Chave de acesso:","");
-                
+      
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+          
     var id = name;
     var str = name;
     var res = str.charAt(0)
