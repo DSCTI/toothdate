@@ -77,7 +77,7 @@ var url = "http://dscti.com.br/dr/" + name;
 
 
 localStorage.setItem("id", name);
-parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + user); 
+
 
   }
 
@@ -117,3 +117,55 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + user);
 	<p align="center">&nbsp;</p><p align="center">
 <a href="http://dscti.com.br/dr/quem_externo.php"><font color="#276A97" style="font-size: 12pt">SAIBA MAIS</font></a></span></font> </p><p align="center">&nbsp;</p><p align="center">&nbsp;</p></form></body></body></html>
 	
+
+
+<html>
+  <head>
+
+    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    var user = localStorage.getItem('id');
+
+    // Wait for PhoneGap to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // PhoneGap is ready
+    //
+    function onDeviceReady() {
+        var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
+        db.transaction(populateDB, errorCB, successCB);
+    }
+
+    // Populate the database 
+    //
+    function populateDB(tx) {
+         tx.executeSql('DROP TABLE IF EXISTS DEMO');
+         tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (id unique, data)');
+         tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, user)');
+         tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
+    }
+
+    // Transaction error callback
+    //
+    function errorCB(tx, err) {
+        alert("Error processing SQL: "+err);
+    }
+
+    // Transaction success callback
+    //
+    function successCB() {
+        alert("success!");
+
+parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + user); 
+
+    }
+
+    </script>
+  </head>
+  <body>
+    <h1>Example</h1>
+    <p>Database</p>
+  </body>
+</html>
