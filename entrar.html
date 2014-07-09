@@ -1,6 +1,6 @@
-<link rel="stylesheet" type="text/css" href="estilos2.css">
-<link rel="stylesheet" type="text/css" href="fonts/tt0140m_.css">
-<link rel="stylesheet" type="text/css" href="fonts/styles.css">
+
+ 
+<title>Digite sua chave de acesso:</title>
  
 <script>
 window.addEventListener('online', function() {
@@ -22,7 +22,7 @@ window.location = "no5.html";
     </script>
 
 
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
 
 <script type="application/javascript">
 
@@ -54,6 +54,8 @@ function checkConnection() {
         
 var id = localStorage.getItem('id');
 
+
+
                 if (id!=null && id!="") { parent.meio.location=("meio.html");  } else {
 
             function show_prompt() {
@@ -73,31 +75,36 @@ var dr = res + resa;
 var name = dr + "/" + resb + resc + resd + rese + ".txt";
 var url = "http://dscti.com.br/dr/" + name;
 
+
+
+ window.onload = function() {
+		var fileInput = url;
+		var fileDisplayArea = document.getElementById('fileDisplayArea');
+
+		fileInput.addEventListener('change', function(e) {
+			var file = fileInput.files[0];
+			var textType = /text.*/;
+
+			if (file.type.match(textType)) {
+				var reader = new FileReader();
+
+				reader.onload = function(e) {
+					fileDisplayArea.innerText = reader.result;
+				}
+
+				reader.readAsText(file);	
+			} else {
+				fileDisplayArea.innerText = "File not supported!"
+			}
+		});
+}
+
+
+
+
+
  localStorage.setItem("id", name);          
-
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-    var db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
-    db.transaction(populateDB, errorCB, successCB);
-}
-
-function populateDB(tx) {
-     tx.executeSql('DROP TABLE IF EXISTS DEMO');
-     tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (id unique, data)');
-     tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, id)');
-     tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
-}
-
-function errorCB(tx, err) {
-    alert("Error processing SQL: "+err);
-}
-
-function successCB() {  alert("success!" + id);
- parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id); 
-
-}
-
- }
+ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);  }
 
 
 }
@@ -105,12 +112,12 @@ function successCB() {  alert("success!" + id);
 </script>
 
 
-
-
-
 <body><html>
-
-<link rel="stylesheet" href="animate.css"><head><meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport" /><meta http-equiv="Content-Language" content="pt-br"></head><body bgcolor="#F9F9F9"><form action="login.php" name="form" method="POST"><p align="center">&nbsp;</p>
+<link rel="stylesheet" type="text/css" href="estilos2.css">
+<link rel="stylesheet" type="text/css" href="fonts/tt0140m_.css">
+<link rel="stylesheet" type="text/css" href="fonts/styles.css">
+<link rel="stylesheet" href="animate.css"><head><meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport" /><meta http-equiv="Content-Language" content="pt-br"></head>
+<link rel="stylesheet" href="animate.css"><body bgcolor="#F9F9F9"><form action="login.php" name="form" method="POST"><p align="center">&nbsp;</p>
 	<p align="center">&nbsp;</p>
 	<p align="center">&nbsp;</p><p align="center">
 	<img border="0" src="lg2.png" width="228" height="91" class="animated flipInY"></p><p align="center">&nbsp;</p>
