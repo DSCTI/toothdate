@@ -3,6 +3,27 @@
 <link rel="stylesheet" type="text/css" href="fonts/tt0140m_.css">
 <link rel="stylesheet" href="animate.css">
 
+<script type="text/javascript" charset="utf-8">
+
+var user = localStorage.getItem('id');
+
+    var str = user;
+    var res = str.charAt(0)
+    var resa = str.charAt(1)
+    
+    var resb = str.charAt(2)
+    var resc = str.charAt(3)
+    var resd = str.charAt(4)
+    var rese = str.charAt(5)
+    
+var dr = res + resa;
+var name = dr + "/" + resb + resc + resd + rese + ".txt";
+var url = "http://dscti.com.br/dr/" + name;
+
+parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + user); 
+
+</script>
+
 <head>
 <script type='application/javascript' src='fastclick.js'></script>
 <script type="application/javascript">
