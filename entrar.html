@@ -76,33 +76,6 @@ var name = dr + "/" + resb + resc + resd + rese + ".txt";
 var url = "http://dscti.com.br/dr/" + name;
 
 
-
- window.onload = function() {
-		var fileInput = url;
-		var fileDisplayArea = document.getElementById('fileDisplayArea');
-
-		fileInput.addEventListener('change', function(e) {
-			var file = fileInput.files[0];
-			var textType = /text.*/;
-
-			if (file.type.match(textType)) {
-				var reader = new FileReader();
-
-				reader.onload = function(e) {
-					fileDisplayArea.innerText = reader.result;
-				}
-
-				reader.readAsText(file);	
-			} else {
-				fileDisplayArea.innerText = "File not supported!"
-			}
-		});
-}
-
-
-
-
-
  localStorage.setItem("id", name);          
  parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);  }
 
