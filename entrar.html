@@ -61,7 +61,7 @@ var id = localStorage.getItem('id');
             function show_prompt() {
                 var name=prompt("Chave de acesso:","");
       
-    var id = name;
+    var user = name;
     var str = name;
     var res = str.charAt(0)
     var resa = str.charAt(1)
@@ -97,7 +97,7 @@ function errorCB(tx, err) {
 function successCB() {
 
 localStorage.setItem("id", name);
-parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id); 
+parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + user); 
 
 }
 
