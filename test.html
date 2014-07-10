@@ -29,17 +29,17 @@
     //
     function querySuccess(tx, results) {
         // this will be empty since no rows were inserted.
-        console.log("Insert ID = " + results.insertId);
+        alert("Insert ID = " + results.insertId);
         // this will be 0 since it is a select statement
-        console.log("Rows Affected = " + results.rowAffected);
+        alert("Rows Affected = " + results.rowAffected);
         // the number of rows returned by the select statement
-        console.log("Insert ID = " + results.rows.length);
+        alert("Insert ID = " + results.rows.length);
     }
 
     // Transaction error callback
     //
     function errorCB(err) {
-        console.log("Error processing SQL: "+err.code);
+        alert("Error processing SQL: "+err.code);
     }
 
     // Transaction success callback
