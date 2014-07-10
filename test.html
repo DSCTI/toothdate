@@ -1,36 +1,44 @@
 <html>
   <head>
-<body onload="onDeviceReady2()">
+<body onload="queryDB(tx)">
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
+function populateDB(tx) {
+    tx.executeSql('DROP TABLE IF EXISTS DEMO');
+    tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
+}
 
-     document.addEventListener("deviceready", onDeviceReady, false);
-        var db;
-    function onDeviceReady() {
-        db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
-
+function errorCB(err) {
+  
+   document.getElementById('sql-result').innerHTML = "<strong>Error processing SQL: " + err.code + "</strong>";
+}
+function successCreateCB() {
+  
+   document.getElementById('sql-result').innerHTML = "<strong>Success creating Database 1.0</strong>";
+}
+var db = 0;
+function createDB(){
+    if (!db) {
+        db = window.openDatabase("Database", "1.0", "PhoneGap Training", 200000);
     }
-   function onDeviceReady2() {
-            tx.executeSql('SELECT * FROM DEMO', [], querySuccess, errorCB);
- }
-        function querySuccess(tx, results) {
-            var len = results.rows.length;
-       
-            for (var i=0; i<len; i++){
-           
-                alert("Row = " + i + " Nome =  " + results.rows.item(i).data);
-            }
-        }
-        function errorCB(err) {
-            alert("Erro!");
-        }
-        function successCB() {
-            alert("Executado com sucesso!");
-        }
+    db.transaction(populateDB, errorCB, successCreateCB);    
+}
 
 
-
-
-    </script>
+function querySuccess(tx, results) {
+   
+    document.getElementById('sql-result').innerHTML = 
+        "<strong>Num. Rows Returned = " + results.rows.length + "</strong>";
+}
+function queryDB(tx) {
+    tx.executeSql('SELECT * FROM DEMO', [], querySuccess, errorCB);
+}
+function getSqlResultSet() {
+    if (!db) {
+        db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
+    }
+    db.transaction(queryDB, errorCB);    
+}
+</script>
 
