@@ -1,51 +1,54 @@
-<script type="text/javascript">
-      function createDatabase(){
-         try{
-              if(window.openDatabase){
-              var shortName = 'db_xyz';
-              var version = '1.0';
-              var displayName = 'Display Information';
-              var maxSize = 65536; // in bytes
-              db = openDatabase(shortName, version, displayName, maxSize);
-        }
-     }catch(e){
-                 alert(e);
-           }
-     }
-     function executeQuery($query,callback){
-     try{
-         if(window.openDatabase){
-         db.transaction(
-         function(tx){
-         tx.executeSql($query,[],function(tx,result){
-         if(typeof(callback) == "function"){
-                 callback(result);
-         }else{
-                 if(callback != undefined){
-                       eval(callback+"(result)");
-                  }
-         }
-         },function(tx,error){});
-          });
-           return rslt;
-         }
-         }catch(e){}
-         }
-           function createTable(){
-           var sql = 'drop table image';
-                 executeQuery(sql);
-                 var sqlC = 'CREATE TABLE image (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, image BLOB )';
-                 executeQuery(sqlC);
-           }
-           function insertValue(){
-                var img = document.getElementById('image');
-                var sql = 'insert into image (name,image) VALUES ("sujeet","'+img+'")';
-                executeQuery(sql,function(results){alert(results)});
-            }
-<input type="button" name='create' onClick="createDatabase()" value='Create Database'>
-<input type="button" name='create' onClick="createTable()" value='create table'>
-<input type="button" name='insert' onClick="insertValue()" value='Insert value'>
-<input type="button" name='select' onClick="showTable()" value='show table'>
-<input type="file" id="image" >
-<div result></div>
+<input id="show" type="button" value="Show">
+
+<script>
+function globalError(tx, error)
+{
+    alert("Error: " + error.message);
+}
+
+var db = window.openDatabase('TabOrder', '', 'Bar Tab Orders', 2500000);
+db.transaction(function(tx) {
+    tx.executeSql('DROP TABLE IF EXISTS Drinks;', null, null, globalError);
+    tx.executeSql('CREATE TABLE Drinks(id INTEGER PRIMARY KEY, category TEXT, drinkname TEXT, our_cost FLOAT(6,2), cust_cost FLOAT(7,2))', 
+                  null, 
+                  function()
+                  {
+                      insertDrinks("soft", "cola", 1, 1.1);
+                      insertDrinks("cold", "smoothie", 5, 5.15);
+                  },
+                  globalError);
+});
+
+ function insertDrinks(category, drinkname, our_cost, cust_cost){
+  db.transaction(function(tx){
+      tx.executeSql('INSERT INTO Drinks (category, drinkname, our_cost, cust_cost) VALUES (?, ?, ?, ?)', [category, drinkname, our_cost, cust_cost], 
+                    null,
+                    globalError
+                   );
+  });
+ }
+
+
+function readDrinks(id, category, drinkname, our_cost, cust_cost){
+     db.transaction(function(tx) {
+         tx.executeSql('SELECT * FROM Drinks',
+                 [],
+                 function(tx, results)
+                 {
+                   for (var i=0; i<results.rows.length; i++) 
+                   { 
+                       var row=results.rows.item(i);
+                       var stringout = "Category: " + row['category'] + "\n"; 
+                       alert(stringout); 
+                   } 
+                 },                
+                 globalError
+                );
+     });
+};
+
+$(function()
+        {
+            $('#show').click(readDrinks);
+        });
 </script>
