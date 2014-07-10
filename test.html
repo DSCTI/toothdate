@@ -1,54 +1,47 @@
-<input id="show" type="button" value="Show">
+<html>
+  <head>
 
-<script>
-function globalError(tx, error)
-{
-    alert("Error: " + error.message);
-}
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
 
-var db = window.openDatabase('TabOrder', '', 'Bar Tab Orders', 2500000);
-db.transaction(function(tx) {
-    tx.executeSql('DROP TABLE IF EXISTS Drinks;', null, null, globalError);
-    tx.executeSql('CREATE TABLE Drinks(id INTEGER PRIMARY KEY, category TEXT, drinkname TEXT, our_cost FLOAT(6,2), cust_cost FLOAT(7,2))', 
-                  null, 
-                  function()
-                  {
-                      insertDrinks("soft", "cola", 1, 1.1);
-                      insertDrinks("cold", "smoothie", 5, 5.15);
-                  },
-                  globalError);
-});
-
- function insertDrinks(category, drinkname, our_cost, cust_cost){
-  db.transaction(function(tx){
-      tx.executeSql('INSERT INTO Drinks (category, drinkname, our_cost, cust_cost) VALUES (?, ?, ?, ?)', [category, drinkname, our_cost, cust_cost], 
-                    null,
-                    globalError
-                   );
-  });
- }
+var user = localStorage.getItem('id');
 
 
-function readDrinks(id, category, drinkname, our_cost, cust_cost){
-     db.transaction(function(tx) {
-         tx.executeSql('SELECT * FROM Drinks',
+    document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {
+        var db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
+        db.transaction(populateDB, errorCB, successCB);
+    }
+
+
+    function populateDB(tx) {
+       
+ tx.executeSql('SELECT * FROM Drinks',
                  [],
                  function(tx, results)
                  {
                    for (var i=0; i<results.rows.length; i++) 
                    { 
                        var row=results.rows.item(i);
-                       var stringout = "Category: " + row['category'] + "\n"; 
+                       var stringout = "Category: " + row['1'] + "\n"; 
                        alert(stringout); 
                    } 
                  },                
                  globalError
                 );
-     });
-};
 
-$(function()
-        {
-            $('#show').click(readDrinks);
-        });
-</script>
+
+    }
+
+
+    function errorCB(tx, err) {
+        alert("Error processing SQL: "+err);
+    }
+
+
+    function successCB() {
+
+
+    }
+
+    </script>
