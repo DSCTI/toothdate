@@ -1,6 +1,6 @@
 <html>
   <head>
-
+<body onload="onDeviceReady2()">
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
@@ -11,9 +11,9 @@
         db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
 
     }
-
+   function onDeviceReady2() {
             tx.executeSql('SELECT * FROM DEMO', [], querySuccess, errorCB);
- 
+ }
         function querySuccess(tx, results) {
             var len = results.rows.length;
        
