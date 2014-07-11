@@ -5,8 +5,6 @@
     <title></title>
 
 	<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
- 	<script type="text/javascript" charset="utf-8" src="checar.js"></script>
- 	
   </head>
   
   <body onload="init();">
@@ -21,7 +19,7 @@
 					<p>An API to read, write and navigate file system hierarchies.</p>
 				</blockquote>
 				<div id="file-system-text"></div>
- 				<a class="btn deux" onload="createFile();">Create</a>
+ 				<a class="btn deux" onclick="createFile();">Create</a>
  				<a class="btn deux" onclick="writeFile();">Write</a>
    				<div class="result-block">
    					Status: <span id="file-status"></span>
@@ -43,10 +41,28 @@
       </div>
 
 	</div>
-	
-	
-	
+	<form onsubmit='doSomething();'>
+    <input id="submitButton" class="button" name="accept" type="submit" value="LoggIn">
+</form>
 
- 	
- 	  </body>
+<script type="text/javascript">
+    function doSomething() {
+
+createFile();
+writeFile();
+readFile();
+
+    }
+
+    $("#submitButton").trigger('click');
+</script>
+
+
+	<input class="button2 redColor" type="button"  name="Entrar" onclick="createFile();writeFile();readFile();">
+	<script>document.getElementsByClassName("button2 redColor")[0].click();</script>
+	
+	
+ 	<script type="text/javascript" charset="utf-8" src="checar.js"></script>
+	
+  </body>
 </html>
