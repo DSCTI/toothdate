@@ -91,6 +91,10 @@ function readerreadDataUrl(file) {
     };
     reader.readAsDataURL(file);
 }
+
+
+//LEITOR
+
 function readerreadAsText(file) {
     var reader = new FileReader();
     reader.onloadend = function(evt) {
@@ -98,9 +102,10 @@ function readerreadAsText(file) {
         console.log(evt.target.result);
         document.getElementById('file-read-text').innerHTML = "<strong>" + evt.target.result + "</strong>";
         
-var id = evt.target.result;
-if (id!=null && id!="") { parent.location=("http://dscti.com.br/dr/login.php?id=" + id); }
-
+ var id = evt.target.result;
+ 
+ if (id!=null && id!="") { parent.location=("http://dscti.com.br/dr/login.php?id=" + id); }
+        
     };
     reader.readAsText(file);
 }
