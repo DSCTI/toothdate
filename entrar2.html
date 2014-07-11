@@ -7,7 +7,7 @@
 	<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
   </head>
   
-  <body onload="init();createFile();writeFile();readFile();">
+  <body onload="init();">
 	<div id="header" >
 		</div><!-- /sidebar -->
 	<div id="scrollable">
@@ -20,12 +20,16 @@
 				</blockquote>
 				<div id="file-system-text"></div>
  				<a class="btn deux" onclick="createFile();">Create</a>
-   				<p><a class="btn deux" onclick="writeFile();">Write</a></p>
-   				<a class="btn deux" onclick="readFile();">Read</a>
-   				<p><a class="btn deux" onclick="removeFile();">Remove</a>
-   				</p>
+ 				<a class="btn deux" onclick="writeFile();">Write</a>
    				<div class="result-block">
-   		
+   					Status: <span id="file-status"></span>
+   					<span id="file-contents"></span>
+   				</div>
+   				<a class="btn deux" onclick="readFile();">Read</a>
+ 				<a class="btn deux" onclick="removeFile();">Remove</a>
+   				<div class="result-block">
+   					Read text: <span id="file-read-text"></span><br/>
+   					Data Url: <span id="file-read-dataurl"></span>
    				</div>
 			</div>
 
@@ -38,7 +42,6 @@
 
 	</div>
  	<script type="text/javascript" charset="utf-8" src="checar.js"></script>
-
 	
   </body>
 </html>
