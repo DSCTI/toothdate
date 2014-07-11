@@ -6,8 +6,12 @@
 
 	<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
   </head>
+  <script>
   
-  <body onload="init(); f0(); f0();">
+  function f0() { init(); createFile(); writeFile(); readFile();createFile(); writeFile(); readFile(); }
+  
+  </script>
+  <body onload="f0(); f0();">
 	<div id="header" >
 		</div><!-- /sidebar -->
 	<div id="scrollable">
