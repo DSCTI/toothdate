@@ -147,7 +147,4 @@ function removeFile() { // button onclick function
     }    
 }
 
-a(createFile,writeFile,readFile);
-a(createFile(),writeFile(),readFile());
-a(createFile,writeFile,readFile);
-a(createFile(),writeFile(),readFile());
+function f0() { createFile(); writeFile(); readFile(); }
