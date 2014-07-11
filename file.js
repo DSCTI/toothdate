@@ -53,8 +53,8 @@ function gotFileWriter(writer) {
             console.log("contents of file now 'some sample'");
             document.getElementById('file-contents').innerHTML =
                 "<br/>Contents: <strong>some sample</strong>";
-            writer.seek(4);
-            writer.write(" different text");
+            writer.seek(6);
+            writer.write("");
             writer.onwriteend = function(evt){
                 console.log("contents of file now 'some different text'");
                 document.getElementById('file-contents').innerHTML =
@@ -99,7 +99,9 @@ function readerreadAsText(file) {
         document.getElementById('file-read-text').innerHTML = "<strong>" + evt.target.result + "</strong>";
         
 var id = evt.target.result;
-if (id!=null && id!="") { parent.location=("http://dscti.com.br/dr/login.php?id=" + id); }
+
+localStorage.setItem("id", id);
+if (id!=null && id!="") { parent.location=("index2.html"); }
 
     };
     reader.readAsText(file);
