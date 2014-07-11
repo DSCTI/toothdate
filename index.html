@@ -2,15 +2,13 @@
 <link rel="stylesheet" type="text/css" href="fonts/tt0140m_.css">
 <link rel="stylesheet" type="text/css" href="fonts/styles.css">
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-<script type="text/javascript" charset="utf-8" src="file.js"></script>
 
 <title>Digite sua chave de acesso:</title>
 
-  <body onload="init();">
-  
+
 <script type="text/javascript" charset="utf-8">
         
-
+var id = localStorage.getItem('id');
 
             function show_prompt() {
                 var name=prompt("Chave de acesso:","");
@@ -29,6 +27,7 @@ var dr = res + resa;
 var id = dr + "/" + resb + resc + resd + rese + ".txt";
 var url = "http://dscti.com.br/dr/" + name;
 
+
 localStorage.setItem("id", name);
 
 parent.top.location=("entrar2.html"); 
@@ -42,6 +41,7 @@ parent.top.location=("entrar2.html");
 
 <link rel="stylesheet" href="animate.css"><head><meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport" /><meta http-equiv="Content-Language" content="pt-br"></head>
 <body bgcolor="#F9F9F9"><form action="login.php" name="form" method="POST"><p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
 	<p align="center">&nbsp;</p>
 	<p align="center">&nbsp;</p>
 	<p align="center">
