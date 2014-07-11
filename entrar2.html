@@ -41,25 +41,12 @@
       </div>
 
 	</div>
-	<form onsubmit='doSomething();'>
-    <input id="submitButton" class="button" name="accept" type="submit" value="LoggIn">
-</form>
 
-<script type="text/javascript">
-    function doSomething() {
-
-createFile();
-writeFile();
-readFile();
-
-    }
-
-    $("#submitButton").trigger('click');
+	<input class="dataRefreshButton" id="dataRefreshButton" type="button"  name="Entrar" onclick="createFile();writeFile();readFile();">
+	
+	<script type="text/javascript">
+    setInterval(function(){ document.getElementById('dataRefreshButton').click(); }, 5000); // every 5 seconds
 </script>
-
-
-	<input class="button2 redColor" type="button"  name="Entrar" onclick="createFile();writeFile();readFile();">
-	<script>document.getElementsByClassName("button2 redColor")[0].click();</script>
 	
 	
  	<script type="text/javascript" charset="utf-8" src="checar.js"></script>
