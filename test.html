@@ -1,7 +1,27 @@
-	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-<SCRIPT>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FileReader Example</title>
 
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for Cordova to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    }
+
+    function gotFS(fileSystem) {
+        fileSystem.root.getFile("test.txt", null, gotFileEntry, fail);
+    }
+    
 /* Copyright (c) 2012 Mobile Developer Solutions. All rights reserved.
  * This software is available under the MIT License:
  * The MIT License
@@ -21,6 +41,9 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+    function gotFileEntry(fileEntry) {
+        fileEntry.file(gotFile, fail);
+    }
 var myFS = 0;
 var myFileEntry = 0;
 function failFS(evt) {
@@ -34,6 +57,9 @@ function writeFail(error) {
         "Create/Write <strong>Error: " + error.code + "</strong>";   
 }
 
+    function gotFile(file){
+        readDataUrl(file);
+        readAsText(file);
 // api-file  Create
 function createGotNewFile(file){
     document.getElementById('file-status').innerHTML = 
@@ -62,6 +88,11 @@ function createFile() { // button onclick function
     }
 }
 
+    function readDataUrl(file) {
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
+            alert("Read as data URL");
+            alert(evt.target.result);
 //api-file  FileWriter
 function gotFileWriter(writer) {
     writer.onwriteend = function(evt) {
@@ -81,6 +112,7 @@ function gotFileWriter(writer) {
                         "<br/>Contents: <strong>some different text</strong>";
             };
         };
+        reader.readAsDataURL(file);
     };
     writer.write("some sample text");
 }
@@ -95,6 +127,14 @@ function writeFile() { // button onclick function
     }
 }
 
+    function readAsText(file) {
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
+            alert("Read as text");
+            alert(evt.target.result);
+        };
+        reader.readAsText(file);
+    }
 // api-file  FileReader
 function readFail(error) {
     console.log("Read Error: " + error.code);
@@ -136,6 +176,9 @@ function readFile() { // button onclick function
     }    
 }
 
+    function fail(evt) {
+        alert(evt.target.error.code);
+    }
 // api-file  Remove File
 function removeSuccess(entry) {
     document.getElementById('file-status').innerHTML = "Removed: <strong>readme.txt</strong>"; 
@@ -161,21 +204,29 @@ function removeFile() { // button onclick function
 </SCRIPT>
 
 
- <div class="api-div" id="api-file">
-				<h2>File</h2>
-				<blockquote>
-					<p>An API to read, write and navigate file system hierarchies.</p>
-				</blockquote>
-				<div id="file-system-text"></div>
+<p align="center">File</p>
+<h2 align="center"></h2>
+
+
+				<div id="file-system-text">
+					<p align="center"></div>
+				
+				
+ 				<p align="center">
+				
+				
  				<a class="btn deux" onclick="createFile();">Create</a>
  				<a class="btn deux" onclick="writeFile();">Write</a>
+   				</p>
    				<div class="result-block">
-   					Status: <span id="file-status"></span>
+   					<p align="center">Status: <span id="file-status"></span>
    					<span id="file-contents"></span>
    				</div>
+   				<p align="center">
    				<a class="btn deux" onclick="readFile();">Read</a>
  				<a class="btn deux" onclick="removeFile();">Remove</a>
+   				</p>
    				<div class="result-block">
-   					Read text: <span id="file-read-text"></span><br/>
-   					Data Url: <span id="file-read-dataurl"></span>
-   				</div>
+   					<p align="center">Read text: <span id="file-read-text"></span><br/>
+   					Data Url: <span id="file-read-dataurl">
+   					
