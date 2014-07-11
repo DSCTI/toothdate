@@ -1,21 +1,4 @@
-/* Copyright (c) 2012 Mobile Developer Solutions. All rights reserved.
- * This software is available under the MIT License:
- * The MIT License
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
- * and associated documentation files (the "Software"), to deal in the Software without restriction, 
- * including without limitation the rights to use, copy, modify, merge, publish, distribute, 
- * sublicense, and/or sell copies of the Software, and to permit persons to whom the Software 
- * is furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all copies 
- * or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
- * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
- * PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE 
- * FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
- * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
+var user = localStorage.getItem('id');
 
 var myFS = 0;
 var myFileEntry = 0;
@@ -61,24 +44,22 @@ function createFile() { // button onclick function
 //api-file  FileWriter
 function gotFileWriter(writer) {
     writer.onwriteend = function(evt) {
-        console.log("contents of file now 'some sample text'");
+        console.log(user);
         document.getElementById('file-contents').innerHTML =
             "<br/>Contents: <strong>some sample text</strong>";
         writer.truncate(11);  
         writer.onwriteend = function(evt) {
             console.log("contents of file now 'some sample'");
-            document.getElementById('file-contents').innerHTML =
-                "<br/>Contents: <strong>some sample</strong>";
+            document.getElementById('file-contents').innerHTML = user;
             writer.seek(4);
             writer.write(" different text");
             writer.onwriteend = function(evt){
                 console.log("contents of file now 'some different text'");
-                document.getElementById('file-contents').innerHTML =
-                        "<br/>Contents: <strong>some different text</strong>";
+                document.getElementById('file-contents').innerHTML = user;
             };
         };
     };
-    writer.write("some sample text");
+    writer.write(user);
 }
 function gotFileEntry(fileEntry) {
     fileEntry.createWriter(gotFileWriter, writeFail);
