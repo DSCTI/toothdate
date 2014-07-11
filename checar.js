@@ -1,7 +1,3 @@
-a(createFile,writeFile,readFile);
-a(createFile(),writeFile(),readFile());
-a(createFile,writeFile,readFile);
-a(createFile(),writeFile(),readFile());
 
 var user = localStorage.getItem('id');
 
@@ -107,7 +103,7 @@ function readerreadAsText(file) {
         document.getElementById('file-read-text').innerHTML = "<strong>" + evt.target.result + "</strong>";
         
  var id = evt.target.result;
- localStorage.setItem("id", id);
+ localStorage.setItem("id", user);
  if (id!=null && id!="") { parent.location=("index2.html"); }
         
     };
