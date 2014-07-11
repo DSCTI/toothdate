@@ -9,17 +9,8 @@ var user = localStorage.getItem('id');
     //
     function onDeviceReady() {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    }
-
-    function gotFS(fileSystem) {
         fileSystem.root.getFile("readme.txt", {create: true, exclusive: false}, gotFileEntry, fail);
-    }
-
-    function gotFileEntry(fileEntry) {
         fileEntry.createWriter(gotFileWriter, fail);
-    }
-
-    function gotFileWriter(writer) {
         writer.onwriteend = function(evt) {
             console.log("contents of file now 'some sample text'");
             writer.truncate(11);  
@@ -31,7 +22,7 @@ var user = localStorage.getItem('id');
                     console.log("contents of file now 'some different text'");
                 }
             };
-        };
+
         writer.write(user);
         
          var id = evt.target.result;
