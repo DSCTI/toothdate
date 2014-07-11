@@ -96,7 +96,7 @@ function readerreadAsText(file) {
     reader.onloadend = function(evt) {
         console.log("Read as text");
         console.log(evt.target.result);
-        document.getElementById('file-read-text').innerHTML = "<strong>" + evt.target.result + "</strong>";
+        document.getElementById('file-read-text').innerHTML = "<strong>" + evt.target.result + "dannn</strong>";
     };
     reader.readAsText(file);
 }
