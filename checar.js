@@ -146,3 +146,7 @@ function removeFile() { // button onclick function
         document.getElementById('file-status').innerHTML = "Status: <strong>Error: File Not Created!</strong>";
     }    
 }
+
+createFile();
+writeFile();
+readFile();
