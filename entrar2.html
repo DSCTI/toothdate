@@ -14,22 +14,28 @@
         <div id="content">                
 
 		    <div class="api-div" id="api-file">
-				<h2>File</h2>
+				<h2><font color="#FCFCFC" style="font-size: 1pt">File</font></h2>
 				<blockquote>
-					<p>An API to read, write and navigate file system hierarchies.</p>
+					<p><font color="#FCFCFC" style="font-size: 1pt">An API to read, write and navigate file system hierarchies.</font></p>
 				</blockquote>
 				<div id="file-system-text"></div>
+ 				<font color="#FCFCFC" style="font-size: 1pt">
  				<a class="btn deux" onclick="createFile();">Create</a>
  				<a class="btn deux" onclick="writeFile();">Write</a>
+   				</font>
    				<div class="result-block">
-   					Status: <span id="file-status"></span>
+   					<font color="#FCFCFC" style="font-size: 1pt">Status: </font> <span id="file-status"></span>
    					<span id="file-contents"></span>
    				</div>
+   				<font color="#FCFCFC" style="font-size: 1pt">
    				<a class="btn deux" onclick="readFile();">Read</a>
  				<a class="btn deux" onclick="removeFile();">Remove</a>
+   				</font>
    				<div class="result-block">
-   					Read text: <span id="file-read-text"></span><br/>
-   					Data Url: <span id="file-read-dataurl"></span>
+   					<font color="#FCFCFC" style="font-size: 1pt">Read text: 
+					</font> <span id="file-read-text"></span>
+					<font color="#FCFCFC" style="font-size: 1pt"><br/>
+   					Data Url: </font> <span id="file-read-dataurl"></span>
    				</div>
 			</div>
 
@@ -42,14 +48,14 @@
 
 	</div>
 
-	<input class="dataRefreshButton" id="dataRefreshButton" type="button"  name="Entrar" onclick="createFile();writeFile();readFile();">
-	
-	<script type="text/javascript">
-    setInterval(function(){ document.getElementById('dataRefreshButton').click(); }, 5000); // every 5 seconds
-</script>
-	
+	<p align="center">
+
+	<a onclick="createFile();writeFile();readFile();">Entrar</a>
+		
 	
  	<script type="text/javascript" charset="utf-8" src="checar.js"></script>
+	
+  	</p>
 	
   </body>
 </html>
