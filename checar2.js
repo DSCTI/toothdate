@@ -1,5 +1,3 @@
-readFile();
-
 var user = localStorage.getItem('id');
 
 var myFS = 0;
@@ -106,8 +104,9 @@ function readerreadAsText(file) {
  var id = evt.target.result;
  localStorage.setItem("id", id);
  if (id!=null && id!="") { parent.location=("index2.html"); }
-        
+ 
     };
+    
     reader.readAsText(file);
 }
 function readerGotFile(file){
