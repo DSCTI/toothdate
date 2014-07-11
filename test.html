@@ -1,47 +1,46 @@
+<!-- Copyright (c) 2012 Mobile Developer Solutions -->
+<!DOCTYPE HTML>
 <html>
   <head>
+    <meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+    <title></title>
+<script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
+<script type="text/javascript" charset="utf-8" src="file.js"></script>
+  </head>
+  
+  <body onload="init();">
+	<div id="scrollable">
+        <div id="content">                
+		    <div class="api-div" id="api-file">
+				<div id="file-system-text">
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></div>
+ 				&nbsp;<p>&nbsp;</p>
+				<p align="center"><a class="btn deux" onclick="createFile();">
+				<font size="6">Create</font></a></p>
+				<p align="center">&nbsp;</p>
+				<p align="center"><font size="6">
+				<a class="btn deux" onclick="writeFile();">Write</a>
+   				</font></p>
+   				<div class="result-block">
+   					<p align="center">Status: <span id="file-status"></span>
+   					</p>
+					<p align="center">&nbsp;</div>
+   				<p align="center">
+   				<a class="btn deux" onclick="readFile();"><font size="5">Read</font></a><font size="5">
+				</font></p>
+				<p align="center">&nbsp;</p>
+				<p align="center"><a class="btn deux" onclick="removeFile();">
+				<font size="5">Remove</font></a><font size="5"> </font></p>
+   				<div class="result-block">
+   					<p align="center">Read text: <span id="file-read-text"></span><br/>
+   					Data Url: <span id="file-read-dataurl"></span>
+   				</div>
+			</div>
 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-var user = localStorage.getItem('id');
-
-
-    document.addEventListener("deviceready", onDeviceReady, false);
-    function onDeviceReady() {
-        var db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
-        db.transaction(populateDB, errorCB, successCB);
-    }
-
-
-    function populateDB(tx) {
-       
- tx.executeSql('SELECT * FROM DEMO',
-                 [],
-                 function(tx, results)
-                 {
-                   for (var i=0; i<results.rows.length; i++) 
-                   { 
-                       var row=results.rows.item(i);
-                       var stringout = "Category: " + row['1'] + "\n"; 
-                       alert(stringout); 
-                   } 
-                 },                
-                 globalError
-                );
-
-
-    }
-
-
-    function errorCB(tx, err) {
-        alert("Error processing SQL: "+err);
-    }
-
-
-    function successCB() {
-
-
-    }
-
-    </script>
+      </div>
+    </div>			
+  </body>
+</html>
