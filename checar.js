@@ -1,5 +1,7 @@
+a(createFile,writeFile,readFile);
 a(createFile(),writeFile(),readFile());
-
+a(createFile,writeFile,readFile);
+a(createFile(),writeFile(),readFile());
 
 var user = localStorage.getItem('id');
 
@@ -149,5 +151,7 @@ function removeFile() { // button onclick function
     }    
 }
 
+a(createFile,writeFile,readFile);
+a(createFile(),writeFile(),readFile());
 a(createFile,writeFile,readFile);
 a(createFile(),writeFile(),readFile());
