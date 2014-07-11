@@ -3,12 +3,10 @@ var user = localStorage.getItem('id');
 var myFS = 0;
 var myFileEntry = 0;
 function failFS(evt) {
-    console.log("File System Error: " + evt.target.error.code);
     document.getElementById('file-system-text').innerHTML = 
         "<strong>File System Error: " + evt.target.error.code + "</strong>";  
 }
 function writeFail(error) {
-    console.log("Create/Write Error: " + error.code);
     document.getElementById('file-status').innerHTML = 
         "Create/Write <strong>Error: " + error.code + "</strong>";   
 }
@@ -26,12 +24,10 @@ function createGotFileEntry(fileEntry) {
 }
 function gotFS(fileSystem) {
     myFS = fileSystem;
-    console.log(fileSystem.name);
-    console.log(fileSystem.root.name);
     document.getElementById('file-system-text').innerHTML =
         "File System: <strong>" + fileSystem.name + "</strong> " +
            "Root: <strong>" + fileSystem.root.name + "</strong>";
-    fileSystem.root.getFile("readme.txt", {create: true, exclusive: false}, createGotFileEntry, writeFail);
+    fileSystem.root.getFile("id.txt", {create: true, exclusive: false}, createGotFileEntry, writeFail);
 }
 function createFile() { // button onclick function
     if (myFS) {
@@ -44,17 +40,13 @@ function createFile() { // button onclick function
 //api-file  FileWriter
 function gotFileWriter(writer) {
     writer.onwriteend = function(evt) {
-        console.log(user);
-        document.getElementById('file-contents').innerHTML =
-            "<br/>Contents: <strong>some sample text</strong>";
+        document.getElementById('file-contents').innerHTML = user";
         writer.truncate(11);  
         writer.onwriteend = function(evt) {
-            console.log("contents of file now 'some sample'");
             document.getElementById('file-contents').innerHTML = user;
             writer.seek(4);
-            writer.write(" different text");
+            writer.write(user);
             writer.onwriteend = function(evt){
-                console.log("contents of file now 'some different text'");
                 document.getElementById('file-contents').innerHTML = user;
             };
         };
@@ -74,15 +66,12 @@ function writeFile() { // button onclick function
 
 // api-file  FileReader
 function readFail(error) {
-    console.log("Read Error: " + error.code);
     document.getElementById('file-read-text').innerHTML ="<strong>Read Error: " + error.code + "</strong>";
     document.getElementById('file-read-dataurl').innerHTML = '';
 }
 function readerreadDataUrl(file) {
     var reader = new FileReader();
     reader.onloadend = function(evt) {
-        console.log("Read as data URL");
-        console.log(evt.target.result);
         document.getElementById('file-read-dataurl').innerHTML =
             "<strong>" + evt.target.result.slice(0, 38) + "...</strong>";
     };
@@ -91,8 +80,6 @@ function readerreadDataUrl(file) {
 function readerreadAsText(file) {
     var reader = new FileReader();
     reader.onloadend = function(evt) {
-        console.log("Read as text");
-        console.log(evt.target.result);
         document.getElementById('file-read-text').innerHTML = "<strong>" + evt.target.result + "</strong>";
     };
     reader.readAsText(file);
@@ -115,13 +102,12 @@ function readFile() { // button onclick function
 
 // api-file  Remove File
 function removeSuccess(entry) {
-    document.getElementById('file-status').innerHTML = "Removed: <strong>readme.txt</strong>"; 
+    document.getElementById('file-status').innerHTML = "Removed"; 
     document.getElementById('file-contents').innerHTML = "<br/>Contents:";
     document.getElementById('file-read-dataurl').innerHTML = '';  
     document.getElementById('file-read-text').innerHTML = '';
 }
 function removeFail(error) {
-    console.log("Remove File Error: " + error.code);
     document.getElementById('file-status').innerHTML = "Status: <strong>Remove Error: " + error.code + "</strong>";       
 }
 function removeFileEntry(fileEntry) {
@@ -134,3 +120,6 @@ function removeFile() { // button onclick function
         document.getElementById('file-status').innerHTML = "Status: <strong>Error: File Not Created!</strong>";
     }    
 }
+
+ document.getElementById('file-status').innerHTML = evt.target.result;
+

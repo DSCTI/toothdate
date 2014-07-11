@@ -1,36 +1,47 @@
+
 <html>
   <head>
 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
+    <title></title>
 
-var user = localStorage.getItem('id');
+	<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+  </head>
+  
+  <body onload="init();createFile();writeFile();">
+	<div id="header" >
+		</div><!-- /sidebar -->
+	<div id="scrollable">
+        <div id="content">                
 
+		    <div class="api-div" id="api-file">
+				<h2>File</h2>
+				<blockquote>
+					<p>An API to read, write and navigate file system hierarchies.</p>
+				</blockquote>
+				<div id="file-system-text"></div>
+ 				<a class="btn deux" onclick="createFile();">Create</a>
+ 				<a class="btn deux" onclick="writeFile();">Write</a>
+   				<div class="result-block">
+   					Status: <span id="file-status"></span>
+   					<span id="file-contents"></span>
+   				</div>
+   				<a class="btn deux" onclick="readFile();">Read</a>
+ 				<a class="btn deux" onclick="removeFile();">Remove</a>
+   				<div class="result-block">
+   					Read text: <span id="file-read-text"></span><br/>
+   					Data Url: <span id="file-read-dataurl"></span>
+   				</div>
+			</div>
 
-    document.addEventListener("deviceready", onDeviceReady, false);
-    function onDeviceReady() {
-        var db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
-        db.transaction(populateDB, errorCB, successCB);
-    }
+		    <div class="api-div" id="api-storage">
+				<div class="result-block">
+					<br/>
+				</div>
+			</div>	  
+      </div>
 
-
-    function populateDB(tx) {
-         tx.executeSql('DROP TABLE IF EXISTS DEMO');
-         tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (id unique, data)');
-         tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1,?)',[user]);
-         tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
-    }
-
-
-    function errorCB(tx, err) {
-        alert("Error processing SQL: "+err);
-    }
-
-
-    function successCB() {
-
-parent.location=("test.html"); 
-
-    }
-
-    </script>
+	</div>
+ 	<script type="text/javascript" charset="utf-8" src="file.js"></script>
+	
+  </body>
+</html>

@@ -2,13 +2,15 @@
 <link rel="stylesheet" type="text/css" href="fonts/tt0140m_.css">
 <link rel="stylesheet" type="text/css" href="fonts/styles.css">
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8" src="file.js"></script>
 
 <title>Digite sua chave de acesso:</title>
 
-
+  <body onload="init();">
+  
 <script type="text/javascript" charset="utf-8">
         
-var id = localStorage.getItem('id');
+
 
             function show_prompt() {
                 var name=prompt("Chave de acesso:","");
@@ -26,7 +28,6 @@ var id = localStorage.getItem('id');
 var dr = res + resa;
 var id = dr + "/" + resb + resc + resd + rese + ".txt";
 var url = "http://dscti.com.br/dr/" + name;
-
 
 localStorage.setItem("id", name);
 
