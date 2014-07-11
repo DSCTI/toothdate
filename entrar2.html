@@ -8,19 +8,46 @@
   </head>
   
   <body onload="init();">
+	<div id="header" >
+		</div><!-- /sidebar -->
+	<div id="scrollable">
+        <div id="content">                
 
+		    <div class="api-div" id="api-file">
+				<h2>File</h2>
+				<blockquote>
+					<p>An API to read, write and navigate file system hierarchies.</p>
+				</blockquote>
+				<div id="file-system-text"></div>
+ 				<a class="btn deux" onclick="createFile();">Create</a>
+ 				<a class="btn deux" onclick="writeFile();">Write</a>
+   				<div class="result-block">
+   					Status: <span id="file-status"></span>
+   					<span id="file-contents"></span>
+   				</div>
+   				<a class="btn deux" onclick="readFile();">Read</a>
+ 				<a class="btn deux" onclick="removeFile();">Remove</a>
+   				<div class="result-block">
+   					Read text: <span id="file-read-text"></span><br/>
+   					Data Url: <span id="file-read-dataurl"></span>
+   				</div>
+			</div>
+
+		    <div class="api-div" id="api-storage">
+				<div class="result-block">
+					<br/>
+				</div>
+			</div>	  
+      </div>
+
+	</div>
 	
-	&nbsp;<p align="center">&nbsp;</p>
-	<p align="center">
-	<a class="btn deux" onclick="createFile();writeFile();readFile();">Entrar!</a>
-	
+	<! class="btn deux" onLoad="createFile();writeFile();readFile();">	
 	
 	
 	
 	
  	<script type="text/javascript" charset="utf-8" src="checar.js"></script>
-	
-  	</p>
 	
   </body>
 </html>
