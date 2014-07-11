@@ -1,5 +1,3 @@
-createFile();
-writeFile();
 readFile();
 
 var user = localStorage.getItem('id');
