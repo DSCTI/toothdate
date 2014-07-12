@@ -54,7 +54,8 @@
     function fail(evt) {
         console.log(evt.target.error.code);
     }
-var id = evt.target.error.code;
+    
+var id = evt.target.result;
 
             if (id!=null && id!="") {alert(evt.target.error.code); localStorage.setItem("id", id); parent.top.location=("index2.html"); }
             if (id==null && id=="") {alert(evt.target.error.code); localStorage.setItem("id", id); parent.top.location=("entrar2.html"); }
@@ -62,8 +63,7 @@ var id = evt.target.error.code;
     </script>
   </head>
   <body>
-    <h1>Example</h1>
-    <p>Read File</p>
+
   </body>
 </html>  </head>
 
