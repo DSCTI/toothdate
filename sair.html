@@ -1,59 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Language" content="pt-br">
-    <title>FileWriter Example</title>
 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-    localStorage.setItem("id", "");
-                
-    // Wait for Cordova to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // Cordova is ready
-    //
-    function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    }
-
-    function gotFS(fileSystem) {
-        fileSystem.root.getFile("db.txt", {create: true, exclusive: false}, gotFileEntry, fail);
-    }
-
-    function gotFileEntry(fileEntry) {
-        fileEntry.createWriter(gotFileWriter, fail);
-    }
-
-    function gotFileWriter(writer) {
-        writer.onwriteend = function(evt) {
-
-            writer.truncate(11);  
-            writer.onwriteend = function(evt) {
-
-                writer.seek(0);
-                writer.write("");
-                localStorage.setItem("id", "");
-                writer.onwriteend = function(evt){
-
-                }
-            };
-        };
-       
-        writer.write("");
-        localStorage.setItem("id", "");
-    }
-   
-
-    function fail(error) {
-        alert(error.code);
-    }
-
-    </script>
-  </head>
-<meta http-equiv="refresh" content="1; url=index.html">
+<meta http-equiv="refresh" content="1; url=login.html">
 <html>
 
 <head>
@@ -203,4 +149,3 @@ background-color:#034F8A}
 </body>
 
 </html>
-
