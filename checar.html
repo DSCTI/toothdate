@@ -36,7 +36,7 @@
 var dr = res + resa;
 var id = resb + resc + resd + rese;
 
-var url = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
+var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
 
 
 
@@ -69,16 +69,16 @@ var url = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
                 fileEntry.remove();
                 
                 fileTransfer.download(
-                    url,
+                    url2,
                     path + 'theFile.pdf',
                     function(file) {
-                        console.log('download complete: ' + file.toURI());
+                        alert('download complete: ' + file.toURI());
                         showLink(file.toURI());
                     },
                     function(error) {
-                        console.log('download error source ' + error.source);
-                        console.log('download error target ' + error.target);
-                        console.log('upload error code: ' + error.code);
+                        alert('download error source ' + error.source);
+                        alert('download error target ' + error.target);
+                        alert('upload error code: ' + error.code);
                     }
                 );
             }
