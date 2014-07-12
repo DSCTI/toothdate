@@ -1,56 +1,53 @@
-
+<!DOCTYPE html>
 <html>
   <head>
+    <title>FileWriter Example</title>
 
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
 
-	<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    }
+
+    function gotFS(fileSystem) {
+        fileSystem.root.getFile("readme.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+    }
+
+    function gotFileEntry(fileEntry) {
+        fileEntry.createWriter(gotFileWriter, fail);
+    }
+
+    function gotFileWriter(writer) {
+        writer.onwriteend = function(evt) {
+            alert("contents of file now 'some sample text'");
+            writer.truncate(11);  
+            writer.onwriteend = function(evt) {
+                alert("contents of file now 'some sample'");
+                writer.seek(4);
+                writer.write(" different text");
+                writer.onwriteend = function(evt){
+                    alert("contents of file now 'some different text'");
+                }
+            };
+        };
+        writer.write("some sample text");
+    }
+
+    function fail(error) {
+        alert(error.code);
+    }
+
+    </script>
   </head>
-  <script>
-  
-  function f0() { init(); createFile(); writeFile(); readFile();createFile(); writeFile(); readFile(); }
-  
-  </script>
-  <body onload="f0(); f0();">
-       
-
-<script type="text/javascript" charset="utf-8">
-
-
-var user = localStorage.getItem('id');
-
-            // Wait for PhoneGap to load
-            //
-            document.addEventListener("deviceready", onDeviceReady, false);
-
-            // PhoneGap is ready
-            //
-            function onDeviceReady() {
-                window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-            }
-
-            function gotFS(fileSystem) {
-                fileSystem.root.getFile("db.txt", {create: true}, gotFileEntry, fail);
-            }
-
-            function gotFileEntry(fileEntry) {
-                fileEntry.createWriter(gotFileWriter, fail);
-            }
-
-            function gotFileWriter(writer) {
-                writer.onwrite = function(evt) {
-              
-  parent.location=("index2.html");
-                
-                    alert("write success");
-                };
-
-                writer.write(user);
-                writer.abort();
-                // contents of file now 'some different text'
-            }
-
-            function fail(error) {
-                alert("error : "+error.code);
-            }
-
-        </script>
+  <body>
+    <h1>Example</h1>
+    <p>Write File</p>
+  </body>
+</html>
