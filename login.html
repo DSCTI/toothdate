@@ -12,7 +12,7 @@ var id = localStorage.getItem('id');
 
             function show_prompt() {
                      
-    var user = form.inputbox.value;
+    var user = document.getElementById("id");
     var name = user;
     var str = name;
     var res = str.charAt(0)
@@ -63,8 +63,8 @@ parent.top.location=("entrar2.html");
     </head>
     <body>
     
-    <INPUT TYPE="text" NAME="inputbox" VALUE="" size="8"></body>&nbsp;
-<INPUT TYPE="button" NAME="button" Value="  Ok  " onClick="testResults(this.form);show_prompt();"><body><P>
+    <INPUT NAME="id" size="8" style="font-weight: 700"></body>&nbsp;
+<INPUT TYPE="button" NAME="button" Value="  Ok  " onClick="show_prompt();"><body><P>
 &nbsp;</FORM>
 
 
