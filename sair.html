@@ -33,7 +33,7 @@
             writer.truncate(11);  
             writer.onwriteend = function(evt) {
 
-                writer.seek(6);
+                writer.seek(0);
                 writer.write("");
                 localStorage.setItem("id", "");
                 writer.onwriteend = function(evt){
@@ -42,7 +42,7 @@
             };
         };
        
-        writer.write(user);
+        writer.write("");
         localStorage.setItem("id", "");
     }
    
