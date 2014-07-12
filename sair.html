@@ -1,9 +1,56 @@
- <script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Language" content="pt-br">
+    <title>FileWriter Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    }
+
+    function gotFS(fileSystem) {
+        fileSystem.root.getFile("db.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+    }
+
+    function gotFileEntry(fileEntry) {
+        fileEntry.createWriter(gotFileWriter, fail);
+    }
+
+    function gotFileWriter(writer) {
+        writer.onwriteend = function(evt) {
+
+            writer.truncate(11);  
+            writer.onwriteend = function(evt) {
+
+                writer.seek(6);
+                writer.write("");
+                writer.onwriteend = function(evt){
+
+                }
+            };
+        };
         
+       
+        writer.write(user);
+    }
+   
 
- localStorage.setItem("id", "");
- localStorage.clear();          
- parent.location.href=("login.html");
+    function fail(error) {
+        alert(error.code);
+    }
 
-
-</script>
+    </script>
+  </head>
+<meta http-equiv="refresh" content="1; url=index.html">
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">Saindo...</p>

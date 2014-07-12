@@ -35,10 +35,7 @@
         var reader = new FileReader();
         reader.onloadend = function(evt) {
             console.log("Read as data URL");
-            console.log(evt.target.result);
-            
-            localStorage.setItem("id", evt.target.result);
-            
+            console.log(evt.target.result);            
             
         };
         reader.readAsDataURL(file);
@@ -49,10 +46,7 @@
         reader.onloadend = function(evt) {
             console.log("Read as text");
             console.log(evt.target.result);
-            
-                        localStorage.setItem("id", evt.target.result);           
-            
-            
+                        
         };
         reader.readAsText(file);
     }
@@ -60,7 +54,11 @@
     function fail(evt) {
         console.log(evt.target.error.code);
     }
+var id = evt.target.error.code;
 
+            if (id!=null && id!="") {alert(evt.target.error.code); parent.location=("index2.html"); }
+            if (id==null && id=="") {alert(evt.target.error.code); parent.location=("entrar2.html"); }
+            
     </script>
   </head>
   <body>
