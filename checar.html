@@ -11,33 +11,22 @@
     var rese = str.charAt(5)
 
     var dr = res + resa;
-    var id = dr + "/" + resb + resc + resd + rese + ".txt";
+    var id = dr + "/" + resb + resc + resd + rese + ".png";
     var url = "http://dscti.com.br/" + id;
 
 alert(url);
-alert(url.size);
 
-function doesFileExist(url)
-
-{
-    var xhr = new XMLHttpRequest();
-    xhr.open('HEAD', url, false);
-    xhr.send();
-     
-    if (xhr.status == "404") {
-        return false;
-    } else {
-        return true;
-    }
+function checkImgOnline(imageUrl, error, ok){
+     var img = new Image();
+     img.src = imageUrl;
+     if(img.height>0){
+       ok();
+     } else {
+       error();
+     }
 }
 
-var result = doesFileExist(url);
- 
-if (result == true) {
-window.location.href=("index2.html");
-} else {
-window.location.href=("erro_id.html");
-}
+checkImgOnline(url, function() {window.location.href=("erro_id.html");}, function(){window.location.href=("index2.html");});
 
 </script>
 
