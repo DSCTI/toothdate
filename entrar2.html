@@ -6,8 +6,6 @@
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
-  var user = localStorage.getItem('id');
-
     // Wait for Cordova to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -32,15 +30,16 @@
             writer.truncate(11);  
             writer.onwriteend = function(evt) {
                 alert("contents of file now 'some sample'");
-                writer.seek(4);
-                writer.write("");
+                writer.seek(6);
+                writer.write(user);
                 writer.onwriteend = function(evt){
                     alert("contents of file now 'some different text'");
                 }
             };
         };
-        writer.write(user);
         
+        var user = localStorage.getItem('id'); 
+        writer.write(user);
         parent.location=("index2.html");
     }
    
