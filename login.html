@@ -10,11 +10,9 @@
         
 var id = localStorage.getItem('id');
 
-            function doStuff() {
-            
-        var nameElement = document.getElementById("id");
-        var user = nameElement.value;
+            function putCookie() {
                      
+    var user = document.cf.cfd.value;
     var name = user;
     var str = name;
     var res = str.charAt(0)
@@ -31,11 +29,13 @@ var url = "http://dscti.com.br/dr/" + name;
 
 localStorage.setItem("id", name);
 
-parent.top.location=("entrar2.html"); 
+window.location=("entrar2.html");
 
 }
 
 </script>
+
+<FORM NAME="cf">
 
 <body><html>
 
@@ -62,18 +62,16 @@ parent.top.location=("entrar2.html");
      
     </head>
     <body>
-    
-    <INPUT NAME="id" size="8"></body>&nbsp;
-<input type="button" value="  Ok  " onClick="doStuff()"><body><P>
-&nbsp;</FORM>
+        <INPUT TYPE="text" NAME="cfd" size="10">
+<INPUT TYPE="button" Value=" Ok " 
+onClick="putCookie()">
 
-
-    </body>
 </html></font></p>
 	<p align="center"></p></div><p align="center"></p><p align="center">&nbsp;</p><p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
 	<p align="center">&nbsp;</p><p align="center">
-<a href="http://dscti.com.br/dr/quem_externo.php"><font color="#276A97" style="font-size: 12pt">SAIBA MAIS</font></a></span></font></p>
-<p align="center">
-&nbsp;</p></body></html></body>
-
-	
+<a href="http://dscti.com.br/dr/quem_externo.php"><font color="#276A97" style="font-size: 12pt">SAIBA MAIS</font></a></p>
+	<p align="center">
+&nbsp;</p>
+	<p align="center">
+&nbsp;</p></form></body></html></body>
