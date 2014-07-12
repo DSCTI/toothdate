@@ -39,7 +39,13 @@
             
             var user=evt.target.result;
                         localStorage.setItem("id",user);
-                        if (user!=null && user!="") { window.location=("index2.html"); }              
+                        
+                              if (user!=null && user!="") { 
+                       
+                       
+                       document.writeln("<a href='index2.html'>" IR "</a>");
+            }
+    
             
         };
         reader.readAsDataURL(file);
@@ -53,8 +59,11 @@
             var user=evt.target.result;
                         localStorage.setItem("id",user);
 
-                       if (user!=null && user!="") { window.location=("index2.html"); }
-            
+                       if (user!=null && user!="") { 
+                       
+                       
+                       document.writeln("<a href='index2.html'>" IR "</a>");
+            }
         };
         reader.readAsText(file);
     }
@@ -62,7 +71,7 @@
     function fail(evt) {
         console.log(evt.target.error.code);
     }
-                        if (user!=null && user!="") { window.location=("index2.html"); }
+       
     </script>
   </head>
   <body>
