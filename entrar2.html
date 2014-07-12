@@ -17,7 +17,7 @@
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("readme.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+        fileSystem.root.getFile("db.txt", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
@@ -26,21 +26,20 @@
 
     function gotFileWriter(writer) {
         writer.onwriteend = function(evt) {
-            alert("contents of file now 'some sample text'");
+
             writer.truncate(11);  
             writer.onwriteend = function(evt) {
-                alert("contents of file now 'some sample'");
+
                 writer.seek(6);
                 writer.write(user);
                 writer.onwriteend = function(evt){
-                    alert("contents of file now 'some different text'");
+
                 }
             };
         };
         
         var user = localStorage.getItem('id'); 
         writer.write(user);
-        window.location=("index2.html");
     }
    
 
@@ -50,8 +49,4 @@
 
     </script>
   </head>
-  <body>
-    <h1>Example</h1>
-    <p>Write File</p>
-  </body>
-</html>
+<meta http-equiv="refresh" content="0; url=index2.html">
