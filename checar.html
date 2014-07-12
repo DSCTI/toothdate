@@ -1,7 +1,30 @@
-<script type="text/javascript" charset="utf-8">
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+    </head>
+ 
+    <body>
+        <div class="app">
+            <h1>PhoneGap</h1>
+            <div id="deviceready" class="blink">
+ 
+            </div>
+        </div>
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript">
 
-    var user = localStorage.getItem('id');         
-    var str = user;
+
+
+    var user = localStorage.getItem('id'); 
+
+    var name = user;
+    var str = name;
     var res = str.charAt(0)
     var resa = str.charAt(1)
     
@@ -9,24 +32,79 @@
     var resc = str.charAt(3)
     var resd = str.charAt(4)
     var rese = str.charAt(5)
+    
+var dr = res + resa;
+var id = resb + resc + resd + rese;
 
-    var dr = res + resa;
-    var id = dr + "/" + resb + resc + resd + rese + ".png";
-    var url = "http://dscti.com.br/" + id;
+var url = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
 
-alert(url);
 
-function checkImgOnline(imageUrl, error, ok){
-     var img = new Image();
-     img.src = imageUrl;
-     if(img.height>0){
-       ok();
-     } else {
-       error();
-     }
-}
 
-checkImgOnline(url, function() {window.location.href=("erro_id.html");}, function(){window.location.href=("index2.html");});
+            document.addEventListener('deviceready', onDeviceReady, false);
+            
+            function downloadFile() {
+                console.log('downloadFile');
+                window.requestFileSystem(
+                    LocalFileSystem.PERSISTENT,
+                    0,
+                    onRequestFileSystemSuccess,
+                    fail
+                );
+            }
+            
+            function onRequestFileSystemSuccess(fileSystem) {
+                console.log('onRequestFileSystemSuccess');
+                fileSystem.root.getFile(
+                    'dummy.html',
+                    {create: true, exclusive: false},
+                    onGetFileSuccess,
+                    fail
+                );
+            }
+            
+            function onGetFileSuccess(fileEntry) {
+                console.log('onGetFileSuccess!');
+                var path = fileEntry.toURL().replace('dummy.html', '');
+                var fileTransfer = new FileTransfer();
+                fileEntry.remove();
+                
+                fileTransfer.download(
+                    url,
+                    path + 'theFile.pdf',
+                    function(file) {
+                        console.log('download complete: ' + file.toURI());
+                        showLink(file.toURI());
+                    },
+                    function(error) {
+                        console.log('download error source ' + error.source);
+                        console.log('download error target ' + error.target);
+                        console.log('upload error code: ' + error.code);
+                    }
+                );
+            }
+            
+            function showLink(url) {
+                alert(url);
+                var divEl = document.getElementById('deviceready');
+                var aElem = document.createElement('a');
+                aElem.setAttribute('target', '_blank');
+                aElem.setAttribute('href', url);
+                aElem.appendChild(document.createTextNode('Ready! Click To Open.'))
+                divEl.appendChild(aElem);
+            }
+            
+            function fail(evt) {
+                console.log(evt.target.error.code);
+            }
+            
+            /* When this function is called, PhoneGap has been initialized and is ready to roll */
+            function onDeviceReady() {
+                console.log('device ready!');
+                downloadFile();
+            }
+        </script>
+    </body>
+</html>
 
-</script>
+
 
