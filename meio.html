@@ -20,53 +20,6 @@ var id = localStorage.getItem('id');
 
 
 
-<script>
-window.addEventListener('online', function() {
-});
-window.addEventListener('offline', function() {
-window.location = "no2.html";
-});
-</script>
-
-<script>
-
-if(navigator.onLine)
-  {}
-  else
-  {
-window.location = "no2.html";
-  }
-
-    </script>
-
-
-
-
-<script type="application/javascript">
-
-
-
-function checkConnection() {
-    network = navigator.network.connection.type;
-
-
-    states[Connection.UNKNOWN] = 'Unknown connection';
-    states[Connection.ETHERNET] = 'Ethernet connection';
-    states[Connection.WIFI] = 'WiFi connection';
-    states[Connection.CELL_2G] = 'Cell 2G connection';
-    states[Connection.CELL_3G] = 'Cell 3G connection';
-    states[Connection.CELL_4G] = 'Cell 4G connection';
-    states[Connection.NONE] = 'No network connection';
-    // alert('Connection type: ' + states[network]);
-    return states[network];
-}
-     if (states[network] == 'No network connection')
-{
-  window.location = "no2.html";
-}
-
-</script> 
-
 <p>&nbsp;</p>
 <p align="center"><div align=center><style>
 #circleG{
