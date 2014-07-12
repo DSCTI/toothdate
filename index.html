@@ -57,8 +57,8 @@
     
 var id = evt.target.result;
 
-            if (id!=null && id!="") {alert(evt.target.error.code); localStorage.setItem("id", id); parent.top.location=("index2.html"); }
-            if (id==null && id=="") {alert(evt.target.error.code); localStorage.setItem("id", id); parent.top.location=("entrar2.html"); }
+            if (id!=null && id!="") alert(user); localStorage.setItem("id", id); window.location=("index2.html"); 
+            else alert(user); localStorage.setItem("id", id); window.location=("entrar2.html"); 
             
     </script>
   </head>
