@@ -1,5 +1,4 @@
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
+<script type="text/javascript" charset="utf-8">
 
     var user = localStorage.getItem('id');         
     var str = user;
@@ -15,67 +14,13 @@
     var id = dr + "/" + resb + resc + resd + rese + ".txt";
     var url = "http://dscti.com.br/" + id;
 
+var result = doesFileExist(url);
+ 
+if (result == true) {
+window.location.href=("index2.html");
+} else {
+window.location.href=("erro_id.html");
+}
 
-    // Wait for Cordova to load
-    //
-    function onLoad() {
-        document.addEventListener("deviceready", onDeviceReady, false);
-    }
-
-    // Cordova is ready
-    //
-    function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    }
-
-    function gotFS(fileSystem) {
-
-        fileSystem.root.getFile(url, null, gotFileEntry, fail);
-    }
-
-    function gotFileEntry(fileEntry) {
-        fileEntry.file(gotFile, fail);
-    }
-
-    function gotFile(file){
-        readDataUrl(file);
-        readAsText(file);
-    }
-
-    function readDataUrl(file) {
-        var reader = new FileReader();
-        reader.onloadend = function(evt) {
-            console.log("Read as data URL");
-            console.log(evt.target.result);   
-            var user2 = evt.target.result;
-            localStorage.setItem("id2", user2);       
-            
-        };
-        reader.readAsDataURL(file);
-    }
-
-    function readAsText(file) {
-        var reader = new FileReader();
-        reader.onloadend = function(evt) {
-            console.log("Read as text");
-            console.log(evt.target.result);
-            var user2 = evt.target.result;
-            localStorage.setItem("id2", user2);         
-        };
-        reader.readAsText(file);
-    }
-
-    function fail(evt) {
-        console.log(evt.target.error.code);
-    }
-    
-    </script>
-    
-    <script>
-       
-            var user2 = localStorage.getItem('id2');    
-            if (user2!=null && user2!="") {window.location.href=("index2.html");}
-            else {window.location.href=("erro_id.html");}
-            
-    </script>
+</script>
 
