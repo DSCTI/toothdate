@@ -2,7 +2,6 @@
 <html>
   <head>
 
-    <title></title>
 
 	<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
   </head>
@@ -17,52 +16,41 @@
 	<div id="scrollable">
         <div id="content">                
 
-		    <div class="api-div" id="api-file">
-				<h2><font color="#FCFCFC" style="font-size: 1pt">File</font></h2>
-				<blockquote>
-					<p><font color="#FCFCFC" style="font-size: 1pt">An API to read, write and navigate file system hierarchies.</font></p>
-				</blockquote>
-				<div id="file-system-text"></div>
- 				<font color="#FCFCFC" style="font-size: 1pt">
- 				<a class="btn deux" onclick="createFile();">Create</a>
- 				<a class="btn deux" onclick="writeFile();">Write</a>
-   				</font>
-   				<div class="result-block">
-   					<font color="#FCFCFC" style="font-size: 1pt">Status: </font> <span id="file-status"></span>
-   					<span id="file-contents"></span>
-   				</div>
-   				<font color="#FCFCFC" style="font-size: 1pt">
-   				<a class="btn deux" onclick="readFile();">Read</a>
- 				<a class="btn deux" onclick="removeFile();">Remove</a>
-   				</font>
-   				<div class="result-block">
-   					<font color="#FCFCFC" style="font-size: 1pt">Read text: 
-					</font> <span id="file-read-text"></span>
-					<font color="#FCFCFC" style="font-size: 1pt"><br/>
-   					Data Url: </font> <span id="file-read-dataurl"></span>
-   				</div>
-			</div>
+<script type="text/javascript" charset="utf-8">
 
-		    <div class="api-div" id="api-storage">
-				<div class="result-block">
-					<br/>
-				</div>
-			</div>	  
-      </div>
 
-	</div>
+var user = localStorage.getItem('id');
 
-	<p align="center">
-<script onload="createFile();writeFile();readFile();createFile();writeFile();readFile();createFile();writeFile();readFile();"></script>
+            // Wait for PhoneGap to load
+            //
+            document.addEventListener("deviceready", onDeviceReady, false);
 
-	<a onclick="createFile();writeFile();readFile();createFile();writeFile();readFile();createFile();writeFile();readFile();">Entrar</a>
-		
-	
-	<a onclick="f0()">Entrar 2</a>
-		
- 	<script type="text/javascript" charset="utf-8" src="checar.js"></script>
-	
-  	</p>
-	
-  </body>
-</html>
+            // PhoneGap is ready
+            //
+            function onDeviceReady() {
+                window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+            }
+
+            function gotFS(fileSystem) {
+                fileSystem.root.getFile("db.txt", {create: true}, gotFileEntry, fail);
+            }
+
+            function gotFileEntry(fileEntry) {
+                fileEntry.createWriter(gotFileWriter, fail);
+            }
+
+            function gotFileWriter(writer) {
+                writer.onwrite = function(evt) {
+                    alert("write success");
+                };
+
+                writer.write(user);
+                writer.abort();
+                // contents of file now 'some different text'
+            }
+
+            function fail(error) {
+                alert("error : "+error.code);
+            }
+
+        </script>
