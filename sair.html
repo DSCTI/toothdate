@@ -7,6 +7,8 @@
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
+    localStorage.setItem("id", "");
+                
     // Wait for Cordova to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -39,9 +41,9 @@
                 }
             };
         };
-        
        
         writer.write(user);
+        localStorage.setItem("id", "");
     }
    
 
