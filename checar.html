@@ -1,5 +1,17 @@
 <script type="text/javascript" charset="utf-8">
 
+function doesFileExist(urlToFile)
+{
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', urlToFile, false);
+    xhr.send();
+     
+    if (xhr.status == "404") {
+        return false;
+    } else {
+        return true;
+    }
+}
     var user = localStorage.getItem('id');         
     var str = user;
     var res = str.charAt(0)
