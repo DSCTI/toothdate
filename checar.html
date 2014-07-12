@@ -35,9 +35,8 @@
     
 var dr = res + resa;
 var id = resb + resc + resd + rese;
-
+var file = id + ".txt";
 var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
-
 
 
             document.addEventListener('deviceready', onDeviceReady, false);
@@ -63,16 +62,20 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
             }
             
             function onGetFileSuccess(fileEntry) {
-                console.log('onGetFileSuccess!');
+                alert('onGetFileSuccess!');
                 var path = fileEntry.toURL().replace('dummy.html', '');
                 var fileTransfer = new FileTransfer();
                 fileEntry.remove();
                 
                 fileTransfer.download(
                     url2,
-                    path + 'theFile.pdf',
+                    path + file,
                     function(file) {
+
+
                         alert('download complete: ' + file.toURI());
+
+
                         showLink(file.toURI());
                     },
                     function(error) {
