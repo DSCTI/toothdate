@@ -11,10 +11,7 @@
   
   </script>
   <body onload="f0(); f0();">
-	<div id="header" >
-		</div><!-- /sidebar -->
-	<div id="scrollable">
-        <div id="content">                
+       
 
 <script type="text/javascript" charset="utf-8">
 
@@ -41,6 +38,9 @@ var user = localStorage.getItem('id');
 
             function gotFileWriter(writer) {
                 writer.onwrite = function(evt) {
+              
+  parent.location=("index2.html");
+                
                     alert("write success");
                 };
 
