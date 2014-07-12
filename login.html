@@ -10,9 +10,11 @@
         
 var id = localStorage.getItem('id');
 
-            function show_prompt() {
+            function doStuff() {
+            
+        var nameElement = document.getElementById("id");
+        var user = nameElement.value;
                      
-    var user = document.getElementById("id").value;
     var name = user;
     var str = name;
     var res = str.charAt(0)
@@ -34,8 +36,6 @@ parent.top.location=("entrar2.html");
 }
 
 </script>
-
-<FORM NAME="myform" ACTION="" METHOD="GET">
 
 <body><html>
 
@@ -64,7 +64,7 @@ parent.top.location=("entrar2.html");
     <body>
     
     <INPUT NAME="id" size="8"></body>&nbsp;
-<INPUT TYPE="submit" NAME="button" Value="  Ok  " onClick="show_prompt();"><body><P>
+<input type="button" value="  Ok  " onClick="doStuff()"><body><P>
 &nbsp;</FORM>
 
 
