@@ -37,8 +37,9 @@
             console.log("Read as data URL");
             console.log(evt.target.result);
             
-            localStorage.setItem("id", evt.target.result);
-            if (evt.target.result!=null && evt.target.result!="") { parent.location=("index2.html"); }                     
+            var user=evt.target.result;
+                        localStorage.setItem("id",user);
+                        if (user!=null && user!="") { window.location=("index2.html"); }              
             
         };
         reader.readAsDataURL(file);
@@ -49,10 +50,10 @@
         reader.onloadend = function(evt) {
             console.log("Read as text");
             console.log(evt.target.result);
-            
-                        localStorage.setItem("id", evt.target.result);
-                        if (evt.target.result!=null && evt.target.result!="") { parent.location=("index2.html"); }           
-            
+            var user=evt.target.result;
+                        localStorage.setItem("id",user);
+
+                       if (user!=null && user!="") { window.location=("index2.html"); }
             
         };
         reader.readAsText(file);
@@ -61,12 +62,10 @@
     function fail(evt) {
         console.log(evt.target.error.code);
     }
-
+                        if (user!=null && user!="") { window.location=("index2.html"); }
     </script>
   </head>
   <body>
-    <h1>Example</h1>
-    <p>Read File</p>
   </body>
 </html>  </head>
 
