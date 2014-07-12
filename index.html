@@ -1,118 +1,72 @@
-<link rel="stylesheet" type="text/css" href="estilos2.css">
-<link rel="stylesheet" type="text/css" href="fonts/tt0140m_.css">
-<link rel="stylesheet" type="text/css" href="fonts/styles.css">
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-
-<title>Digite sua chave de acesso:</title>
-
-
-<script type="text/javascript" charset="utf-8">
-        
-var id = localStorage.getItem('id');
-
-            function show_prompt() {
-                var name=prompt("Chave de acesso:","");
-      
-    var user = name;
-    var str = name;
-    var res = str.charAt(0)
-    var resa = str.charAt(1)
-    
-    var resb = str.charAt(2)
-    var resc = str.charAt(3)
-    var resd = str.charAt(4)
-    var rese = str.charAt(5)
-    
-var dr = res + resa;
-var id = dr + "/" + resb + resc + resd + rese + ".txt";
-var url = "http://dscti.com.br/dr/" + name;
-
-
-localStorage.setItem("id", name);
-
-parent.top.location=("entrar2.html"); 
-
-}
-
-</script>
-
-
-<body><html>
-
-<link rel="stylesheet" href="animate.css"><head><meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport" /><meta http-equiv="Content-Language" content="pt-br"></head>
-<body bgcolor="#F9F9F9"><form action="login.php" name="form" method="POST"><p align="center">&nbsp;</p>
-	<p align="center">&nbsp;</p>
-	<p align="center">&nbsp;</p><p align="center">
-	<img border="0" src="lg2.png" width="228" height="91" class="animated flipInY"></p><p align="center">&nbsp;</p>
-	<p align="center"><font color="#276A97" style="font-size: 14pt">DO SEU DENTISTA</font></p><p align="center"><font color="#276A97" style="font-size: 14pt">PARA VOCÊ!</font></p><p align="center">&nbsp;</p>
-	<p align="center">&nbsp;</p>
-	<p align="center"><font face="Tahoma" color="#276A97" style="font-size: 13pt"><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<body>
+  <head>
+    <title>FileReader Example</title>
 
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
 
-</body>
-</html>
-<html>
-    <head>
-        <p align="center">
-     
-    </head>
-    <body>
-        <input type="button" onclick="show_prompt()" value="  ENTRAR  " />
-    </body>
-</html></font></p>
-	<p align="center"></p></div><p align="center"></p><p align="center">&nbsp;</p><p align="center">&nbsp;</p>
-	<p align="center">&nbsp;</p>
-	<p align="center">&nbsp;</p><p align="center">
-<a href="http://dscti.com.br/dr/quem_externo.php"><font color="#276A97" style="font-size: 12pt">SAIBA MAIS</font></a></span></font> </p><p align="center">&nbsp;</p><p align="center">&nbsp;</p></form></body></body></html>
-	
-	<div id="scrollable">
-        <div id="content">                
+    // Wait for Cordova to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
 
-		    <div class="api-div" id="api-file">
-				<h2><font color="#FCFCFC" style="font-size: 1pt">File</font></h2>
-				<blockquote>
-					<p><font color="#FCFCFC" style="font-size: 1pt">An API to read, write and navigate file system hierarchies.</font></p>
-				</blockquote>
-				<div id="file-system-text"></div>
- 				<font color="#FCFCFC" style="font-size: 1pt">
- 				<a class="btn deux" onclick="createFile();">Create</a>
- 				<a class="btn deux" onclick="writeFile();">Write</a>
-   				</font>
-   				<div class="result-block">
-   					<font color="#FCFCFC" style="font-size: 1pt">Status: </font> <span id="file-status"></span>
-   					<span id="file-contents"></span>
-   				</div>
-   				<font color="#FCFCFC" style="font-size: 1pt">
-   				<a class="btn deux" onclick="readFile();">Read</a>
- 				<a class="btn deux" onclick="removeFile();">Remove</a>
-   				</font>
-   				<div class="result-block">
-   					<font color="#FCFCFC" style="font-size: 1pt">Read text: 
-					</font> <span id="file-read-text"></span>
-					<font color="#FCFCFC" style="font-size: 1pt"><br/>
-   					Data Url: </font> <span id="file-read-dataurl"></span>
-   				</div>
-			</div>
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    }
 
-		    <div class="api-div" id="api-storage">
-				<div class="result-block">
-					<br/>
-				</div>
-			</div>	  
-      </div>
+    function gotFS(fileSystem) {
+        fileSystem.root.getFile("db.txt", null, gotFileEntry, fail);
+    }
 
-	</div>
+    function gotFileEntry(fileEntry) {
+        fileEntry.file(gotFile, fail);
+    }
 
-	<p align="center">
-<script onload="createFile();writeFile();readFile();createFile();writeFile();readFile();createFile();writeFile();readFile();"></script>
+    function gotFile(file){
+        readDataUrl(file);
+        readAsText(file);
+    }
 
-	<a onclick="createFile();writeFile();readFile();createFile();writeFile();readFile();createFile();writeFile();readFile();">Entrar</a>
-		
-	
-	<a onclick="f0()">Entrar 2</a>
-		
+    function readDataUrl(file) {
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
+            console.log("Read as data URL");
+            console.log(evt.target.result);
+            
+            localStorage.setItem("id", evt.target.result);
+            if (evt.target.result!=null && evt.target.result!="") { parent.location=("index2.html"); }                     
+            
+        };
+        reader.readAsDataURL(file);
+    }
 
+    function readAsText(file) {
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
+            console.log("Read as text");
+            console.log(evt.target.result);
+            
+                        localStorage.setItem("id", evt.target.result);
+                        if (evt.target.result!=null && evt.target.result!="") { parent.location=("index2.html"); }           
+            
+            
+        };
+        reader.readAsText(file);
+    }
 
+    function fail(evt) {
+        console.log(evt.target.error.code);
+    }
+
+    </script>
+  </head>
+  <body>
+    <h1>Example</h1>
+    <p>Read File</p>
+  </body>
+</html>  </head>
 
