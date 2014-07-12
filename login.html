@@ -11,9 +11,9 @@
 var id = localStorage.getItem('id');
 
             function show_prompt() {
-                var name=prompt("Chave de acesso:","");
-      
-    var user = name;
+                     
+    var user = form.inputbox.value;
+    var name = user;
     var str = name;
     var res = str.charAt(0)
     var resa = str.charAt(1)
@@ -35,15 +35,19 @@ parent.top.location=("entrar2.html");
 
 </script>
 
+<FORM NAME="myform" ACTION="" METHOD="GET">
 
 <body><html>
 
 <link rel="stylesheet" href="animate.css"><head><meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport" /><meta http-equiv="Content-Language" content="pt-br"></head>
 <body bgcolor="#F9F9F9"><form action="login.php" name="form" method="POST"><p align="center">&nbsp;</p>
 	<p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
 	<p align="center">&nbsp;</p><p align="center">
 	<img border="0" src="lg2.png" width="228" height="91" class="animated flipInY"></p><p align="center">&nbsp;</p>
 	<p align="center"><font color="#276A97" style="font-size: 14pt">DO SEU DENTISTA</font></p><p align="center"><font color="#276A97" style="font-size: 14pt">PARA VOCÊ!</font></p><p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
+	<p align="center"><font color="#276A97">Chave de acesso:</font></p>
 	<p align="center">&nbsp;</p>
 	<p align="center"><font face="Tahoma" color="#276A97" style="font-size: 13pt"><!DOCTYPE html>
 <html>
@@ -58,11 +62,15 @@ parent.top.location=("entrar2.html");
      
     </head>
     <body>
-        <input type="button" onclick="show_prompt()" value="  ENTRAR  " />
+    
+    <INPUT TYPE="text" NAME="inputbox" VALUE="" size="8"></body>&nbsp;
+<INPUT TYPE="button" NAME="button" Value="  Ok  " onClick="testResults(this.form);show_prompt();"><body><P>
+&nbsp;</FORM>
+
+
     </body>
 </html></font></p>
 	<p align="center"></p></div><p align="center"></p><p align="center">&nbsp;</p><p align="center">&nbsp;</p>
-	<p align="center">&nbsp;</p>
 	<p align="center">&nbsp;</p><p align="center">
 <a href="http://dscti.com.br/dr/quem_externo.php"><font color="#276A97" style="font-size: 12pt">SAIBA MAIS</font></a></span></font> </p><p align="center">&nbsp;</p><p align="center">&nbsp;</p></form></body></body></html>
 	
@@ -95,23 +103,8 @@ parent.top.location=("entrar2.html");
    				</div>
 			</div>
 
-		    <div class="api-div" id="api-storage">
-				<div class="result-block">
-					<br/>
-				</div>
-			</div>	  
       </div>
 
 	</div>
 
-	<p align="center">
-<script onload="createFile();writeFile();readFile();createFile();writeFile();readFile();createFile();writeFile();readFile();"></script>
-
-	<a onclick="createFile();writeFile();readFile();createFile();writeFile();readFile();createFile();writeFile();readFile();">Entrar</a>
-		
 	
-	<a onclick="f0()">Entrar 2</a>
-		
-
-
-
