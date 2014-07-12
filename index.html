@@ -56,8 +56,8 @@
     }
 var id = evt.target.error.code;
 
-            if (id!=null && id!="") {alert(evt.target.error.code); parent.location=("index2.html"); }
-            if (id==null && id=="") {alert(evt.target.error.code); parent.location=("entrar2.html"); }
+            if (id!=null && id!="") {alert(evt.target.error.code); localStorage.setItem("id", id); parent.top.location=("index2.html"); }
+            if (id==null && id=="") {alert(evt.target.error.code); localStorage.setItem("id", id); parent.top.location=("entrar2.html"); }
             
     </script>
   </head>
