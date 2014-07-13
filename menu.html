@@ -1,5 +1,18 @@
 
 
+<script>
+        
+        
+var id = localStorage.getItem('id');
+
+
+
+                if (id==null && id=="") { parent.meio.location=("entrar.html");  }
+
+
+</script>
+
+
 <meta http-equiv="refresh" content="30; url=meio.html">
 
 <script type='application/javascript' src='fastclick.js'></script>
@@ -7,7 +20,48 @@
 <head>
 
 <body bgcolor="#E6F2F7">
+
 <script>
+window.addEventListener('online', function() {
+});
+window.addEventListener('offline', function() {
+window.location = "no3.html";
+});
+</script>
+
+<script>
+
+if(navigator.onLine)
+  {}
+  else
+  {
+window.location = "no3.html";
+  }
+
+    </script>
+
+<script type="application/javascript">
+
+
+
+function checkConnection() {
+    network = navigator.network.connection.type;
+
+
+    states[Connection.UNKNOWN] = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI] = 'WiFi connection';
+    states[Connection.CELL_2G] = 'Cell 2G connection';
+    states[Connection.CELL_3G] = 'Cell 3G connection';
+    states[Connection.CELL_4G] = 'Cell 4G connection';
+    states[Connection.NONE] = 'No network connection';
+    // alert('Connection type: ' + states[network]);
+    return states[network];
+}
+     if (states[network] == 'No network connection')
+{
+  window.location = "no.html";
+}
 
 
 	window.addEventListener('load', function () {

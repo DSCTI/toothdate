@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.toothdate.dscti2" version="1.0.4">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.toothdate.dscti" version="1.0.4">
 
 <name>Tooth Date</name>
 
@@ -44,7 +44,9 @@
 <icon src="icons/ios/120.png" gap:platform="ios" width="120" height="120" />
 <icon src="icons/ios/152.png" gap:platform="ios" width="152" height="152" />
 
+<gap:plugin name="org.apache.cordova.media" />
 <gap:plugin name="org.apache.cordova.device" />
+<gap:plugin name="org.apache.cordova.device-motion" />
 <gap:plugin name="org.apache.cordova.file-transfer" />
 <gap:plugin name="org.apache.cordova.network-information" />
 <gap:plugin name="org.apache.cordova.file" />
