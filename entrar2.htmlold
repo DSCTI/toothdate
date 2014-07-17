@@ -150,23 +150,16 @@ background-color:#034F8A}
 <!DOCTYPE html>
 <html>
 
-    <head>
-
-
-    </head>
- 
-    <body>
-        <div class="app">
-            <div id="deviceready" class="blink">
- 
-            </div>
-        </div>
-        <script type="text/javascript" src="phonegap.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
-    document.addEventListener("deviceready", onDeviceReady, false);
-    var user = localStorage.getItem('id'); 
 
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    var user = localStorage.getItem('id'); 
+    // Cordova is ready
+    //
     function onDeviceReady() {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
     }
@@ -202,7 +195,29 @@ background-color:#034F8A}
     window.location=("erro_db.html");
     }
 
-     var user = localStorage.getItem('id'); 
+    </script>
+
+
+</html>
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+    </head>
+ 
+    <body>
+        <div class="app">
+            <div id="deviceready" class="blink">
+ 
+            </div>
+        </div>
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript">
+
+
+
+    var user = localStorage.getItem('id'); 
 
     var name = user;
     var str = name;
@@ -254,6 +269,7 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
 
     window.location=("index2.html");
 
+                        showLink(file.toURI());
                     },
                     function(error) {
     localStorage.setItem("id", "");
@@ -261,14 +277,26 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
                     }
                 );
             }
-           
+            
+            function showLink(url) {
+
+                var divEl = document.getElementById('deviceready');
+                var aElem = document.createElement('a');
+                aElem.setAttribute('target', '_blank');
+                aElem.setAttribute('href', url);
+                aElem.appendChild(document.createTextNode(''))
+                divEl.appendChild(aElem);
+            }
             
             function fail(evt) {
     localStorage.setItem("id", "");
     window.location=("erro_db.html");
             }
             
-
+            /* When this function is called, PhoneGap has been initialized and is ready to roll */
+            function onDeviceReady() {
+                downloadFile();
+            }
         </script>
     </body>
 </html>
