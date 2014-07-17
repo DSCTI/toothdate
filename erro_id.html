@@ -7,13 +7,8 @@
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
-    // Wait for Cordova to load
-    //
     document.addEventListener("deviceready", onDeviceReady, false);
 
-    var user = localStorage.getItem('id'); 
-    // Cordova is ready
-    //
     function onDeviceReady() {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
     }
@@ -33,7 +28,7 @@
             writer.onwriteend = function(evt) {
 
                 writer.seek(6);
-                writer.write(user);
+                writer.write("");
                 writer.onwriteend = function(evt){
 
                 }
