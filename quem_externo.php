@@ -34,45 +34,45 @@
 <p align="center">&nbsp;</p>
 <hr></p>
 <p align="center">&nbsp;</p>
-<p align="center">DIREITOS AUTORAIS E AVISOS DE MARCA 
-COMERCIAL</p>
+<p align="center"><font color="#808080">DIREITOS AUTORAIS E AVISOS DE MARCA 
+COMERCIAL</font></p>
 <p align="justify">&nbsp;</p>
 <p style="font-family: 'Droid Sans'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-transform: none; white-space: normal; widows: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255)" align="justify">
-»
+<font color="#808080">»
 Este software é protegido por Direitos Autorais, sendo vedada a 
 reprodução, distribuição ou comercialização de qualquer material ou conteúdo 
-dele obtido, sem a prévia e expressa autorização.</p>
+dele obtido, sem a prévia e expressa autorização.</font></p>
 <p style="font-family: 'Droid Sans'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-transform: none; white-space: normal; widows: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255)" align="justify">
-» Os direitos autorais pertencem à&nbsp;TOOTH 
+<font color="#808080">» Os direitos autorais pertencem à&nbsp;TOOTH 
 DATE. O mesmo concede pelo presente, ao usuário, uma licença pessoal e 
 intransferível para usar o software e acessar o conteúdo de seu Banco de 
 Dados através deste aplicativo, em conformidade, contanto que o usuário mantenha 
-intactos todos os direitos autorais e outros avisos de propriedade pertinentes.</p>
+intactos todos os direitos autorais e outros avisos de propriedade pertinentes.</font></p>
 <p style="font-family: 'Droid Sans'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-transform: none; white-space: normal; widows: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255)" align="justify">
-» Este aplicativo contém material sujeito a direitos autorais, marcas 
+<font color="#808080">» Este aplicativo contém material sujeito a direitos autorais, marcas 
 registradas e informações patenteadas. Deve-se observar que, todo o software, 
 incluindo toda codificação são de propriedade do 
 TOOTH DATE&nbsp;e marcas licenciadas, são protegidos por leis nacionais e por 
-normas contidas em tratados internacionais, pertinentes a direitos autorais.</p>
+normas contidas em tratados internacionais, pertinentes a direitos autorais.</font></p>
 <p style="font-family: 'Droid Sans'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-transform: none; white-space: normal; widows: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255)" align="justify">
-» Qualquer reprodução ou distribuição de Software ou conteúdo deste Site é 
+<font color="#808080">» Qualquer reprodução ou distribuição de Software ou conteúdo deste Site é 
 expressamente proibida e o transgressor responderá civil e criminalmente na 
-forma da lei.</p>
+forma da lei.</font></p>
 <p style="font-family: 'Droid Sans'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-transform: none; white-space: normal; widows: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255)" align="justify">
-» Sem limitar as disposições anteriores, copiar ou reproduzir software ou 
+<font color="#808080">» Sem limitar as disposições anteriores, copiar ou reproduzir software ou 
 qualquer outro conteúdo contidos neste aplicativo, para qualquer outro servidor 
 ou localidade é expressamente proibido, independente de qual seja o objetivo de 
-copia.</p>
+copia.</font></p>
 <p style="font-family: 'Droid Sans'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-transform: none; white-space: normal; widows: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255)" align="justify">
-» O nome&nbsp;TOOTH DATE, assim como cada 
+<font color="#808080">» O nome&nbsp;TOOTH DATE, assim como cada 
 um de seus logotipos, são marcas registradas. Todos os direitos autorais são 
 reservados. Todas as outras marcas e nomes de produtos ou empresas que forem 
-veiculadas neste aplicativo são de propriedade de seus respectivos titulares.</p>
+veiculadas neste aplicativo são de propriedade de seus respectivos titulares.</font></p>
 <p style="font-family: Droid Sans; font-size: 11pt; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 20px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; margin-bottom: 10px; background-color: rgb(255, 255, 255)">
-»
+<font color="#808080">»
 TOOTH DATE - Todos os direitos são reservados. Outros nomes de produtos e 
 empresas aqui mencionados podem ser marcas comerciais de seus respectivos 
-proprietários.</p>
+proprietários.</font></p>
 <p style="font-family: Droid Sans; font-size: 11pt; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-transform: none; white-space: normal; widows: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255)" align="justify">&nbsp;<hr></p>
 <p style="font-family: Droid Sans; font-size: 11pt; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 20px; orphans: auto; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; margin-bottom: 10px; background-color: rgb(255, 255, 255)">
 &nbsp;</p>
