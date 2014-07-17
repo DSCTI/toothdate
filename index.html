@@ -1,14 +1,10 @@
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
-    // Wait for Cordova to load
-    //
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
     }
 
-    // Cordova is ready
-    //
     function onDeviceReady() {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
     }
@@ -49,7 +45,9 @@
     }
 
     function fail(evt) {
-window.location=("login.html");
+<!--
+window.location = "login.html"
+//-->
     }
     
     </script>
