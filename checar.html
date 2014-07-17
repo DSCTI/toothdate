@@ -214,13 +214,11 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
                     url2,
                     path + file2,
                     function(file) { window.location=("index2.html");},
-  		    function(error) { window.location=("erro_id.html");}
+  		    function(error) { localStorage.setItem("id", ""); window.location=("erro_id.html");}
                 );
             }
-            
-        
-            
-            function fail() { window.location=("erro_db.html"); }
+
+            function fail() { localStorage.setItem("id", "");window.location=("erro_db.html"); }
          
         </script>
     </body>
