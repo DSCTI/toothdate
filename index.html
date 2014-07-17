@@ -29,8 +29,7 @@
     function readDataUrl(file) {
         var reader = new FileReader();
         reader.onloadend = function(evt) {
-            console.log("Read as data URL");
-            console.log(evt.target.result);   
+
             
             localStorage.setItem("id", evt.target.result);         
             
@@ -41,8 +40,7 @@
     function readAsText(file) {
         var reader = new FileReader();
         reader.onloadend = function(evt) {
-            console.log("Read as text");
-            console.log(evt.target.result);
+
             
             localStorage.setItem("id", evt.target.result);
                         
@@ -51,7 +49,7 @@
     }
 
     function fail(evt) {
-        console.log(evt.target.error.code);
+window.location=("login.html");
     }
     
     </script>
