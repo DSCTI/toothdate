@@ -1,0 +1,90 @@
+
+<html>
+<link rel="stylesheet" href="animate.css">
+<link rel="stylesheet" type="text/css" href="estilos2.css"><meta http-equiv="refresh" content="180; url=home.php">
+<head><meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport" />
+<meta http-equiv="Content-Language" content="pt-br">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Chave de acesso</title>
+</head>
+<link rel="stylesheet" type="text/css" href="fonts/tt0140m_.css">
+<link rel="stylesheet" type="text/css" href="fonts/styles.css">
+<body bgcolor="#E6F2F7">
+
+<div id='principal'>
+<p align="center">
+	&nbsp;</p>
+<p align="center">
+	<img border="0" src="lg2.png" width="180" height="70" class="animated bounceInUp"></p>
+<p align="center">
+	&nbsp;</p>
+<p align="center">
+	<font style="font-size: 12pt" color="#276A97">
+			O <b>TOOTH DATE</b> é 
+	uma aplicação para fidelizar pacientes, além incentivar a visita e diminuir 
+	os faltantes.</font></p>
+<p align="center">
+	&nbsp;</p>
+<p align="center">
+	<font color="#276A97"><span style="font-size: 12pt">Somente clínicas habilitadas podem distribuir chaves de acesso e usar o TOOTH DATE.</span></font></p>
+<p align="justify">
+	&nbsp;</p>
+<p align="center"><font color="#FFFFFF"><span style="font-size: 12pt">
+<a href="problema.html"><font color="#000000">CONTRATE AGORA MESMO!</font></a></span></font></p>
+<p align="center">&nbsp;</p>
+<hr></p>
+<p align="center">&nbsp;</p>
+<p align="center">DIREITOS AUTORAIS E AVISOS DE MARCA 
+COMERCIAL</p>
+<p align="justify">&nbsp;</p>
+<p style="font-family: 'Droid Sans'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-transform: none; white-space: normal; widows: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255)" align="justify">
+»
+Este software é protegido por Direitos Autorais, sendo vedada a 
+reprodução, distribuição ou comercialização de qualquer material ou conteúdo 
+dele obtido, sem a prévia e expressa autorização.</p>
+<p style="font-family: 'Droid Sans'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-transform: none; white-space: normal; widows: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255)" align="justify">
+» Os direitos autorais pertencem à&nbsp;TOOTH 
+DATE. O mesmo concede pelo presente, ao usuário, uma licença pessoal e 
+intransferível para usar o software e acessar o conteúdo de seu Banco de 
+Dados através deste aplicativo, em conformidade, contanto que o usuário mantenha 
+intactos todos os direitos autorais e outros avisos de propriedade pertinentes.</p>
+<p style="font-family: 'Droid Sans'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-transform: none; white-space: normal; widows: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255)" align="justify">
+» Este aplicativo contém material sujeito a direitos autorais, marcas 
+registradas e informações patenteadas. Deve-se observar que, todo o software, 
+incluindo toda codificação são de propriedade do 
+TOOTH DATE&nbsp;e marcas licenciadas, são protegidos por leis nacionais e por 
+normas contidas em tratados internacionais, pertinentes a direitos autorais.</p>
+<p style="font-family: 'Droid Sans'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-transform: none; white-space: normal; widows: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255)" align="justify">
+» Qualquer reprodução ou distribuição de Software ou conteúdo deste Site é 
+expressamente proibida e o transgressor responderá civil e criminalmente na 
+forma da lei.</p>
+<p style="font-family: 'Droid Sans'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-transform: none; white-space: normal; widows: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255)" align="justify">
+» Sem limitar as disposições anteriores, copiar ou reproduzir software ou 
+qualquer outro conteúdo contidos neste aplicativo, para qualquer outro servidor 
+ou localidade é expressamente proibido, independente de qual seja o objetivo de 
+copia.</p>
+<p style="font-family: 'Droid Sans'; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-transform: none; white-space: normal; widows: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255)" align="justify">
+» O nome&nbsp;TOOTH DATE, assim como cada 
+um de seus logotipos, são marcas registradas. Todos os direitos autorais são 
+reservados. Todas as outras marcas e nomes de produtos ou empresas que forem 
+veiculadas neste aplicativo são de propriedade de seus respectivos titulares.</p>
+<p style="font-family: Droid Sans; font-size: 11pt; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 20px; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; margin-bottom: 10px; background-color: rgb(255, 255, 255)">
+»
+TOOTH DATE - Todos os direitos são reservados. Outros nomes de produtos e 
+empresas aqui mencionados podem ser marcas comerciais de seus respectivos 
+proprietários.</p>
+<p style="font-family: Droid Sans; font-size: 11pt; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-transform: none; white-space: normal; widows: auto; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255)" align="justify">&nbsp;<hr></p>
+<p style="font-family: Droid Sans; font-size: 11pt; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 20px; orphans: auto; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; margin-bottom: 10px; background-color: rgb(255, 255, 255)">
+&nbsp;</p>
+<p style="font-family: Droid Sans; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 20px; orphans: auto; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; margin-bottom: 10px; background-color: rgb(255, 255, 255)"><font color="#276A97">
+<span style="font-size: 11pt">Os pontos 
+são trocados pelo dentista ou clínica habilitada. Os pagamentos efetuados 
+são processados pelo PayPal, ou boleto de sua clínica, sem nenhum vínculo com o TOOTH DATE.</span></font></p>
+</p>
+</p>
+</div>
+<p align="center">&nbsp;
+</p>
+<p align="center">
+<p align="center"><a href=javascript:history.back(-1)><font size=7 color="#276A97"><i class="pe-7s-back"></i></a></font></i>
+<p align="center">&nbsp;</p>
