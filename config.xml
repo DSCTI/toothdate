@@ -4,7 +4,7 @@
 
 <name>Tooth Date</name>
 
-<preference name="splash-screen-duration" value="2000" />
+<preference name="splash-screen-duration" value="1900" />
 <preference name="HideKeyboardFormAccessoryBar" value="true" />
 <preference name="webviewbounce" value="false" />
 <preference name="DisallowOverscroll" value="true" />
@@ -46,9 +46,9 @@
 
 <gap:plugin name="org.apache.cordova.device" />
 <gap:plugin name="org.apache.cordova.file-transfer" />
-<gap:plugin name="org.apache.cordova.network-information" />
 <gap:plugin name="org.apache.cordova.file" />
 <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
+<gap:plugin name="nl.x-services.plugins.calendar" />
 
 <access origin="*" />
 
