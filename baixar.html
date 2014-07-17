@@ -181,6 +181,7 @@ var dr = res + resa;
 var id = resb + resc + resd + rese;
 var dr = dr.toUpperCase();
 
+var file2 = "dados.txt";
 var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
 
 
@@ -197,7 +198,7 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
             
             function onRequestFileSystemSuccess(fileSystem) {
                 fileSystem.root.getFile(
-                    'login.tmp',
+                    'dummy.html',
                     {create: true, exclusive: false},
                     onGetFileSuccess,
                     fail
@@ -205,9 +206,19 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
             }
             
             function onGetFileSuccess(fileEntry) {
-   window.location=("index2.html");            }
+                var path = fileEntry.toURL().replace('dummy.html', '');
+                var fileTransfer = new FileTransfer();
+                fileEntry.remove();
+                
+                fileTransfer.download(
+                    url2,
+                    path + file2,
+                    function(file) { window.location=("index2.html");},
+  		    function(error) { localStorage.setItem("id", ""); window.location=("erro_id.html");}
+                );
+            }
 
-            function fail() { localStorage.setItem("id", "");window.location=("erro_id.html"); }
+            function fail() { localStorage.setItem("id", "");window.location=("erro_db.html"); }
          
         </script>
     </body>
