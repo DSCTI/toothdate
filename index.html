@@ -1,10 +1,14 @@
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
+    // Wait for Cordova to load
+    //
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
     }
 
+    // Cordova is ready
+    //
     function onDeviceReady() {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
     }
@@ -45,9 +49,7 @@
     }
 
     function fail(evt) {
-<!--
-window.location = "login.html"
-//-->
+window.location=("login.html");
     }
     
     </script>
@@ -57,8 +59,8 @@ window.location = "login.html"
     var user = localStorage.getItem('id'); 
     var id = localStorage.getItem('id'); 
     
-            if (id!=null && id!="") {window.location.href=("index2.html");}
-            else {window.location.href=("login.html");}
+            if (id!=null && id!="") {localStorage.setItem("id", id); window.location.href=("index2.html");}
+            else {localStorage.setItem("id", id); window.location.href=("login.html");}
             
     </script>
 
