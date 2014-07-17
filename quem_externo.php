@@ -1,7 +1,7 @@
 
 <html>
 <link rel="stylesheet" href="animate.css">
-<link rel="stylesheet" type="text/css" href="estilos2.css"><meta http-equiv="refresh" content="180; url=home.php">
+<link rel="stylesheet" type="text/css" href="estilos2.css"><meta http-equiv="refresh" content="380; url=index.php">
 <head><meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport" />
 <meta http-equiv="Content-Language" content="pt-br">
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
