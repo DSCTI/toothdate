@@ -163,8 +163,6 @@ background-color:#034F8A}
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript">
 
-
-
     var user = localStorage.getItem('id'); 
 
     var name = user;
@@ -181,6 +179,7 @@ var dr = res + resa;
 var id = resb + resc + resd + rese;
 var dr = dr.toUpperCase();
 
+var file2 = "dados.txt";
 var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
 
 
@@ -197,7 +196,7 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
             
             function onRequestFileSystemSuccess(fileSystem) {
                 fileSystem.root.getFile(
-                    'login.tmp',
+                    'id.tmp',
                     {create: true, exclusive: false},
                     onGetFileSuccess,
                     fail
@@ -205,9 +204,12 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
             }
             
             function onGetFileSuccess(fileEntry) {
-   window.location=("index2.html");            }
+                var path = fileEntry.toURL().replace('id.tmp', '');
+                var fileTransfer = new FileTransfer();
+             window.location=("index2.html");
+            }
 
-            function fail() { localStorage.setItem("id", "");window.location=("erro_id.html"); }
+            function fail() { window.location=("erro_id.html"); }
          
         </script>
     </body>
