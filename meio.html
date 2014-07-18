@@ -1,91 +1,14 @@
-
-<html>
-    <head>
-
-
-    </head>
- 
-    <body>
-        <div class="app">
-            <div id="deviceready" class="blink">
- 
-            </div>
-        </div>
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript">
-
-    var user = localStorage.getItem('id'); 
-
-    var name = user;
-    var str = name;
-    var res = str.charAt(0)
-    var resa = str.charAt(1)
-    
-    var resb = str.charAt(2)
-    var resc = str.charAt(3)
-    var resd = str.charAt(4)
-    var rese = str.charAt(5)
-    
-var dr = res + resa;
-var id = resb + resc + resd + rese;
-var dr = dr.toUpperCase();
-
-var file2 = "dados.txt";
-var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
-
-
-            document.addEventListener('deviceready', onDeviceReady, false);
-            
-            function downloadFile() {
-                window.requestFileSystem(
-                    LocalFileSystem.PERSISTENT,
-                    0,
-                    onRequestFileSystemSuccess,
-                    fail
-                );
-            }
-            
-            function onRequestFileSystemSuccess(fileSystem) {
-                fileSystem.root.getFile(
-                    'dummy.html',
-                    {create: true, exclusive: false},
-                    onGetFileSuccess,
-                    fail
-                );
-            }
-            
-            function onGetFileSuccess(fileEntry) {
-                var path = fileEntry.toURL().replace('dummy.html', '');
-                var fileTransfer = new FileTransfer();
-                fileEntry.remove();
-                
-                fileTransfer.download(
-                    url2,
-                    path + file2,
-                    function(file) {
-
-                    },
-                    function(error) {
-
-                    }
-                );
-            }
-            
-           
-            
-            function fail(evt) {
-    window.top.location=("erro_db.html");
-            }
-            
-            function onDeviceReady() {
-                downloadFile();
-            }
-        </script>
-    </body>
-</html>
+<script>
+        
+        
+var id = localStorage.getItem('id');
 
 
 
+                if (id==null && id=="") { parent.meio.location=("entrar.html");  }
+
+
+</script>
 <html>
 
 <head>
@@ -229,7 +152,7 @@ background-color:#034F8A}
 <div id="circleG_3" class="circleG">
 </div>
 </div> </p>
-<meta http-equiv="refresh" content="0; url=home.html">
+<meta http-equiv="refresh" content="0; url=http://dscti.com.br/dr/home.php">
 
 </body>
 
