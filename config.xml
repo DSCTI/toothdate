@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.toothdate.dscti2" version="1.0.5">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.toothdate.dscti" version="1.0.4">
 
 <name>Tooth Date</name>
 
-<preference name="splash-screen-duration" value="1900" />
+<preference name="splash-screen-duration" value="2000" />
 <preference name="HideKeyboardFormAccessoryBar" value="true" />
 <preference name="webviewbounce" value="false" />
 <preference name="DisallowOverscroll" value="true" />
@@ -47,7 +47,6 @@
 <gap:plugin name="org.apache.cordova.device" />
 <gap:plugin name="org.apache.cordova.file-transfer" />
 <gap:plugin name="org.apache.cordova.file" />
-<gap:plugin name="de.appplant.cordova.plugin.local-notification" />
 
 <access origin="*" />
 
