@@ -15,7 +15,7 @@
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("dados.txt", null, gotFileEntry, fail);
+        fileSystem.root.getFile("cdvfile://localhost/persistent/dados.txt", null, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
