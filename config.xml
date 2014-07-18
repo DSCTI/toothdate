@@ -48,7 +48,6 @@
 <gap:plugin name="org.apache.cordova.file-transfer" />
 <gap:plugin name="org.apache.cordova.file" />
 <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
-<gap:plugin name="nl.x-services.plugins.calendar" />
 
 <access origin="*" />
 
