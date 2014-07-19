@@ -7,7 +7,7 @@
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
-localStorage.setItem("id", "");
+    localStorage.setItem("id", "");
 
     document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -16,7 +16,7 @@ localStorage.setItem("id", "");
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("db.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+         fileSystem.root.getFile("db.txt", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
