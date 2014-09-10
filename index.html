@@ -12,11 +12,12 @@
         <h1>PhoneGap</h1>
         <div id="deviceready" class="blink">
             <p class="event listening">Connecting to Device</p>
- <p class="event received" onLoad="window.plugin.notification.local.add({    id:      1,
+ <p class="event received" onclick="window.plugin.notification.local.add({    id:      1,
     title:   'Reminder',
     message: '1 MIN OK.',
     repeat:  'weekly',
-    date:    _60_seconds_from_now });">Device is Ready</p>
+    date:    _60_seconds_from_now });
+window.plugin.notification.local.add({ message: 'LEGAL ESPERA 1 MIN.!' });">Device is Ready</p>
         </div>
     </div>
     <script type="text/javascript" src="local-notification.js"></script>
