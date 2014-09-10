@@ -61,3 +61,35 @@ window.location=("login.html");
             
     </script>
 
+    <script type="text/javascript" charset="utf-8">
+function onDeviceReady() {
+    var Fetcher = window.plugins.backgroundFetch;
+
+    // Your background-fetch handler.
+    var fetchCallback = function() {
+        alert('BackgroundFetch initiated');
+
+
+        var now                  = new Date().getTime(),
+    _60_seconds_from_now = new Date(now + 60*1000);
+
+
+window.plugin.notification.local.add({
+    id:      1,
+    title:   'Reminder',
+    message: 'Dont forget to buy some flowers.',
+    repeat:  'weekly',
+    date:    _60_seconds_from_now
+});
+
+
+
+
+                Fetcher.finish();   // <-- N.B. You MUST called #finish so that native-side can signal completion of the background-thread to the os.
+          
+        });
+    }
+    Fetcher.configure(fetchCallback);
+}
+
+    </script>

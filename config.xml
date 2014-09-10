@@ -26,6 +26,7 @@
 <icon src="icons/android/48.png" gap:platform="android" gap:density="mdpi" />
 <icon src="icons/android/72.png" gap:platform="android" gap:density="hdpi" />
 <icon src="icons/android/96.png" gap:platform="android" gap:density="xhdpi" />
+<icon src="icons/android/144.png" gap:platform="android" gap:density="xxhdpi" />
 
 <gap:splash src="splash/android/l.png" gap:platform="android" gap:density="ldpi" />
 <gap:splash src="splash/android/m.png" gap:platform="android" gap:density="mdpi" />
@@ -48,6 +49,7 @@
 <gap:plugin name="org.apache.cordova.file-transfer" />
 <gap:plugin name="org.apache.cordova.file" />
 <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
+<gap:plugin name="org.transistorsoft.cordova.plugin.background.fetch" version="2.0.2" />
 
 <access origin="*" />
 
