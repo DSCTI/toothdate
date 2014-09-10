@@ -15,13 +15,13 @@
  <p class="event received" onclick="window.plugin.notification.local.add({ message: 'Great app!' });">Device is Ready</p>
         </div>
     </div>
-    <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="local-notification.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
 
-document.addEventListener('deviceready', function () {
-    // window.plugin.notification.local is now available
-}, false);
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
 
 window.plugin.notification.local.add({ message: 'LEGAL ESPERA 1 MIN.!' });
 
