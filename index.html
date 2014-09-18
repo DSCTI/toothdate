@@ -1,59 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+                      "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <title>Contact Example</title>
 
-  <body>
-    <h1>Example</h1>
-    <p>Read File</p>
-  </body>
-</html>
-
-<!DOCTYPE html>
-     <html>
-     <head>
-      <title>FileReader Example</title>
- 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="phonegap-0.9.3.js"></script>
     <script type="text/javascript" charset="utf-8">
- 
 
-// PhoneGap is ready
-function onDeviceReady() {
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-}
- 
+    // Wait for PhoneGap to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
 
-function gotFS(fileSystem) {
-    fileSystem.root.getFile("dados.txt", { create: true }, gotFileEntry, fail);
-}
- 
-function gotFileEntry(fileEntry) {
-    fileEntry.file(gotFile, fail);
-}
- 
-function gotFile(file) {
-    readAsText(file);
-}
- 
-function readAsText(file) {
-    var reader = new FileReader();
-    reader.onloadend = function (evt) {
-        console.log("Read as text");
-        var xml = evt.target.result;
-        alert("evt.target.result");
+    // PhoneGap is ready
+    //
+    function onDeviceReady() {
+        var paths = navigator.fileMgr.getRootPaths();
+        var reader = new FileReader();
+        reader.onload = win;
+        reader.onerror= fail;
+        reader.readAsText(paths[0] + "dados.txt");
+    }
 
-        fileObject = xml;
-        ParseXmlCat(xml);
-    };
-    reader.readAsText(file);
-}
+    function win(evt) {
+        alert(evt.target.result);
+    }
 
+    function fail(evt) {
+        alert(evt.target.error);
+    }
 
-
- 
     </script>
   </head>
-  <body>
+  <body onload="onLoad()">
     <h1>Example</h1>
     <p>Read File</p>
   </body>
 </html>
-       
-       
