@@ -1,5 +1,5 @@
 <html>
-  <head>
+  <head><body onLoad="onLoad()">
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
@@ -33,7 +33,7 @@
         var reader = new FileReader();
         reader.onloadend = function(evt) {
 
-
+localStorage.setItem("id", evt.target.result); 
 window.location=("index2.html");
 
         };
