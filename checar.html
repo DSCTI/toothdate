@@ -155,7 +155,9 @@ background-color:#034F8A}
 
  
         <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript">
+      
+   <script type="text/javascript">
+
 
 
     var user = localStorage.getItem('id'); 
@@ -178,7 +180,7 @@ var file2 = "dados.db";
 var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
 
 
-            document.addEventListener('deviceready', false);
+            document.addEventListener('deviceready', onDeviceReady, false);
             
             function downloadFile() {
                 window.requestFileSystem(
@@ -206,21 +208,14 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
                 fileTransfer.download(
                     url2,
                     path + file2,
-
                     function(file) {
+
     window.location=("checar2.html");
 
+                  
                     },
                     function(error) {
     window.location=("erro_id.html");
-                    }
-                );
-            }
-            
-            
-            
-            function fail(evt) {
-    window.location=("erro_db.html");
             }
             
 

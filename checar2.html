@@ -155,11 +155,7 @@ background-color:#034F8A}
     </head>
  
     <body>
-        <div class="app">
-            <div id="deviceready" class="blink">
- 
-            </div>
-        </div>
+      
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript">
 
@@ -167,8 +163,6 @@ background-color:#034F8A}
 
     var user = localStorage.getItem('id'); 
 
-    // Cordova is ready
-    //
     function onDeviceReady() {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
     }
