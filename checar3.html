@@ -1,236 +1,45 @@
-<html>
+<!DOCTYPE html>
+<html><body onload="onLoad()">
+  <head>
 
-<head>
-<body bgcolor="#FFFFFF">
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
 
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
 
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p align="center"><div align=center><style>
-#circleG{
-width:93.33333333333333px;
-}
+    function onDeviceReady() {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    }
 
-.circleG{
-background-color:#D2EDFC;
-float:left;
-height:16px;
-margin-left:13px;
-width:16px;
--moz-animation-name:bounce_circleG;
--moz-animation-duration:1.2000000000000002s;
--moz-animation-iteration-count:infinite;
--moz-animation-direction:linear;
--moz-border-radius:13px;
--webkit-animation-name:bounce_circleG;
--webkit-animation-duration:1.2000000000000002s;
--webkit-animation-iteration-count:infinite;
--webkit-animation-direction:linear;
--webkit-border-radius:13px;
--ms-animation-name:bounce_circleG;
--ms-animation-duration:1.2000000000000002s;
--ms-animation-iteration-count:infinite;
--ms-animation-direction:linear;
--ms-border-radius:13px;
--o-animation-name:bounce_circleG;
--o-animation-duration:1.2000000000000002s;
--o-animation-iteration-count:infinite;
--o-animation-direction:linear;
--o-border-radius:13px;
-animation-name:bounce_circleG;
-animation-duration:1.2000000000000002s;
-animation-iteration-count:infinite;
-animation-direction:linear;
-border-radius:13px;
-}
+    function gotFS(fileSystem) {
+        fileSystem.root.getFile("dados.db", null, gotFileEntry, fail);
+    }
 
-#circleG_1{
--moz-animation-delay:0.24000000000000005s;
--webkit-animation-delay:0.24000000000000005s;
--ms-animation-delay:0.24000000000000005s;
--o-animation-delay:0.24000000000000005s;
-animation-delay:0.24000000000000005s;
-}
+    function gotFileEntry(fileEntry) {
+        fileEntry.file(gotFile, fail);
+    }
 
-#circleG_2{
--moz-animation-delay:0.56s;
--webkit-animation-delay:0.56s;
--ms-animation-delay:0.56s;
--o-animation-delay:0.56s;
-animation-delay:0.56s;
-}
+    function gotFile(file){
+        readAsText(file);
+    }
 
-#circleG_3{
--moz-animation-delay:0.72s;
--webkit-animation-delay:0.72s;
--ms-animation-delay:0.72s;
--o-animation-delay:0.72s;
-animation-delay:0.72s;
-}
-
-@-moz-keyframes bounce_circleG{
-0%{
-}
-
-50%{
-background-color:#034F8A}
-
-100%{
-}
-
-}
-
-@-webkit-keyframes bounce_circleG{
-0%{
-}
-
-50%{
-background-color:#034F8A}
-
-100%{
-}
-
-}
-
-@-ms-keyframes bounce_circleG{
-0%{
-}
-
-50%{
-background-color:#034F8A}
-
-100%{
-}
-
-}
-
-@-o-keyframes bounce_circleG{
-0%{
-}
-
-50%{
-background-color:#034F8A}
-
-100%{
-}
-
-}
-
-@keyframes bounce_circleG{
-0%{
-}
-
-50%{
-background-color:#034F8A}
-
-100%{
-}
-
-}
-
-</style>
-<div id="circleG">
-<div id="circleG_1" class="circleG">
-</div>
-<div id="circleG_2" class="circleG">
-</div>
-<div id="circleG_3" class="circleG">
-</div>
-</div> </p>
-
-</body>
-
-</body>
-
-</html>
-
-<html>
-
+    function readAsText(file) {
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
  
-    <body>
-
-    <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript">
-
-    var user = localStorage.getItem('id'); 
-
-    var name = user;
-    var str = name;
-    var res = str.charAt(0)
-    var resa = str.charAt(1)
-    
-    var resb = str.charAt(2)
-    var resc = str.charAt(3)
-    var resd = str.charAt(4)
-    var rese = str.charAt(5)
-    
-var dr = res + resa;
-var id = resb + resc + resd + rese;
-var dr = dr.toUpperCase();
-
-var file2 = "dados.deb";
-var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
+window.location=("index2.html");
 
 
-            document.addEventListener('deviceready', onDeviceReady, false);
+        };
+        reader.readAsText(file);
+    }
 
-            function onDeviceReady() {
-                downloadFile();
-            
-            
-            function downloadFile() {
-                window.requestFileSystem(
-                    LocalFileSystem.PERSISTENT,
-                    0,
-                    onRequestFileSystemSuccess,
-                    fail
-                );
-            }
-            
-            function onRequestFileSystemSuccess(fileSystem) {
-                fileSystem.root.getFile(
-                    'dummy.html',
-                    {create: true, exclusive: false},
-                    onGetFileSuccess,
-                    fail
-                );
-            }
-            
-            function onGetFileSuccess(fileEntry) {
-                var path = fileEntry.toURL().replace('dummy.html', '');
-                var fileTransfer = new FileTransfer();
-                fileEntry.remove();
-                
-                fileTransfer.download(
-                    url2,
-                    path + file2,
-                    function(file) {
+    function fail(evt) {
+window.location=("checar.html");
+    }
 
-        window.location = "index2.html";
-
-
- },
-
-
-
-                    function(error) {
-
-window.location = "erro_id.html";
-                    
-}
-                );
-            }
-            
-           
-            
-            function fail(evt) {
-
-window.location = "erro_db.html";
-           
- }
-
-}
-
-        </script> 
-
+    </script>
+  </head>
+</html>
