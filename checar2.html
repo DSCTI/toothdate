@@ -35,8 +35,6 @@
        
         writer.write(name);
 
-window.location = "index2.html";
-
   }
    
 
@@ -48,3 +46,54 @@ window.location = "erro_db.html";
  }
 
         </script>
+<!DOCTYPE html>
+<html><body onload="onLoad()">
+  <head>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for Cordova to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    }
+
+    function gotFS(fileSystem) {
+        fileSystem.root.getFile("dados.db", null, gotFileEntry, fail);
+    }
+
+    function gotFileEntry(fileEntry) {
+        fileEntry.file(gotFile, fail);
+    }
+
+    function gotFile(file){
+        readAsText(file);
+    }
+
+    function readAsText(file) {
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
+
+
+localStorage.setItem("id", evt.target.result); 
+window.location=("index2.html");
+
+
+        };
+        reader.readAsText(file);
+    }
+
+    function fail(evt) {
+window.location=("checar.html");
+    }
+
+    </script>
+  </head>
+</html>
