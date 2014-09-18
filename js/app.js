@@ -5,7 +5,7 @@ function init() {
 	window.resolveLocalFileSystemURL("Phonegap/dados.db", gotFile, fail);
 
 	/* Yes, this works too for our specific example...
-	$.get("index.html", function(res) {
+	$.get("Phonegap/dados.db", function(res) {
 		console.log("index.html", res);
 	});
 	*/
