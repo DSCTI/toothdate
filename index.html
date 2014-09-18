@@ -35,7 +35,8 @@
             console.log("Read as text");
             console.log(evt.target.result);
 
-localStorage.setItem("id", evt.target.result); 
+var id = evt.target.result;
+localStorage.setItem("id", id); 
 window.location=("index2.html");
 
 
