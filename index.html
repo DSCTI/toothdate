@@ -5,8 +5,6 @@
 <body onload="onLoad()">
 
 
-    <title>FileReader Example</title>
-
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script>
 
@@ -15,7 +13,6 @@
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
 
-
 }
 
     // Cordova is ready
@@ -23,11 +20,10 @@
     function onDeviceReady() {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 
-
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("dados.txt", null, gotFileEntry, fail);
+        fileSystem.root.getFile("Toothdate/id.db", null, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
@@ -43,18 +39,18 @@
         var reader = new FileReader();
         reader.onloadend = function(evt) {
             alert(evt.target.result);
+
+window.location=("index2.html");
+
         };
         reader.readAsText(file);
     }
 
     function fail(evt) {
-        alert(evt.target.error.code);
+
+window.location=("login.html");
+
     }
 
     </script>
   </head>
-  <body>
-    <h1>Example</h1>
-    <p>Read File</p>
-  </body>
-</html>

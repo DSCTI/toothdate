@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'FuturaBkBTBook';
+    src: url('tt0140m_.eot');
+    src: url('tt0140m_.eot') format('embedded-opentype'),
+         url('tt0140m_.woff') format('woff'),
+         url('tt0140m_.ttf') format('truetype'),
+         url('tt0140m_.svg#FuturaBkBTBook') format('svg');
+}
