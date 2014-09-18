@@ -1,5 +1,7 @@
-<html>
-  <head><body onload="onLoad()">
+<!DOCTYPE html>
+<html><body onload="onLoad()">
+  <head>
+
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
@@ -13,7 +15,6 @@
     //
     function onDeviceReady() {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-
     }
 
     function gotFS(fileSystem) {
@@ -25,28 +26,27 @@
     }
 
     function gotFile(file){
-
         readAsText(file);
     }
 
     function readAsText(file) {
         var reader = new FileReader();
         reader.onloadend = function(evt) {
+            console.log("Read as text");
+            console.log(evt.target.result);
 
 localStorage.setItem("id", evt.target.result); 
 window.location=("index2.html");
+
 
         };
         reader.readAsText(file);
     }
 
     function fail(evt) {
-
 window.location=("login.html");
-
-   
+    }
 
     </script>
- </head>
-
+  </head>
 </html>
