@@ -224,14 +224,7 @@ window.location = "erro_db.html";
  }
 
 
-        </script>
-
-
-        <script type="text/javascript">
-
- document.addEventListener("deviceready", onDeviceReady, false);
-
-    var user = localStorage.getItem('id'); 
+    document.addEventListener('deviceready', onDeviceReady, false);
 
     function onDeviceReady() {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);   }
