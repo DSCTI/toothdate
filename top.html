@@ -109,9 +109,7 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
 
     <script type="text/javascript" charset="utf-8">
 
-            document.addEventListener('deviceready', onDeviceReady, false);
-
-            function onDeviceReady() {
+          
             
          var Fetcher = window.plugins.backgroundFetch;
 
@@ -128,7 +126,7 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
                     Fetcher.finish();   // <-- N.B. You MUST called #finish so that native-side can signal completion of the background-thread to the os.
                 }
             });
-        }
+        
         Fetcher.configure(fetchCallback);
     }
 
