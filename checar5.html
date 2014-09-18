@@ -14,7 +14,7 @@
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("id.db", null, gotFileEntry, fail);
+        fileSystem.root.getFile("dados.db", null, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
@@ -30,7 +30,7 @@
         reader.onloadend = function(evt) {
 
 
-window.location=("checar5.html");
+window.location=("index2.html");
 
 
         };
@@ -38,7 +38,7 @@ window.location=("checar5.html");
     }
 
     function fail(evt) {
-window.location=("checar2.html");
+window.location=("checar.html");
     }
 
     </script>
