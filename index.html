@@ -35,16 +35,8 @@
     }
 
     function gotFile(file){
-        readDataUrl(file);
-        readAsText(file);
-    }
 
-    function readDataUrl(file) {
-        var reader = new FileReader();
-        reader.onloadend = function(evt) {
-            alert(evt.target.result);
-        };
-        reader.readAsDataURL(file);
+        readAsText(file);
     }
 
     function readAsText(file) {
