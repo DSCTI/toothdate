@@ -1,10 +1,40 @@
 
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
         <script type="text/javascript">
 
 
-    window.location=("login.html");
 
- 
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    var user = localStorage.getItem('id'); 
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    }
+
+
+
+function removefile(){
+    fileSystem.root.getFile("id.db", {create: false, exclusive: false}, gotRemoveFileEntry, fail);
+}
+
+function gotRemoveFileEntry(fileEntry){
+    console.log(fileEntry);
+    fileEntry.remove(success, fail);
+}
+
+function success(entry) {
+    alert("Removal succeeded!");
+    window.location=("index.html");
+}
+
+function fail(error) {
+ alert("erro!");
+}
+
+
         </script>
 
 
