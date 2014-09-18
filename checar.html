@@ -176,7 +176,13 @@ var file2 = "dados.deb";
 var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
 
 
+
+
             document.addEventListener('deviceready', onDeviceReady, false);
+
+            function onDeviceReady() {
+                downloadFile();
+            }
             
             function downloadFile() {
                 window.requestFileSystem(
@@ -221,11 +227,8 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
             function fail(evt) {
     window.location=("erro_db.html");
             }
-            
-            /* When this function is called, PhoneGap has been initialized and is ready to roll */
-            function onDeviceReady() {
-                downloadFile();
-            }
+
+
         </script>
     </body>
 </html>
