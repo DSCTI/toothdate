@@ -1,22 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-
-<body onload="onLoad()">
 
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script>
 
-    // Wait for Cordova to load
-    //
-    function onLoad() {
-        document.addEventListener("deviceready", onDeviceReady, false);
 
-}
+        document.addEventListener("deviceready", onDeviceReady, false);}
 
-    // Cordova is ready
-    //
+
     function onDeviceReady() {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 
@@ -38,7 +28,9 @@
     function readAsText(file) {
         var reader = new FileReader();
         reader.onloadend = function(evt) {
-            alert(evt.target.result);
+
+
+          
 
 window.location=("index2.html");
 
@@ -50,7 +42,6 @@ window.location=("index2.html");
 
 window.location=("login.html");
 
-    }
+   
 
     </script>
-  </head>
