@@ -30,7 +30,7 @@
             
             function onRequestFileSystemSuccess(fileSystem) {
                 fileSystem.root.getFile(
-                    'dados.db',
+                    'id.db',
                     {create: true, exclusive: false},
                     onGetFileSuccess,
                     fail
@@ -39,7 +39,7 @@
                 entry.remove();
 
 
-    window.location=("login.html");
+    window.location=("index.html");
 
                         
             }

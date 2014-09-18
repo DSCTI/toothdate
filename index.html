@@ -1,5 +1,5 @@
 <html>
-  <head><body onLoad="onLoad()">
+  <head><body onload="onLoad()">
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
@@ -17,7 +17,7 @@
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("dados.db", null, gotFileEntry, fail);
+        fileSystem.root.getFile("id.db", null, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
