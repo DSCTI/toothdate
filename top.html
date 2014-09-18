@@ -41,7 +41,7 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
 <div style=" position: absolute;z-index: 9999;"><a target="meio" href=meio.html><FONT size=6 color=WHITE><i class="pe-7s-home" style="padding-left:11;padding-top:17; padding-bottom:17; padding-right:15;"></i></font>
 </a></div>
 <FONT size=6 color=WHITE>
-<div style=" position: absolute;z-index: 9; width: 100%; text-align: right; "><a target="meio" href="menu.html"data-transition="slidedown"><FONT size=6 color=WHITE><i class="pe-7s-ribbon" style="padding-top:17; padding-bottom:17; padding-right:10; padding-left:13;"> </i></a>
+<div style=" position: absolute;z-index: 9; width: 100%; text-align: right; "><a target="meio" href="menu.html"data-transition="slidedown"><FONT size=6 color=WHITE><i class="pe-7s-ribbon" style="padding-top:17; padding-bottom:17; padding-right:10; padding-left:13;"></i></a>
 </font></div>
 </body>
 
@@ -49,6 +49,7 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
 
 
     <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="phonegap.js"></script>
 
     <script type="text/javascript" charset="utf-8">
 
@@ -56,21 +57,23 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
 
             function onDeviceReady() {
             
-        var Fetcher = window.plugins.backgroundFetch;
+         var Fetcher = window.plugins.backgroundFetch;
 
         // Your background-fetch handler.
         var fetchCallback = function() {
             alert('BackgroundFetch initiated');
 
+            // perform your ajax request to server here
+            $.get({
+                url: '/heartbeat.json',
+                callback: function(response) {
+                    // process your response and whatnot.
 
-
-
-                    Fetcher.finish();   
-           
+                    Fetcher.finish();   // <-- N.B. You MUST called #finish so that native-side can signal completion of the background-thread to the os.
+                }
+            });
         }
-        
-Fetcher.configure(fetchCallback);
-
-  }
+        Fetcher.configure(fetchCallback);
+    }
 
     </script>
