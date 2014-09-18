@@ -14,7 +14,7 @@
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("id.db", null, gotFileEntry, fail);
+        fileSystem.root.getFile("dados.db", null, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
@@ -30,9 +30,9 @@
         reader.onloadend = function(evt) {
 
 
-localStorage.setItem("id", evt.target.result); 
 
-window.location=("index4.html");
+
+window.location=("index2.html");
 
         };
         reader.readAsText(file);
