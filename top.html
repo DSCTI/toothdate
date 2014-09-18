@@ -1,7 +1,4 @@
-
-<!DOCTYPE html>
-<html><body onload="onLoad()">
-  <head>
+<body onload="onLoad()">
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
@@ -47,12 +44,6 @@ alert( res[0] );
     }
 
     </script>
-  </head>
-
-
-<html>
-
-<head>
 
 <script type="text/javascript" charset="utf-8">
 
@@ -63,17 +54,12 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
 </script>
 
 
+
 <link rel="stylesheet" type="text/css" href="estilos.css">
 <link rel="stylesheet" type="text/css" href="fonts/tt0140m_.css">
 <link rel="stylesheet" href="animate.css">
 
 <head>
-<script type='application/javascript' src='fastclick.js'></script>
-<script type="application/javascript">
- window.addEventListener('load', function () {
-  FastClick.attach(document.body);
- }, false);
-</script> 
 <base target="meio">
 </head>
 
@@ -103,31 +89,3 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
 
 </html>
 
-
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="phonegap.js"></script>
-
-    <script type="text/javascript" charset="utf-8">
-
-          
-            
-         var Fetcher = window.plugins.backgroundFetch;
-
-        // Your background-fetch handler.
-        var fetchCallback = function() {
-            alert('BackgroundFetch initiated');
-
-            // perform your ajax request to server here
-            $.get({
-                url: '/heartbeat.json',
-                callback: function(response) {
-                    // process your response and whatnot.
-
-                    Fetcher.finish();   // <-- N.B. You MUST called #finish so that native-side can signal completion of the background-thread to the os.
-                }
-            });
-        
-        Fetcher.configure(fetchCallback);
-    }
-
-    </script>
