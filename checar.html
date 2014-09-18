@@ -205,7 +205,14 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
                 fileTransfer.download(
                     url2,
                     path + file2,
-                    function(file) { },
+                    function(file) {
+
+window.location = "checar2.html";
+
+
+ },
+
+
 
                     function(error) {
 
@@ -222,45 +229,6 @@ window.location = "erro_id.html";
 window.location = "erro_db.html";
            
  }
-
-
-
-    document.addEventListener('deviceready', onDeviceReady, false);
-
-    function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);   }
-
-    function gotFS(fileSystem) {
-        fileSystem.root.getFile("id.db", {create: true, exclusive: false}, gotFileEntry, fail); }
-
-    function gotFileEntry(fileEntry) {
-        fileEntry.createWriter(gotFileWriter, fail); }
-
-    function gotFileWriter(writer) {
-        writer.onwriteend = function(evt) {
-
-            writer.truncate(11);  
-            writer.onwriteend = function(evt) {
-
-                writer.seek(6);
-                writer.write(user);
-                writer.onwriteend = function(evt){
-
-window.location = "index2.html";
-
-                } }; };
-        
-       
-        writer.write(name);  }
-   
-
-    function fail(error) {
-
-window.location = "erro_db.html";
-
-
- }
-
 
 
         </script>
