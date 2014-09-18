@@ -1,45 +1,7 @@
-<body onload="removefile()">
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-
-        <script type="text/javascript">
-
-
-    // Cordova is ready
-    //
-    function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    }
-
-
-
-function removefile(){
-    fileSystem.root.getFile("id.db", {create: false, exclusive: false}, gotRemoveFileEntry, fail);
-}
-
-function gotRemoveFileEntry(fileEntry){
-    console.log(fileEntry);
-    fileEntry.remove(success, fail);
-}
-
-function success(entry) {
-    alert("Removal succeeded!");
-    window.location=("index.html");
-}
-
-function fail(error) {
- alert("erro!");
-}
-
-
-        </script>
-
-
-
-
-
+<html>
 
 <head>
-
+<body bgcolor="#FFFFFF">
 
 </head>
 
@@ -185,3 +147,70 @@ background-color:#034F8A}
 </body>
 
 </html>
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+    </head>
+ 
+    <body>
+        <div class="app">
+            <div id="deviceready" class="blink">
+ 
+            </div>
+        </div>
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript">
+
+
+
+var user = localStorage.getItem('id'); 
+ document.addEventListener("deviceready", onDeviceReady, false);
+
+    var user = localStorage.getItem('id'); 
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    }
+
+    function gotFS(fileSystem) {
+        fileSystem.root.getFile("id.db", {create: true, exclusive: false}, gotFileEntry, fail);
+    }
+
+    function gotFileEntry(fileEntry) {
+        fileEntry.createWriter(gotFileWriter, fail);
+    }
+
+    function gotFileWriter(writer) {
+        writer.onwriteend = function(evt) {
+
+            writer.truncate(11);  
+            writer.onwriteend = function(evt) {
+
+                writer.seek(6);
+                writer.write(user);
+                writer.onwriteend = function(evt){
+		window.location=("index2.html");
+
+                }
+            };
+        };
+        
+       
+        writer.write(name);
+    }
+   
+
+    function fail(error) {
+window.location=("erro_db.html");
+    }
+
+        </script>
+    </body>
+</html>
+
+
+

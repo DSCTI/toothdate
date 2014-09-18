@@ -25,49 +25,9 @@ var id = dr + "/" + resb + resc + resd + rese + ".txt";
 var url = "http://dscti.com.br/dr/" + name;
 
 localStorage.setItem("id", name); 
+window.location=("checar.html");
 
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    var user = localStorage.getItem('id'); 
-    // Cordova is ready
-    //
-    function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
     }
-
-    function gotFS(fileSystem) {
-        fileSystem.root.getFile("id.db", {create: true, exclusive: false}, gotFileEntry, fail);
-    }
-
-    function gotFileEntry(fileEntry) {
-        fileEntry.createWriter(gotFileWriter, fail);
-    }
-
-    function gotFileWriter(writer) {
-        writer.onwriteend = function(evt) {
-
-            writer.truncate(11);  
-            writer.onwriteend = function(evt) {
-
-                writer.seek(6);
-                writer.write(name);
-                writer.onwriteend = function(evt){
-		window.location=("checar.html");
-
-                }
-            };
-        };
-        
-       
-        writer.write(name);
-    }
-   
-
-    function fail(error) {
-window.location=("erro_db.html");
-    } }
-
-
 
     </script>
 
