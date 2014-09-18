@@ -1,4 +1,3 @@
-
 <html>
 
 <head>
@@ -148,64 +147,97 @@ background-color:#034F8A}
 
 <html>
 
-<html>
+ 
+    <body>
 
-<body bgcolor="#FFFFFF">
+    <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript">
 
-        <script type="text/javascript" src="phonegap.js"></script>
+    var user = localStorage.getItem('id'); 
 
-    <script type="text/javascript" charset="utf-8">
+    var name = user;
+    var str = name;
+    var res = str.charAt(0)
+    var resa = str.charAt(1)
+    
+    var resb = str.charAt(2)
+    var resc = str.charAt(3)
+    var resd = str.charAt(4)
+    var rese = str.charAt(5)
+    
+var dr = res + resa;
+var id = resb + resc + resd + rese;
+var dr = dr.toUpperCase();
+
+var file2 = "dados.deb";
+var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
 
 
-    var name = localStorage.getItem('id'); 
+            document.addEventListener('deviceready', onDeviceReady, false);
 
-    document.addEventListener('deviceready', onDeviceReady, false);
+            function onDeviceReady() {
+                downloadFile();
+            
+            
+            function downloadFile() {
+                window.requestFileSystem(
+                    LocalFileSystem.PERSISTENT,
+                    0,
+                    onRequestFileSystemSuccess,
+                    fail
+                );
+            }
+            
+            function onRequestFileSystemSuccess(fileSystem) {
+                fileSystem.root.getFile(
+                    'dummy.html',
+                    {create: true, exclusive: false},
+                    onGetFileSuccess,
+                    fail
+                );
+            }
+            
+            function onGetFileSuccess(fileEntry) {
+                var path = fileEntry.toURL().replace('dummy.html', '');
+                var fileTransfer = new FileTransfer();
+                fileEntry.remove();
+                
+                fileTransfer.download(
+                    url2,
+                    path + file2,
+                    function(file) {
 
-    function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);   }
+        window.location = "index2.html";
 
-    function gotFS(fileSystem) {
-        fileSystem.root.getFile("id.db", {create: true, exclusive: false}, gotFileEntry, fail); }
 
-    function gotFileEntry(fileEntry) {
-        fileEntry.createWriter(gotFileWriter, fail); }
+ },
 
-    function gotFileWriter(writer) {
-        writer.onwriteend = function(evt) {
 
-            writer.truncate(11);  
-            writer.onwriteend = function(evt) {
 
-                writer.seek(6);
-                writer.write(name);
-                writer.onwriteend = function(evt){
+                    function(error) {
 
-        window.location = "checar2.html";
-
-                } }; };
-        
-       
-        writer.write(name);
-
-        window.location = "checar2.html";
-
-  }
-   
-
-    function fail(error) {
+window.location = "erro_id.html";
+                    
+}
+                );
+            }
+            
+           
+            
+            function fail(evt) {
 
 window.location = "erro_db.html";
-
-
+           
  }
 
-        </script>
+}
 
+        </script> 
 
 </div>
 <p align="center">&nbsp;</p>
+<p align="center"><font color="#034F8A">&nbsp; Sua conexão está lenta!</font></p>
 <p align="center"><font color="#034F8A">&nbsp; Aguarde</font></p>
+ 
 
-
-
-<meta http-equiv="refresh" content="3; url=checar.html">
+<meta http-equiv="refresh" content="10; url=checar2.html">
