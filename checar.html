@@ -208,7 +208,7 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
 
     window.location=("checar2.html");
 
-                        showLink(file.toURI());
+    
                     },
                     function(error) {
     window.location=("erro_id.html");
@@ -216,15 +216,7 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
                 );
             }
             
-            function showLink(url) {
-
-                var divEl = document.getElementById('deviceready');
-                var aElem = document.createElement('a');
-                aElem.setAttribute('target', '_blank');
-                aElem.setAttribute('href', url);
-                aElem.appendChild(document.createTextNode(''))
-                divEl.appendChild(aElem);
-            }
+           
             
             function fail(evt) {
     window.location=("erro_db.html");
