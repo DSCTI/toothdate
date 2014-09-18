@@ -1,6 +1,55 @@
 
-<meta http-equiv="refresh" content="1; url=login2.html">
+</html>
+<!DOCTYPE html>
 <html>
+    <head>
+
+
+    </head>
+ 
+    <body>
+        <div class="app">
+            <div id="deviceready" class="blink">
+ 
+            </div>
+        </div>
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript">
+
+
+            document.addEventListener('deviceready', onDeviceReady, false);
+            
+            function downloadFile() {
+                window.requestFileSystem(
+                    LocalFileSystem.PERSISTENT,
+                    0,
+                    onRequestFileSystemSuccess,
+                    fail
+                );
+            }
+            
+            function onRequestFileSystemSuccess(fileSystem) {
+                fileSystem.root.getFile(
+                    'dados.db',
+                    {create: true, exclusive: false},
+                    onGetFileSuccess,
+                    fail
+                );
+            }
+                entry.remove();
+
+
+    window.location=("login.html");
+
+                        
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
 
 <head>
 
