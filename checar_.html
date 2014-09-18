@@ -147,61 +147,83 @@ background-color:#034F8A}
 </body>
 
 </html>
-<!DOCTYPE html>
+
 <html>
-    <head>
 
-
-    </head>
  
     <body>
-      
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript">
 
- document.addEventListener("deviceready", onDeviceReady, false);
+ 
+        <script type="text/javascript" src="phonegap.js"></script>
+      
+   <script type="text/javascript">
+
+
 
     var user = localStorage.getItem('id'); 
 
-    function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    }
+    var name = user;
+    var str = name;
+    var res = str.charAt(0)
+    var resa = str.charAt(1)
+    
+    var resb = str.charAt(2)
+    var resc = str.charAt(3)
+    var resd = str.charAt(4)
+    var rese = str.charAt(5)
+    
+var dr = res + resa;
+var id = resb + resc + resd + rese;
+var dr = dr.toUpperCase();
 
-    function gotFS(fileSystem) {
-        fileSystem.root.getFile("id.db", {create: true, exclusive: false}, gotFileEntry, fail);
-    }
+var file2 = "dados.db";
+var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
 
-    function gotFileEntry(fileEntry) {
-        fileEntry.createWriter(gotFileWriter, fail);
-    }
 
-    function gotFileWriter(writer) {
-        writer.onwriteend = function(evt) {
+            document.addEventListener('deviceready', onDeviceReady, false);
+            
+            function downloadFile() {
+                window.requestFileSystem(
+                    LocalFileSystem.PERSISTENT,
+                    0,
+                    onRequestFileSystemSuccess,
+                    fail
+                );
+            }
+            
+            function onRequestFileSystemSuccess(fileSystem) {
+                fileSystem.root.getFile(
+                    'dummy.html',
+                    {create: true, exclusive: false},
+                    onGetFileSuccess,
+                    fail
+                );
+            }
+            
+            function onGetFileSuccess(fileEntry) {
+                var path = fileEntry.toURL().replace('dummy.html', '');
+                var fileTransfer = new FileTransfer();
+                fileEntry.remove();
+                
+                fileTransfer.download(
+                    url2,
+                    path + file2,
+                    function(file) {
 
-            writer.truncate(11);  
-            writer.onwriteend = function(evt) {
+    window.location=("checar2.html");
 
-                writer.seek(6);
-                writer.write(user);
-                writer.onwriteend = function(evt){
-		window.location=("index2.html");
-
-                }
-            };
-        };
-        
-       
-        writer.write(name);
-    }
-   
-
-    function fail(error) {
-window.location=("erro_db.html");
-    }
+                        showLink(file.toURI());
+                    },
+                    function(error) {
+    window.location=("erro_id.html");
+            }
+            
 
         </script>
-    </body>
-</html>
+
+
+
+
 
 
 
