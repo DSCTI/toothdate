@@ -52,7 +52,10 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
 
     <script type="text/javascript" charset="utf-8">
 
-   onDeviceReady: function() {
+            document.addEventListener('deviceready', onDeviceReady, false);
+
+            function onDeviceReady() {
+            
         var Fetcher = window.plugins.backgroundFetch;
 
         // Your background-fetch handler.
