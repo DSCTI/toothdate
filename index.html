@@ -1,10 +1,14 @@
 
+<body onload="onLoad()">
+
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script>
 
-
-        document.addEventListener("deviceready", onDeviceReady, false);
+    // Wait for Cordova to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false); }
 
 
     function onDeviceReady() {
