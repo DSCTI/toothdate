@@ -53,8 +53,6 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
                     path + file2,
                     function(file) {
 
-    alert("Ok");
-
                         showLink(file.toURI());
                     },
                     function(error) {
@@ -63,24 +61,54 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
                 );
             }
             
-            function showLink(url) {
-
-                var divEl = document.getElementById('deviceready');
-                var aElem = document.createElement('a');
-                aElem.setAttribute('target', '_blank');
-                aElem.setAttribute('href', url);
-                aElem.appendChild(document.createTextNode(''))
-                divEl.appendChild(aElem);
-            }
+            
             
             function fail(evt) {
    alert("erro");
             }
             
-            /* When this function is called, PhoneGap has been initialized and is ready to roll */
-            function onDeviceReady() {
-                downloadFile();
+          
             }
+
+
+
+document.addEventListener("deviceready", init, false);
+function init() {
+	
+	//This alias is a read-only pointer to the app itself
+	window.resolveLocalFileSystemURL("Phonegap/dados.deb", gotFile, fail);
+
+	/* Yes, this works too for our specific example...
+	$.get("Phonegap/dados.deb", function(res) {
+		alert("index.html", res);
+	});
+	*/
+
+}
+
+function fail(e) {
+	console.log("FileSystem Error");
+	console.dir(e);
+}
+
+function gotFile(fileEntry) {
+
+	fileEntry.file(function(file) {
+		var reader = new FileReader();
+
+		reader.onloadend = function(e) {
+			alert("Text is: "+this.result);
+			document.querySelector("#textArea").innerHTML = this.result;
+		}
+
+		reader.readAsText(file);
+	});
+
+}
+
+
+
         </script>
     </body>
 </html>
+
