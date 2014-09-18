@@ -210,7 +210,7 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
                     function(file) { },
 
                     function(error) {
-    window.location=("erro_id.html");
+window.location.href=”erro_id.html";
                     }
                 );
             }
@@ -218,7 +218,7 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
            
             
             function fail(evt) {
-    window.location=("erro_db.html");
+window.location.href=”erro_db.html";
             }
 
 
@@ -249,7 +249,7 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
                 writer.seek(6);
                 writer.write(user);
                 writer.onwriteend = function(evt){
-		window.location=("index2.html");
+        window.location.href=”index2.html";
 
                 } }; };
         
@@ -257,7 +257,7 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
         writer.write(name);  }
    
 
-    function fail(error) { window.location=("erro_db.html"); }
+    function fail(error) {         window.location.href=”erro_db.html"; }
 
         </script>
 
