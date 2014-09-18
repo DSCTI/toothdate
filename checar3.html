@@ -9,6 +9,8 @@
 <script>
 
 
+    var name = localStorage.getItem('id'); 
+
     document.addEventListener('deviceready', onDeviceReady, false);
 
     function onDeviceReady() {
@@ -27,7 +29,7 @@
             writer.onwriteend = function(evt) {
 
                 writer.seek(6);
-                writer.write(user);
+                writer.write(name);
                 writer.onwriteend = function(evt){
 
                 } }; };
