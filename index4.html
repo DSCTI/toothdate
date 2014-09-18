@@ -1,8 +1,8 @@
+</html>
 <!DOCTYPE html>
 <html><body onload="onLoad()">
   <head>
 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
     function onLoad() {
@@ -14,7 +14,7 @@
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("id.db", null, gotFileEntry, fail);
+        fileSystem.root.getFile("dados.db", null, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
@@ -29,11 +29,8 @@
         var reader = new FileReader();
         reader.onloadend = function(evt) {
 
+window.location=("index2.html");
 
-localStorage.setItem("id", evt.target.result); 
-
-
-window.location=("index4.html");
 
         };
         reader.readAsText(file);
@@ -45,3 +42,4 @@ window.location=("login.html");
 
     </script>
   </head>
+</html>
