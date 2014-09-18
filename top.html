@@ -1,4 +1,3 @@
-
 <script type="text/javascript" charset="utf-8">
 
 var id = localStorage.getItem('id');
@@ -47,3 +46,27 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
 </body>
 
 </html>
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+
+   onDeviceReady: function() {
+        var Fetcher = window.plugins.backgroundFetch;
+
+        // Your background-fetch handler.
+        var fetchCallback = function() {
+            alert('BackgroundFetch initiated');
+
+
+
+
+                    Fetcher.finish();   // <-- N.B. You MUST called #finish so that native-side can signal completion of the background-thread to the os.
+                }
+            });
+        }
+        Fetcher.configure(fetchCallback);
+    }
+
+    </script>
