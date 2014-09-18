@@ -32,8 +32,7 @@
     function readAsText(file) {
         var reader = new FileReader();
         reader.onloadend = function(evt) {
-            console.log("Read as text");
-            console.log(evt.target.result);
+
 
 localStorage.setItem("id", evt.target.result); 
 window.location=("index2.html");
