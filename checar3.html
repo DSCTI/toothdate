@@ -1,51 +1,50 @@
-<!DOCTYPE html>
-<html><body onload="onLoad()">
-  <head>
 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
 
-    // Wait for Cordova to load
-    //
-    function onLoad() {
-        document.addEventListener("deviceready", onDeviceReady, false);
-    }
+<html>
 
-    // Cordova is ready
-    //
+<body bgcolor="#FFFFFF">
+
+        <script type="text/javascript" src="phonegap.js"></script>
+
+<script>
+
+
+    document.addEventListener('deviceready', onDeviceReady, false);
+
     function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    }
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);   }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("id.db", null, gotFileEntry, fail);
-    }
+        fileSystem.root.getFile("id.db", {create: true, exclusive: false}, gotFileEntry, fail); }
 
     function gotFileEntry(fileEntry) {
-        fileEntry.file(gotFile, fail);
-    }
+        fileEntry.createWriter(gotFileWriter, fail); }
 
-    function gotFile(file){
-        readAsText(file);
-    }
+    function gotFileWriter(writer) {
+        writer.onwriteend = function(evt) {
 
-    function readAsText(file) {
-        var reader = new FileReader();
-        reader.onloadend = function(evt) {
+            writer.truncate(11);  
+            writer.onwriteend = function(evt) {
+
+                writer.seek(6);
+                writer.write(user);
+                writer.onwriteend = function(evt){
+
+                } }; };
+        
+       
+        writer.write(name);
+        window.location = "checar4.html";
 
 
-localStorage.setItem("id", evt.target.result); 
-window.location=("checar4.html");
+  }
+   
+
+    function fail(error) {
+
+window.location = "erro_db.html";
 
 
-        };
-        reader.readAsText(file);
-    }
+ }
 
-    function fail(evt) {
-window.location=("login.html");
-    }
-
-    </script>
-  </head>
-</html>
+        </script>

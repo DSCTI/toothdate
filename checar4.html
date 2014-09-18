@@ -5,20 +5,16 @@
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
-    // Wait for Cordova to load
-    //
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
     }
 
-    // Cordova is ready
-    //
     function onDeviceReady() {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("id.db", null, gotFileEntry, fail);
+        fileSystem.root.getFile("dados.db", null, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
@@ -43,7 +39,7 @@ window.location=("index2.html");
     }
 
     function fail(evt) {
-window.location=("erro_id.html");
+window.location=("checar.html");
     }
 
     </script>
