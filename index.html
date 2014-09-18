@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+<body onload="onLoad()">
+
+
     <title>FileReader Example</title>
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
@@ -8,17 +12,17 @@
 
     // Wait for Cordova to load
     //
-    function onLoad() {
+    function onLoad() {    alert("loaded");
         document.addEventListener("deviceready", onDeviceReady, false);
-    alert("loaded");
+
 
 }
 
     // Cordova is ready
     //
-    function onDeviceReady() {
+    function onDeviceReady() {alert("ready");
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-alert("ready");
+
 
     }
 
