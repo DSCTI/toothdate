@@ -16,7 +16,7 @@
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("Toothdate/id.db", {create: true, exclusive: false}, gotFileEntry, fail);
+        fileSystem.root.getFile("id.db", {create: true, exclusive: false}, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
