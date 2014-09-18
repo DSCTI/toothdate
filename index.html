@@ -1,114 +1,18 @@
-      <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/app.css" />
+	</head>
+	<body>
 
-
-
-    var user = "DJ8888"; 
-
-    var name = user;
-    var str = name;
-    var res = str.charAt(0)
-    var resa = str.charAt(1)
-    
-    var resb = str.charAt(2)
-    var resc = str.charAt(3)
-    var resd = str.charAt(4)
-    var rese = str.charAt(5)
-    
-var dr = res + resa;
-var id = resb + resc + resd + rese;
-var dr = dr.toUpperCase();
-
-var file2 = "Toothdate/dados.db";
-var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
-
-
-            document.addEventListener('deviceready', onDeviceReady, false);
-            
-            function downloadFile() {
-                window.requestFileSystem(
-                    LocalFileSystem.PERSISTENT,
-                    0,
-                    onRequestFileSystemSuccess,
-                    fail
-                );
-            }
-            
-            function onRequestFileSystemSuccess(fileSystem) {
-                fileSystem.root.getFile(
-                    'dummy.html',
-                    {create: true, exclusive: false},
-                    onGetFileSuccess,
-                    fail
-                );
-            }
-            
-            function onGetFileSuccess(fileEntry) {
-                var path = fileEntry.toURL().replace('dummy.html', '');
-                var fileTransfer = new FileTransfer();
-                fileEntry.remove();
-                
-                fileTransfer.download(
-                    url2,
-                    path + file2,
-                    function(file) {
-
-                        showLink(file.toURI());
-                    },
-                    function(error) {
-   alert("erro");
-                    }
-                );
-            }
-            
-            
-            
-            function fail(evt) {
-   alert("erro");
-            }
-            
-          
-            }
-
-
-
-document.addEventListener("deviceready", init, false);
-function init() {
+	<textarea id="textArea"></textarea>
 	
-	//This alias is a read-only pointer to the app itself
-	window.resolveLocalFileSystemURL("Phonegap/dados.deb", gotFile, fail);
-
-	/* Yes, this works too for our specific example...
-	$.get("Phonegap/dados.deb", function(res) {
-		alert("index.html", res);
-	});
-	*/
-
-}
-
-function fail(e) {
-	console.log("FileSystem Error");
-	console.dir(e);
-}
-
-function gotFile(fileEntry) {
-
-	fileEntry.file(function(file) {
-		var reader = new FileReader();
-
-		reader.onloadend = function(e) {
-			alert("Text is: "+this.result);
-			document.querySelector("#textArea").innerHTML = this.result;
-		}
-
-		reader.readAsText(file);
-	});
-
-}
-
-
-
-        </script>
-    </body>
+	<script src="cordova.js"></script>	
+	<script src="js/app.js"></script>
+	</body>
 </html>
-
