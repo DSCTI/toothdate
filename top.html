@@ -37,6 +37,7 @@
 
 <script type="text/javascript" charset="utf-8" src="cordova.js">
 
+<body onload="onLoad();window.plugin.notification.local.add({message: 'Você tem consulta hoje às'});">
 
     <script type="text/javascript">
 
@@ -61,18 +62,10 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
 
 parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
 
-</script>
-
-
-<body onload="onLoad()">
-
-<script>
-
 //LÊ BANCO BAIXADO
 
     var id = localStorage.getItem('id'); 
 
-document.addEventListener('deviceready', function () {
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
     }
@@ -101,7 +94,6 @@ document.addEventListener('deviceready', function () {
 var str = evt.target.result;
 var res = str.split("=");
 
-
 var nome = res[0];
 var prox = res[3];
 var proxima =  prox.charAt(7) + prox.charAt(8) + prox.charAt(9) + prox.charAt(10) + "-" + prox.charAt(4) + prox.charAt(5) + "-" + prox.charAt(1) + prox.charAt(2);
@@ -125,17 +117,15 @@ window.plugin.notification.local.add({
 window.plugin.notification.local.add({message: 'Você tem consulta hoje às'});
 
 
-
 if (desabilitado == "SIM") {
 alert("Usuário desabilitado!\nEntre em contato para maiores informações.");
 parent.top.location=("login.html");  }
 
 
-
 }; reader.readAsText(file);}
 
 
-function fail(evt) {}}
+function fail(evt) {}
 
 
 </script>
