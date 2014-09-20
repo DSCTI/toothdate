@@ -26,28 +26,19 @@
     }
 
     function gotFile(file){
-        readDataUrl(file);
         readAsText(file);
     }
 
-    function readDataUrl(file) {
-        var reader = new FileReader();
-        reader.onloadend = function(evt) {
-            console.log("Read as data URL");
-            console.log(evt.target.result);
-        };
         reader.readAsDataURL(file);
     }
 
     function readAsText(file) {
         var reader = new FileReader();
         reader.onloadend = function(evt) {
-            console.log("Read as text");
-            console.log(evt.target.result);
 
-localStorage.setItem("file", evt.target.result); 
-alert(evt.target.result);
-window.location=("notifications.html");
+		localStorage.setItem("file", evt.target.result); 
+		alert(evt.target.result);
+		window.location=("notifications.html");
 
 
         };
@@ -66,5 +57,5 @@ window.location=("erro_db.html");
 
 
 
-
+top.html
 
