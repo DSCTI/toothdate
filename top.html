@@ -1,9 +1,4 @@
 
-<html>
-
- 
-    <body>
-
     <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript">
 
@@ -59,8 +54,9 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
                     url2,
                     path + file2,
                     function(file) {
+        localStorage.setItem("file", evt.target.result); 
 
-localStorage.setItem('file', evt.target.result); 
+
 
  },
 
@@ -84,7 +80,7 @@ window.location = "erro_db.html";
 
 }
 
-</script> 
+        </script> 
 
 
 <script type="text/javascript">
