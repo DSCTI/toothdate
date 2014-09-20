@@ -37,7 +37,7 @@
 <head>
 
 <script type="text/javascript" charset="utf-8" src="cordova.js">
-
+<script>
 
 //ATUALIZA DB
 
@@ -94,10 +94,9 @@ function fail(evt) {window.location = "top.html"; }}
 
 </script>
 
-
 <body onload="onLoad()">
 
-<script type="text/javascript" charset="utf-8" src="cordova.js">
+<script>
 
 //LÊ BANCO BAIXADO
 
@@ -144,6 +143,11 @@ alert(proxima);
 
 
 function fail(evt) { alert("Falha ao obter informações");}
+
+
+</script>
+
+<script>
 
 parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id); 
 
