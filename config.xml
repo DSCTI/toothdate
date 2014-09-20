@@ -4,7 +4,7 @@
 
 <name>Tooth Date</name>
 
-<preference name="splash-screen-duration" value="1900" />
+<preference name="splash-screen-duration" value="1300" />
 <preference name="HideKeyboardFormAccessoryBar" value="true" />
 <preference name="webviewbounce" value="false" />
 <preference name="DisallowOverscroll" value="true" />
