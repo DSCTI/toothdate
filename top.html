@@ -31,7 +31,13 @@
 var str = evt.target.result;
 var res = str.split("=");
 
-alert(res[1]);
+
+var nome = res[0];
+var proxima =  res[3].charAt(6) + res[7].charAt(8) + res[3].charAt(9) + res[3].charAt(10);
+var ultima = res[2];
+var desabilitado = res[1];
+
+alert(proxima);
 
 
 
@@ -39,9 +45,9 @@ alert(res[1]);
         reader.readAsText(file);
     }
 
-    function fail(evt) {
 
-    }
+
+function fail(evt) { alert("Falha ao obter informações :(");}
 
     </script>
 
