@@ -29,10 +29,6 @@
         var reader = new FileReader();
         reader.onloadend = function(evt) {
 
-
-localStorage.setItem("file", evt.target.result); 
-
-
         };
         reader.readAsText(file);
     }
@@ -40,17 +36,9 @@ localStorage.setItem("file", evt.target.result);
     function fail(evt) {
 window.location=("erro_db.html");
     }
-
-    </script>
-  </head>
  
-
-
-<script type="text/javascript">
-
-var file = localStorage.getItem("file"); 
-alert (file);
-var str = file;
+alert (evt.target.result);
+var str = evt.target.result;
 var res = str.split("=");
 
 var nome = res[0];
