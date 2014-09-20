@@ -1,6 +1,119 @@
 <body onload="onLoad()">
 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+   
+
+
+<link rel="stylesheet" type="text/css" href="estilos.css">
+<link rel="stylesheet" type="text/css" href="fonts/tt0140m_.css">
+<link rel="stylesheet" href="animate.css">
+
+<head>
+<base target="meio">
+</head>
+
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0" bgcolor="#276A97" style="text-align:right">
+<div id="title" class="animated flipInX" style=" position: absolute;
+ 
+  padding-top:26;
+  z-index: 2; width: 100%; text-align: center;
+">
+
+<font style="
+ 
+ font-family: 'FuturaBkBTBook';
+ src: url('fonts/tt0140m_.eot?') format('eot'), 
+    url('fonts/tt0140m_.woff') format('woff'), 
+    url('fonts/tt0140m_.ttf') format('truetype'),
+    color:white; font-weight:700" color="#FFFFFF">
+
+<font color="#FCFCFC"><span style="text-decoration: none">&nbsp;TOOTH DATE</span></font></div>
+
+<div style=" position: absolute;z-index: 9999;"><a target="meio" href=meio.html><FONT size=6 color=WHITE><i class="pe-7s-home" style="padding-left:11;padding-top:17; padding-bottom:17; padding-right:15;"></i></font>
+</a></div>
+<FONT size=6 color=WHITE>
+<div style=" position: absolute;z-index: 9; width: 100%; text-align: right; "><a target="meio" href="menu.html"data-transition="slidedown"><FONT size=6 color=WHITE><i class="pe-7s-ribbon" style="padding-top:17; padding-bottom:17; padding-right:10; padding-left:13;"></i></a>
+</font></div>
+</body>
+
+</html>
+
+
+
+ <script type="text/javascript" charset="utf-8" src="cordova.js">
+
+
+
+
+
+//ATUALIZA DB
+
+<script type="text/javascript">
+
+    var user = localStorage.getItem('id'); 
+
+    var name = user;
+    var str = name;
+    var res = str.charAt(0)
+    var resa = str.charAt(1)
+    
+    var resb = str.charAt(2)
+    var resc = str.charAt(3)
+    var resd = str.charAt(4)
+    var rese = str.charAt(5)
+    
+var dr = res + resa;
+var id = resb + resc + resd + rese;
+var dr = dr.toUpperCase();
+
+var file2 = "dados.db";
+var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
+
+            document.addEventListener('deviceready', onDeviceReady, false);
+
+            function onDeviceReady() {
+                downloadFile();
+            
+            function downloadFile() {
+                window.requestFileSystem(
+                    LocalFileSystem.PERSISTENT,
+                    0,
+                    onRequestFileSystemSuccess,
+                    fail ); }
+            
+            function onRequestFileSystemSuccess(fileSystem) {
+                fileSystem.root.getFile(
+                    'dummy.html',
+                    {create: true, exclusive: false},
+                    onGetFileSuccess,
+                    fail );}
+            
+            function onGetFileSuccess(fileEntry) {
+                var path = fileEntry.toURL().replace('dummy.html', '');
+                var fileTransfer = new FileTransfer();
+                fileEntry.remove();
+                
+                fileTransfer.download(
+                    url2,
+                    path + file2,
+                    function(file) {},
+
+function(error) { window.location = "top.html"; } ); }
+function fail(evt) {window.location = "top.html"; }}
+
+        </script> 
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
     <script type="text/javascript" charset="utf-8">
 
     function onLoad() {
@@ -58,40 +171,3 @@ var id = localStorage.getItem('id');
 parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id); 
 
 </script>
-
-
-
-<link rel="stylesheet" type="text/css" href="estilos.css">
-<link rel="stylesheet" type="text/css" href="fonts/tt0140m_.css">
-<link rel="stylesheet" href="animate.css">
-
-<head>
-<base target="meio">
-</head>
-
-<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0" bgcolor="#276A97" style="text-align:right">
-<div id="title" class="animated flipInX" style=" position: absolute;
- 
-  padding-top:26;
-  z-index: 2; width: 100%; text-align: center;
-">
-
-<font style="
- 
- font-family: 'FuturaBkBTBook';
- src: url('fonts/tt0140m_.eot?') format('eot'), 
-    url('fonts/tt0140m_.woff') format('woff'), 
-    url('fonts/tt0140m_.ttf') format('truetype'),
-    color:white; font-weight:700" color="#FFFFFF">
-
-<font color="#FCFCFC"><span style="text-decoration: none">&nbsp;TOOTH DATE</span></font></div>
-
-<div style=" position: absolute;z-index: 9999;"><a target="meio" href=meio.html><FONT size=6 color=WHITE><i class="pe-7s-home" style="padding-left:11;padding-top:17; padding-bottom:17; padding-right:15;"></i></font>
-</a></div>
-<FONT size=6 color=WHITE>
-<div style=" position: absolute;z-index: 9; width: 100%; text-align: right; "><a target="meio" href="menu.html"data-transition="slidedown"><FONT size=6 color=WHITE><i class="pe-7s-ribbon" style="padding-top:17; padding-bottom:17; padding-right:10; padding-left:13;"></i></a>
-</font></div>
-</body>
-
-</html>
-
