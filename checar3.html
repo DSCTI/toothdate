@@ -206,7 +206,7 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
                     url2,
                     path + file2,
                     function(file) {
-
+        localStorage.setItem("file", evt.target.result); 
         window.location = "index2.html";
 
 
