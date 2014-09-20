@@ -1,0 +1,29 @@
+<script> 
+
+var file = localStorage.getItem('file'); 
+var str = file;
+var res = str.split("=");
+
+var nome = res[0];
+var prox = res[3];
+var proxima =  prox.charAt(7) + prox.charAt(8) + prox.charAt(9) + prox.charAt(10) + "-" + prox.charAt(4) + prox.charAt(5) + "-" + prox.charAt(1) + prox.charAt(2);
+var hora = prox.charAt(14) + prox.charAt(15) + prox.charAt(16) + prox.charAt(17) + prox.charAt(18);
+var ultima = res[2];
+var desabilitado = res[1];
+
+alert(proxima);
+
+localStorage.setItem('proxima', proxima); 
+
+if (desabilitado == "SIM") {
+alert("Usuário desabilitado!\nEntre em contato para maiores informações.");
+window.location=("login.html");  
+}
+
+window.plugin.notification.local.add({ message: 'Great app!' });
+
+window.location = "top2.html";
+
+</script> 
+
+</div>
