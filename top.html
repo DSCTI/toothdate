@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html>
-  <head><body onload="onLoad()">
+<html><body onload="onLoad()">
+  <head>
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
+    // Wait for Cordova to load
+    //
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
     }
 
+    // Cordova is ready
+    //
     function onDeviceReady() {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("dados.db", null, gotFileEntry, fail);
+        fileSystem.root.getFile("readme.txt", null, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
@@ -22,20 +26,28 @@
     }
 
     function gotFile(file){
+        readDataUrl(file);
         readAsText(file);
     }
 
-    
+    function readDataUrl(file) {
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
+            console.log("Read as data URL");
+            console.log(evt.target.result);
+        };
         reader.readAsDataURL(file);
     }
 
     function readAsText(file) {
         var reader = new FileReader();
         reader.onloadend = function(evt) {
+            console.log("Read as text");
+            console.log(evt.target.result);
 
 localStorage.setItem("file", evt.target.result); 
 alert(evt.target.result);
-window.location=("top2.html");
+window.location=("notifications.html");
 
 
         };
@@ -48,3 +60,11 @@ window.location=("erro_db.html");
 
     </script>
   </head>
+  <body>
+  </body>
+</html>
+
+
+
+
+
