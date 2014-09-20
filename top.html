@@ -72,6 +72,7 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
 
     var id = localStorage.getItem('id'); 
 
+document.addEventListener('deviceready', function () {
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
     }
@@ -121,12 +122,7 @@ window.plugin.notification.local.add({
 });
 
 
-window.plugin.notification.local.add({
-    id:      hoje2,
-    title:   'Reminder',
-    message: 'Você tem consulta hoje às' + hora,
-    repeat:  'weekly',
-});
+window.plugin.notification.local.add({message: 'Você tem consulta hoje às'});
 
 
 
@@ -139,7 +135,7 @@ parent.top.location=("login.html");  }
 }; reader.readAsText(file);}
 
 
-function fail(evt) {}
+function fail(evt) {}}
 
 
 </script>
