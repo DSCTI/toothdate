@@ -35,12 +35,6 @@
 
 <head>
 
-<script>
-
-parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id); 
-
-</script>
-
 <script type="text/javascript" charset="utf-8" src="cordova.js">
 
 
@@ -65,6 +59,7 @@ var dr = dr.toUpperCase();
 var file2 = "dados.db";
 var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
 
+parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id); 
 
             document.addEventListener('deviceready', onDeviceReady, false);
 
