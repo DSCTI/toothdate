@@ -1,5 +1,5 @@
-<script> 
-
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
 var file = localStorage.getItem("file"); 
 var str = file;
 var res = str.split("=");
@@ -11,18 +11,18 @@ var hora = prox.charAt(14) + prox.charAt(15) + prox.charAt(16) + prox.charAt(17)
 var ultima = res[2];
 var desabilitado = res[1];
 
-alert(proxima);
+		alert(proxima);
 
-localStorage.setItem('proxima', proxima); 
+		localStorage.setItem('proxima', proxima); 
 
 if (desabilitado == "SIM") {
 alert("Usuário desabilitado!\nEntre em contato para maiores informações.");
 window.location=("login.html");  
 }
 
-window.plugin.notification.local.add({ message: 'Great app!' });
+		window.plugin.notification.local.add({ message: 'Great app!' });
 
-window.location = "top2.html";
+		window.location=("top2.html"); 
 
 </script>
 
