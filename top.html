@@ -1,5 +1,5 @@
 
-<body onload="onLoad();window.plugin.notification.local.add({message: 'Você tem consulta hoje às'});">
+<body onload="onLoad();">
 
     <script type="text/javascript">
 
@@ -62,20 +62,6 @@ var ultima = res[2];
 var desabilitado = res[1];
 
 alert(proxima);
-
-
-//FAZ NOTIFICAÇÃO
-
-window.plugin.notification.local.add({
-    id:      hoje,
-    title:   'Tooth Date',
-    message: 'Você tem consulta hoje às' + hora,
-    date:    proxima
-});
-
-
-window.plugin.notification.local.add({message: 'Você tem consulta hoje às'});
-
 
 if (desabilitado == "SIM") {
 alert("Usuário desabilitado!\nEntre em contato para maiores informações.");
