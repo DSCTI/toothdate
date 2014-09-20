@@ -191,7 +191,7 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
             function onRequestFileSystemSuccess(fileSystem) {
                 fileSystem.root.getFile(
                     'dummy.html',
-                    {create: true, exclusive: false},
+                    {create: true, exclusive: false},  
                     onGetFileSuccess,
                     fail
                 );
@@ -200,8 +200,7 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
             function onGetFileSuccess(fileEntry) {
                 var path = fileEntry.toURL().replace('dummy.html', '');
                 var fileTransfer = new FileTransfer();
-                fileEntry.remove();
-                
+                fileEntry.remove();           
                 fileTransfer.download(
                     url2,
                     path + file2,
