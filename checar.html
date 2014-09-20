@@ -165,7 +165,7 @@ background-color:#034F8A}
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);   }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("id.db", {create: true, exclusive: false}, gotFileEntry, fail); }
+        fileSystem.root.getFile("Toothdate/id.db", {create: true, exclusive: false}, gotFileEntry, fail); }
 
     function gotFileEntry(fileEntry) {
         fileEntry.createWriter(gotFileWriter, fail); }
