@@ -108,7 +108,7 @@ function fail(evt) {window.location = "top.html"; }}
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("Toothdate/dados.db", null, gotFileEntry, fail);
+        fileSystem.root.getFile("dados.db", null, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
