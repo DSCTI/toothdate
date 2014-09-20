@@ -1,3 +1,4 @@
+
 <html>
 
  
@@ -59,7 +60,37 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
                     path + file2,
                     function(file) {
 
-var str = evt.target.result;
+localStorage.setItem("file", evt.target.result); 
+
+ },
+
+
+
+                    function(error) {
+
+window.location = "erro_db.html";
+                    
+}
+                );
+            }
+            
+           
+            
+            function fail(evt) {
+
+window.location = "erro_db.html";
+           
+ }
+
+}
+
+</script> 
+
+
+<script type="text/javascript">
+
+var file = localStorage.getItem('file'); 
+var str = file;
 var res = str.split("=");
 
 var nome = res[0];
@@ -77,30 +108,8 @@ if (desabilitado == "SIM") {
 alert("Usuário desabilitado!\nEntre em contato para maiores informações.");
 window.location=("login.html");  }
 
- },
-
-
-
-                    function(error) {
-
-
-                    
-}
-                );
-            }
-            
-           
-            
-            function fail(evt) {
-
-
-           
- }
-
-}
-
 window.location = "top2.html";
 
-        </script> 
+</script> 
 
 </div>
