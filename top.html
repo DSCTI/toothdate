@@ -60,7 +60,7 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
                     path + file2,
                     function(file) {
 
-localStorage.setItem("file", evt.target.result); 
+localStorage.setItem('file', evt.target.result); 
 
  },
 
@@ -102,9 +102,9 @@ var desabilitado = res[1];
 
 alert(proxima);
 
-localStorage.setItem("proxima", proxima); 
+localStorage.setItem('proxima', proxima); 
 
-if (desabilitado == "SIM") {
+if (desabilitado == 'SIM') {
 alert("Usuário desabilitado!\nEntre em contato para maiores informações.");
 window.location=("login.html");  
 }
