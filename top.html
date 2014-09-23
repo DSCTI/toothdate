@@ -1,48 +1,32 @@
+<script>
+var id = localStorage.getItem('id'); 
+parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
+</script>
 
-<!DOCTYPE html>
-<html><body onload="onLoad()">
-  <head>
+<link rel="stylesheet" type="text/css" href="estilos.css">
+<link rel="stylesheet" type="text/css" href="fonts/tt0140m_.css">
+<link rel="stylesheet" href="animate.css">
 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
+<base target="meio">
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0" bgcolor="#276A97" style="text-align:right">
+<div id="title" class="animated flipInX" style=" position: absolute;
+ 
+  padding-top:26;
+  z-index: 2; width: 100%; text-align: center;
+">
 
-    function onLoad() {
-        document.addEventListener("deviceready", onDeviceReady, false);
-    }
+<font style="
+ 
+ font-family: 'FuturaBkBTBook';
+ src: url('fonts/tt0140m_.eot?') format('eot'), 
+    url('fonts/tt0140m_.woff') format('woff'), 
+    url('fonts/tt0140m_.ttf') format('truetype'),
+    color:white; font-weight:700" color="#FFFFFF">
 
-    function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    }
+<font color="#FCFCFC"><span style="text-decoration: none">&nbsp;TOOTH DATE</span></font></div>
 
-    function gotFS(fileSystem) {
-        fileSystem.root.getFile("dados.db", null, gotFileEntry, fail);
-    }
-
-    function gotFileEntry(fileEntry) {
-        fileEntry.file(gotFile, fail);
-    }
-
-    function gotFile(file){
-        readAsText(file);
-    }
-
-    function readAsText(file) {
-        var reader = new FileReader();
-        reader.onloadend = function(evt) {
-
-
-		localStorage.setItem("file", evt.target.result);
-
-		window.location=("top2.html"); 
-
-        };
-        reader.readAsText(file);
-    }
-
-    function fail(evt) {
-window.location=("erro_db.html");
-    }
-
-    </script>
-  </head>
-
+<div style=" position: absolute;z-index: 9999;"><a target="_top" href=index2.html><FONT size=6 color=WHITE><i class="pe-7s-home" style="padding-left:11;padding-top:17; padding-bottom:17; padding-right:15;"></i></font>
+</a></div>
+<FONT size=6 color=WHITE>
+<div style=" position: absolute;z-index: 9; width: 100%; text-align: right; "><a target="meio" href="menu.html"data-transition="slidedown"><FONT size=6 color=WHITE><i class="pe-7s-ribbon" style="padding-top:17; padding-bottom:17; padding-right:10; padding-left:13;">&nbsp;</i></a>
+</font></div>
