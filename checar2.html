@@ -213,11 +213,9 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
 
         localStorage.setItem("file", evt.target.result); 
 
-        window.location = "index2.html";
 
 
  },
-
 
 
                     function(error) {
@@ -246,3 +244,50 @@ window.location = "erro_db.html";
  
 
 <meta http-equiv="refresh" content="5; url=checar2.html">
+
+
+<!DOCTYPE html>
+<html><body onload="onLoad()">
+  <head>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    function onDeviceReady() {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    }
+
+    function gotFS(fileSystem) {
+        fileSystem.root.getFile("dados.db", null, gotFileEntry, fail);
+    }
+
+    function gotFileEntry(fileEntry) {
+        fileEntry.file(gotFile, fail);
+    }
+
+    function gotFile(file){
+        readAsText(file);
+    }
+
+    function readAsText(file) {
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
+
+localStorage.setItem("file", evt.target.result); 
+
+window.location=("index2.html");
+
+        };
+        reader.readAsText(file);
+    }
+
+    function fail(evt) {
+window.location=("login.html");
+    }
+
+    </script>
+  </head>
