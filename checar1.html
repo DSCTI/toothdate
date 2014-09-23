@@ -1,12 +1,15 @@
-<meta http-equiv="refresh" content="5; url=index2.html">
+
+<meta http-equiv="refresh" content="5; url=checar.html">
+
 <link rel="stylesheet" type="text/css" href="estilos.css">
 <link rel="stylesheet" type="text/css" href="fonts/tt0140m_.css">
 <link rel="stylesheet" href="animate.css">
+
 <html>
 
 <head>
 <body bgcolor="#FFFFFF">
-<body onload="onLoad()">
+
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -151,97 +154,61 @@ background-color:#034F8A}
 
 <html>
 
- 
-    <body>
-
-    <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript">
-
-    var user = localStorage.getItem('id'); 
-
-    var name = user;
-    var str = name;
-    var res = str.charAt(0)
-    var resa = str.charAt(1)
-    
-    var resb = str.charAt(2)
-    var resc = str.charAt(3)
-    var resd = str.charAt(4)
-    var rese = str.charAt(5)
-    
-var dr = res + resa;
-var id = resb + resc + resd + rese;
-var dr = dr.toUpperCase();
-
-var file2 = "dados.db";
-var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
-var file = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
-
-        </script> 
-
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>FileReader Example</title>
 
-    <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
+<body bgcolor="#FFFFFF">
+
+        <script type="text/javascript" src="phonegap.js"></script>
+
     <script type="text/javascript" charset="utf-8">
 
-    // Wait for Cordova to load
-    //
-    function onLoad() {
-        document.addEventListener("deviceready", onDeviceReady, false);
-    }
 
-    // Cordova is ready
-    //
+    var name = localStorage.getItem('id'); 
+
+    document.addEventListener('deviceready', onDeviceReady, false);
+
     function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    }
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);   }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile(file, null, gotFileEntry, fail);
-    }
+        fileSystem.root.getFile("id.db", {create: true, exclusive: false}, gotFileEntry, fail); }
 
     function gotFileEntry(fileEntry) {
-        fileEntry.file(gotFile, fail);
-    }
+        fileEntry.createWriter(gotFileWriter, fail); }
 
-    function gotFile(file){
-        readDataUrl(file);
-        readAsText(file);
-    }
+    function gotFileWriter(writer) {
+        writer.onwriteend = function(evt) {
 
-    function readDataUrl(file) {
-        var reader = new FileReader();
-        reader.onloadend = function(evt) {
-            console.log("Read as data URL");
-            alert(evt.target.result);
-        };
-        reader.readAsDataURL(file);
-    }
+            writer.truncate(11);  
+            writer.onwriteend = function(evt) {
 
-    function readAsText(file) {
-        var reader = new FileReader();
-        reader.onloadend = function(evt) {
-            console.log("Read as text");
-            alert(evt.target.result);
-        };
-        reader.readAsText(file);
-    }
+                writer.seek(6);
+                writer.write(name);
+                writer.onwriteend = function(evt){
 
-    function fail(evt) {
-        console.log(evt.target.error.code);
-    }
+        window.location = "index2.html";
 
-    </script>
-  </head>
-  <body>
+                } }; };
+        
+       
+        writer.write(name);
 
-  </body>
-</html>
+
+  }
+   
+
+    function fail(error) {
+
+window.location = "erro_db.html";
+
+
+ }
+
+        </script>
+
 
 </div>
 <p align="center">&nbsp;</p>
-<p align="center"><font color="#034F8A">Carregando suas informações</font></p>
+<p align="center"><font color="#034F8A">Aguarde</font></p>
+
 
