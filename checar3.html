@@ -31,7 +31,8 @@
 
 localStorage.setItem("file", evt.target.result); 
 
-window.location=("index2.html");
+var id = localStorage.getItem('id'); 
+parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
 
         };
         reader.readAsText(file);
