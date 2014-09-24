@@ -1,4 +1,5 @@
-<body onload="onLoad()">
+<body onload="onLoad();
+window.plugin.notification.local.add({ message: 'oioioi' });">
 
 <script type="text/javascript" charset="utf-8">
 
@@ -67,16 +68,9 @@ var db = localStorage.getItem('dados');
 
 var dados = db.split("=");
 
-if (dados[1]=="SIM") {window.location.href=("desabilitado.html");}
+if (dados[1]=="SIM") {window.top.location.href=("desabilitado.html");}
 
-if (dados[1]==null) {window.location.href=("login.html");}
-
-window.plugin.notification.local.add({ sound: '/www/beep.mp3' });
-
-
-window.plugin.notification.local.add({ sound: 'beep.mp3' });
-
-window.plugin.notification.local.add({ message: 'oioioi' });
+if (dados[1]==null) {window.top.location.href=("login.html");}
 
 </script>
 
