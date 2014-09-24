@@ -69,9 +69,12 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
 
                         showLink(file.toURI());
                     },
-                    function(error) {
+                    
+function(error) {
+
     window.location=("erro_id.html");
-                    }
+                   
+ }
                 );
             }
             
@@ -86,8 +89,10 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
             }
             
             function fail(evt) {
+
     window.location=("erro_db.html");
-            }
+           
+ }
             
             /* When this function is called, PhoneGap has been initialized and is ready to roll */
             function onDeviceReady() {
@@ -114,6 +119,7 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
 
 <body>
 
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -250,6 +256,7 @@ background-color:#034F8A}
 </div> </div>
 
 </body>
+<p align="center">&nbsp;</p>
 <p align="center">&nbsp;</p>
 <p align="center"><font color="#034F8A">&nbsp;Verificando usuário</font></p>
 
