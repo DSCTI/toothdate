@@ -40,8 +40,6 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
         var reader = new FileReader();
         reader.onloadend = function(evt) {
 
-            localStorage.setItem("dados", evt.target.result);         
-            alert(evt.target.result);
         };
         reader.readAsDataURL(file);
     }
