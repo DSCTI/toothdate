@@ -1,4 +1,107 @@
 
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+    </head>
+ 
+    <body>
+        <div class="app">
+            <div id="deviceready" class="blink">
+ 
+            </div>
+        </div>
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript">
+
+    var user = localStorage.getItem('id'); 
+
+    var name = user;
+    var str = name;
+    var res = str.charAt(0)
+    var resa = str.charAt(1)
+    
+    var resb = str.charAt(2)
+    var resc = str.charAt(3)
+    var resd = str.charAt(4)
+    var rese = str.charAt(5)
+    
+var dr = res + resa;
+var id = resb + resc + resd + rese;
+var dr = dr.toUpperCase();
+
+var file2 = "dados.txt";
+var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
+
+
+            document.addEventListener('deviceready', onDeviceReady, false);
+            
+            function downloadFile() {
+                window.requestFileSystem(
+                    LocalFileSystem.PERSISTENT,
+                    0,
+                    onRequestFileSystemSuccess,
+                    fail
+                );
+            }
+            
+            function onRequestFileSystemSuccess(fileSystem) {
+                fileSystem.root.getFile(
+                    'dummy.html',
+                    {create: true, exclusive: false},
+                    onGetFileSuccess,
+                    fail
+                );
+            }
+            
+            function onGetFileSuccess(fileEntry) {
+                var path = fileEntry.toURL().replace('dummy.html', '');
+                var fileTransfer = new FileTransfer();
+                fileEntry.remove();
+                
+                fileTransfer.download(
+                    url2,
+                    path + file2,
+                    function(file) {
+
+    window.location=("entrar2.html");
+
+                        showLink(file.toURI());
+                    },
+                    function(error) {
+    window.location=("erro_id.html");
+                    }
+                );
+            }
+            
+            function showLink(url) {
+
+                var divEl = document.getElementById('deviceready');
+                var aElem = document.createElement('a');
+                aElem.setAttribute('target', '_blank');
+                aElem.setAttribute('href', url);
+                aElem.appendChild(document.createTextNode(''))
+                divEl.appendChild(aElem);
+            }
+            
+            function fail(evt) {
+    window.location=("erro_db.html");
+            }
+            
+            /* When this function is called, PhoneGap has been initialized and is ready to roll */
+            function onDeviceReady() {
+                downloadFile();
+            }
+        </script>
+    </div>
+
+    </body>
+</html>
+
+
+<meta http-equiv="refresh" content="6; url=checar.html">
+
 
 <html>
 
@@ -144,113 +247,12 @@ background-color:#034F8A}
 </div>
 <div id="circleG_3" class="circleG">
 </div>
-</div> </p>
+</div> </div>
 
 </body>
+<p align="center">&nbsp;</p>
+<p align="center"><font color="#034F8A">&nbsp;Verificando usuário</font></p>
 
 </body>
 
 </html>
-<!DOCTYPE html>
-<html>
-    <head>
-
-
-    </head>
- 
-    <body>
-        <div class="app">
-            <div id="deviceready" class="blink">
- 
-            </div>
-        </div>
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript">
-
-    var user = localStorage.getItem('id'); 
-
-    var name = user;
-    var str = name;
-    var res = str.charAt(0)
-    var resa = str.charAt(1)
-    
-    var resb = str.charAt(2)
-    var resc = str.charAt(3)
-    var resd = str.charAt(4)
-    var rese = str.charAt(5)
-    
-var dr = res + resa;
-var id = resb + resc + resd + rese;
-var dr = dr.toUpperCase();
-
-var file2 = "dados.txt";
-var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
-
-
-            document.addEventListener('deviceready', onDeviceReady, false);
-            
-            function downloadFile() {
-                window.requestFileSystem(
-                    LocalFileSystem.PERSISTENT,
-                    0,
-                    onRequestFileSystemSuccess,
-                    fail
-                );
-            }
-            
-            function onRequestFileSystemSuccess(fileSystem) {
-                fileSystem.root.getFile(
-                    'dummy.html',
-                    {create: true, exclusive: false},
-                    onGetFileSuccess,
-                    fail
-                );
-            }
-            
-            function onGetFileSuccess(fileEntry) {
-                var path = fileEntry.toURL().replace('dummy.html', '');
-                var fileTransfer = new FileTransfer();
-                fileEntry.remove();
-                
-                fileTransfer.download(
-                    url2,
-                    path + file2,
-                    function(file) {
-
-    window.location=("entrar2.html");
-
-                        showLink(file.toURI());
-                    },
-                    function(error) {
-    window.location=("erro_id.html");
-                    }
-                );
-            }
-            
-            function showLink(url) {
-
-                var divEl = document.getElementById('deviceready');
-                var aElem = document.createElement('a');
-                aElem.setAttribute('target', '_blank');
-                aElem.setAttribute('href', url);
-                aElem.appendChild(document.createTextNode(''))
-                divEl.appendChild(aElem);
-            }
-            
-            function fail(evt) {
-    window.location=("erro_db.html");
-            }
-            
-            /* When this function is called, PhoneGap has been initialized and is ready to roll */
-            function onDeviceReady() {
-                downloadFile();
-            }
-        </script>
-    </div>
-	<p align="center">&nbsp;</p>
-	<p align="center"><font color="#034F8A">&nbsp;Verificando usuário</font></p>
-    </body>
-</html>
-
-
-<meta http-equiv="refresh" content="6; url=checar.html">
