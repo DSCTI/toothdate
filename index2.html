@@ -4,147 +4,255 @@
 <html>
     <head>
 
+
+
     </head>
+ 
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0">
+        <div class="app">
+            <div id="deviceready" class="blink">
+ 
+            </div>
+        </div>
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript">
 
-<body onload="removeFile();>
+    var user = localStorage.getItem('id'); 
 
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" id="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no">
-    <script src="json2.js" type="text/javascript"></script>
-    <script src="phonegap.js" type="text/javascript"></script>
-    <script type="text/javascript">
- 
-        // invoked when device is ready 
-        function deviceInfo() {
-            document.getElementById('window.device.phonegap').innerHTML = 'window.device.phonegap = ' + window.device.phonegap;
-        }
- 
-        // register PhoneGap event listeners when DOM content loaded
-        function init() {
-            console.log('init()');
-            document.addEventListener("deviceready", deviceInfo, true); 
-        }
- 
-        // retrieves root file system entry
-        var getFileSystemRoot = (function() {
- 
-            // private
-            var root;
-            
-            // one-time retrieval of the root file system entry
-            var init = function() {
-                window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
-                    function(fileSystem) {
-                        root = fileSystem.root;
-                    }, 
-                    onFileSystemError);
-            };
-            document.addEventListener("deviceready", init, true); 
- 
-            // public function returns private root entry
-            return function() {
-                return root;
-            };
-        }()); // execute immediately
- 
-        // file system error handler
-        function onFileSystemError(error) {
-            var msg = 'file system error: ' + error.code;
-            navigator.notification.alert(msg, null, 'File System Error');
-        }
- 
-        // logs file events
-        function onFileEvent(event) {
-            console.log('file event: ' + event.target.fileName + ' ' + event.type);
-        }
-      
-        // called when error reading file
-        function onFileError(event) {
-            console.log('file error: ' + event.target.error.code);
-        }
- 
-        // called when file is written
-        function onFileWrite(event) {
-            onFileEvent(event);
-            console.log('FileWriter position=' + 
-                event.target.position + ", length=" + event.target.length);
-        }
- 
-        // writes a text file to the device
-        function writeFile() {
-                // root file system entry
-            var root = getFileSystemRoot(),
-            
-                // writes a file
-                write_file = function(writer) {
-                    var lineCount = 1;
-                              
-                    // set the callbacks
-                    writer.onwritestart = onFileEvent;
-                    writer.onprogress = onFileEvent;
-                    writer.onwrite = onFileWrite;
-                    writer.onabort = onFileEvent;
-                    writer.onerror = onFileError;
-                    writer.onwriteend = function(event) {
-                        onFileEvent(event);
-                        lineCount += 1;
-                        if (lineCount <= 3) {
-                            // append a new line   
-                            writer.write('Line ' + lineCount + '.\r\n');  
-                        } 
-                        else {
-                            alert(writer.fileName + 
-                                ' length=' + writer.length + 
-                                ', position=' + writer.position);
-                        }
-                    };
-                    
-                    // append
-                    writer.seek(writer.length);
-          
-                    // write to file
-                    writer.write('Line ' + lineCount + '.\r\n');   
-                },
-                
-                // creates a FileWriter object
-                create_writer = function(fileEntry) {
-                    fileEntry.createWriter(write_file, onFileSystemError);
-                };
-            
-            // create a file and write to it
-            root.getFile('dados.txt', {create: true}, create_writer, onFileSystemError);
-        }
-        
-        // remove file system entry
-        function removeFile() {
-            var root = getFileSystemRoot();
-            var remove_file = function(entry) {
-                entry.remove(function() {
-                    navigator.notification.alert(entry.toURI(), null, 'Entry deleted');
-
-    window.location=("index2_ok.html");
-                    
-                }, onFileSystemError);
-            };
-            
-            // retrieve a file and truncate it
-            root.getFile('dados.txt', {create: false}, remove_file, onFileSystemError);
-        } 
- 
-    </script>
-    <title>File Create/Remove</title>
-  </head>
-  <body onload="init()">
-  
-    <h3>window.device</h3>
-    <p id="window.device.phonegap">[window.device.phonegap]</p>
- 
-    <input type="button" value="Write File" onclick="writeFile();return false;" />
-    <input type="button" value="Remove File" onclick="removeFile();return false;" />
+    var name = user;
+    var str = name;
+    var res = str.charAt(0)
+    var resa = str.charAt(1)
     
-  </body>
+    var resb = str.charAt(2)
+    var resc = str.charAt(3)
+    var resd = str.charAt(4)
+    var rese = str.charAt(5)
+    
+var dr = res + resa;
+var id = resb + resc + resd + rese;
+var dr = dr.toUpperCase();
+
+var file2 = "dados.txt";
+var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
+
+
+            document.addEventListener('deviceready', onDeviceReady, false);
+            
+            function downloadFile() {
+                window.requestFileSystem(
+                    LocalFileSystem.PERSISTENT,
+                    0,
+                    onRequestFileSystemSuccess,
+                    fail
+                );
+            }
+            
+            function onRequestFileSystemSuccess(fileSystem) {
+                fileSystem.root.getFile(
+                    'dummy.html',
+                    {create: true, exclusive: false},
+                    onGetFileSuccess,
+                    fail
+                );
+            }
+            
+            function onGetFileSuccess(fileEntry) {
+                var path = fileEntry.toURL().replace('dummy.html', '');
+                var fileTransfer = new FileTransfer();
+                fileEntry.remove();
+                
+                fileTransfer.download(
+                    url2,
+                    path + file2,
+                    function(file) {
+                    
+    window.location=("home.html");
+    
+                    },
+                    function(error) {
+
+    window.location=("checar.html");
+                
+    }
+                );
+            }
+            
+            function showLink(url) {
+
+                var divEl = document.getElementById('deviceready');
+                var aElem = document.createElement('a');
+                aElem.setAttribute('target', '_blank');
+                aElem.setAttribute('href', url);
+                aElem.appendChild(document.createTextNode(''))
+                divEl.appendChild(aElem);
+            }
+            
+            function fail(evt) {
+
+    window.location=("checar.html");
+          
+  }
+            
+            /* When this function is called, PhoneGap has been initialized and is ready to roll */
+            function onDeviceReady() {
+                downloadFile();
+            }
+        </script>
+
+</div>
+    
+  <html>
+
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="pt-br">
+
+<meta http-equiv="refresh" content="3; url=home.html">
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0">
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="center"><div align=center><style>
+#circleG{
+width:93.33333333333333px;
+}
+
+.circleG{
+background-color:#D2EDFC;
+float:left;
+height:16px;
+margin-left:13px;
+width:16px;
+-moz-animation-name:bounce_circleG;
+-moz-animation-duration:1.2000000000000002s;
+-moz-animation-iteration-count:infinite;
+-moz-animation-direction:linear;
+-moz-border-radius:13px;
+-webkit-animation-name:bounce_circleG;
+-webkit-animation-duration:1.2000000000000002s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-direction:linear;
+-webkit-border-radius:13px;
+-ms-animation-name:bounce_circleG;
+-ms-animation-duration:1.2000000000000002s;
+-ms-animation-iteration-count:infinite;
+-ms-animation-direction:linear;
+-ms-border-radius:13px;
+-o-animation-name:bounce_circleG;
+-o-animation-duration:1.2000000000000002s;
+-o-animation-iteration-count:infinite;
+-o-animation-direction:linear;
+-o-border-radius:13px;
+animation-name:bounce_circleG;
+animation-duration:1.2000000000000002s;
+animation-iteration-count:infinite;
+animation-direction:linear;
+border-radius:13px;
+}
+
+#circleG_1{
+-moz-animation-delay:0.24000000000000005s;
+-webkit-animation-delay:0.24000000000000005s;
+-ms-animation-delay:0.24000000000000005s;
+-o-animation-delay:0.24000000000000005s;
+animation-delay:0.24000000000000005s;
+}
+
+#circleG_2{
+-moz-animation-delay:0.56s;
+-webkit-animation-delay:0.56s;
+-ms-animation-delay:0.56s;
+-o-animation-delay:0.56s;
+animation-delay:0.56s;
+}
+
+#circleG_3{
+-moz-animation-delay:0.72s;
+-webkit-animation-delay:0.72s;
+-ms-animation-delay:0.72s;
+-o-animation-delay:0.72s;
+animation-delay:0.72s;
+}
+
+@-moz-keyframes bounce_circleG{
+0%{
+}
+
+50%{
+background-color:#034F8A}
+
+100%{
+}
+
+}
+
+@-webkit-keyframes bounce_circleG{
+0%{
+}
+
+50%{
+background-color:#034F8A}
+
+100%{
+}
+
+}
+
+@-ms-keyframes bounce_circleG{
+0%{
+}
+
+50%{
+background-color:#034F8A}
+
+100%{
+}
+
+}
+
+@-o-keyframes bounce_circleG{
+0%{
+}
+
+50%{
+background-color:#034F8A}
+
+100%{
+}
+
+}
+
+@keyframes bounce_circleG{
+0%{
+}
+
+50%{
+background-color:#034F8A}
+
+100%{
+}
+
+}
+
+</style>
+<div id="circleG">
+<div id="circleG_1" class="circleG">
+</div>
+<div id="circleG_2" class="circleG">
+</div>
+<div id="circleG_3" class="circleG">
+</div>
+</div> </div>
+
+</body>
+<p align="center">&nbsp;</p>
+<p align="center"><font color="#034F8A">&nbsp;Atualizando suas informações</font></p>
+
+</body>
+
 </html>
