@@ -8,7 +8,7 @@
 
     </head>
  
-<body>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0">
         <div class="app">
             <div id="deviceready" class="blink">
  
@@ -66,7 +66,9 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
                     url2,
                     path + file2,
                     function(file) {
-
+                    
+    window.location=("home.html");
+    
                         showLink(file.toURI());
                     },
                     function(error) {
@@ -89,7 +91,7 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
             
             function fail(evt) {
 
-    window.location=("home.html");
+    window.location=("checar.html");
           
   }
             
@@ -111,7 +113,7 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
 <meta http-equiv="refresh" content="3; url=home.html">
 </head>
 
-<body bgcolor="#FFFFFF">
+<body bgcolor="#FFFFFF" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0">
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
