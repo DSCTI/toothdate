@@ -1,15 +1,11 @@
-
-
-<meta http-equiv="refresh" content="6; url=checar3.html">
-
-<link rel="stylesheet" type="text/css" href="estilos.css">
-<link rel="stylesheet" type="text/css" href="fonts/tt0140m_.css">
-<link rel="stylesheet" href="animate.css">
 <html>
 
 <head>
 <body bgcolor="#FFFFFF">
 
+</head>
+
+<body>
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -151,14 +147,23 @@ background-color:#034F8A}
 </body>
 
 </html>
-
+<!DOCTYPE html>
 <html>
+    <head>
 
+
+    </head>
  
     <body>
-
-    <script type="text/javascript" src="cordova.js"></script>
+        <div class="app">
+            <div id="deviceready" class="blink">
+ 
+            </div>
+        </div>
+        <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript">
+
+
 
     var user = localStorage.getItem('id'); 
 
@@ -176,15 +181,11 @@ var dr = res + resa;
 var id = resb + resc + resd + rese;
 var dr = dr.toUpperCase();
 
-var file2 = "dados.db";
+var file2 = "dados.txt";
 var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
 
 
             document.addEventListener('deviceready', onDeviceReady, false);
-
-            function onDeviceReady() {
-                downloadFile();
-            
             
             function downloadFile() {
                 window.requestFileSystem(
@@ -198,7 +199,7 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
             function onRequestFileSystemSuccess(fileSystem) {
                 fileSystem.root.getFile(
                     'dummy.html',
-                    {create: true, exclusive: false},  
+                    {create: true, exclusive: false},
                     onGetFileSuccess,
                     fail
                 );
@@ -207,42 +208,21 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
             function onGetFileSuccess(fileEntry) {
                 var path = fileEntry.toURL().replace('dummy.html', '');
                 var fileTransfer = new FileTransfer();
-                fileEntry.remove();           
+                fileEntry.remove();
+                
                 fileTransfer.download(
                     url2,
                     path + file2,
-                    function(file) {
-
-        localStorage.setItem("file", evt.target.result);
-
-window.location = "checar3.html";
-
- },
-
-
-                    function(error) {
-
-window.location = "erro_id.html";
-                    
-}
+                    function(file) { window.location=("index2.html");},
+  		    function(error) { localStorage.setItem("id", ""); window.location=("erro_id.html");}
                 );
             }
-            
-           
-            
-            function fail(evt) {
-            
-window.location = "erro_db.html";
-           
- }
 
-}
+            function fail() { localStorage.setItem("id", "");window.location=("erro_db.html"); }
+         
+        </script>
+    </body>
+</html>
 
-        </script> 
-
-</div>
-<p align="center">&nbsp;</p>
-
- 
 
 

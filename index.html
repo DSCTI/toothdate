@@ -30,9 +30,8 @@
         var reader = new FileReader();
         reader.onloadend = function(evt) {
 
-            
             localStorage.setItem("id", evt.target.result);         
-            
+            alert(evt.target.result);
         };
         reader.readAsDataURL(file);
     }
@@ -56,10 +55,9 @@ window.location=("login.html");
     
     <script>
     
-    var user = localStorage.getItem('id'); 
     var id = localStorage.getItem('id'); 
     
-            if (id!=null && id!="") {localStorage.setItem("id", id); window.location.href=("index_ok.html");}
+            if (id!=null && id!="") {localStorage.setItem("id", id); window.location.href=("index2.html");}
             else {localStorage.setItem("id", id); window.location.href=("login.html");}
             
     </script>
