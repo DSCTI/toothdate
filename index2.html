@@ -11,7 +11,17 @@
         <script type="text/javascript">
 
 
-            document.addEventListener('deviceready', onDeviceReady, false);
+// Wait for Cordova to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    }
             
 function removefile(){
     fileSystem.root.getFile("dados.txt", {create: false, exclusive: false}, gotRemoveFileEntry, fail);
