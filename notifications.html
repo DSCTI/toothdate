@@ -1,23 +1,31 @@
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Hello World</title>
 </head>
-<body>
-    <div class="app">
-        <h1>PhoneGap</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-<p class="event received" onclick="window.plugin.notification.local.add({ message: 'Great app!' });">Device is Ready</p>
-        </div>
-    </div>
+<body onLoad="
+
+var db = localStorage.getItem('dados'); 
+
+var dados = db.split("=");
+
+var dia = time.charAt(4) + time.charAt(5) + "-" + time.charAt(1) + time.charAt(2) + "-" + time.charAt(7) + time.charAt(8) + time.charAt(9) + time.charAt(10); 
+
+alert (dia);
+
+var horas = hour.charAt(14) + hour.charAt(15) + hour.charAt(16) + hour.charAt(17) + hour.charAt(18); 
+  
+window.plugin.notification.local.add({ 
+
+date: dia,
+id:         'proxima',  
+message:    'Você tem uma consulta hoje às ' + horas,  
+title:      'Tooth Date',  
+led: '05a0ff',
+badge:  '1',
+sound: null,
+
+ });">
+
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="local-notification.js"></script>
-    <script type="text/javascript">
-        window.plugin.notification.local.add({ message: 'Great app!' });
-    </script>
+
 </body>
