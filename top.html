@@ -67,22 +67,19 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
 
 var db = localStorage.getItem('dados');
 
-alert(db);
 
 var dados = db.split("=");
 var time = dados[3];
 
-alert(time);
+var dia = time.charAt(4) + time.charAt(5) + "-" + ntime.charAt(1) + time.charAt(2) + "-" + time.charAt(7) + time.charAt(8) + time.charAt(9) + time.charAt(10); 
 
-var hora = time.charAt(4) + time.charAt(5) + "-" + time.charAt(1) + time.charAt(2) + "-" + time.charAt(7) + time.charAt(8) + time.charAt(9) + time.charAt(10); 
-
-alert(hora);
+var hora = time.charAt(14) + time.charAt(15) + ":" + ntime.charAt(17) + ntime.charAt(18); 
 
 function notification(){
 
 window.plugin.notification.local.add({ 
 
-date: hora,
+date: dia,
 id:         'proxima',  
 message:    'Você tem uma consulta hoje às ' + hora,  
 title:      'Tooth Date',  
