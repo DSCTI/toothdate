@@ -14,7 +14,16 @@
         <h1>PhoneGap</h1>
         <div id="deviceready" class="blink">
             <p class="event listening">Connecting to Device</p>
-<p class="event received" onclick="window.plugin.notification.local.add({ 
+<p class="event received" onclick="avisa();">Device is Ready</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="local-notification.js"></script>
+    <script type="text/javascript">
+
+function avisa() {
+
+window.plugin.notification.local.add({ 
 
 var db = localStorage.getItem('dados'); 
 
@@ -34,18 +43,10 @@ sound: null,
 
 
 
+}}
 
 
 
 
-
-
-});">Device is Ready</p>
-        </div>
-    </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="local-notification.js"></script>
-    <script type="text/javascript">
-        window.plugin.notification.local.add({ message: 'Great app!' });
     </script>
 </body>
