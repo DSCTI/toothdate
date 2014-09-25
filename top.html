@@ -70,41 +70,26 @@ var dados = db.split("=");
 var hora = dados[3];
 
 
+function notification(){
+
+window.plugin.notification.local.add({ 
+
+date: '09-24-2014',
+id:         'proxima',  
+message:    'Você tem uma consulta hoje às ' + hora,  
+title:      'Tooth Date',  
+led: '05a0ff',
+badge:  '1',
+sound: 'TYPE_ALARM',
+
+ }); }
+
 </script>
 
 
 
 
-
-
-<body onload="
-
-onLoad();
-
-window.plugin.notification.local.add({ 
-
-
-id:         'proxima',  
-message:    'Você tem uma consulta hoje às ' + hora,  
-title:      'Tooth Date',  
-led: 'A0FF05' ,
-badge:  '1',
-sound: 'TYPE_ALARM',
-
-
- }); 
-
-
- var now      = new Date().getTime();
-alert(now);
-
-"
-
-
-
-
->
-
+<body onload="onLoad();notification();">
 
 
 
