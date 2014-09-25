@@ -1,5 +1,4 @@
-<body onload="onLoad();
-window.plugin.notification.local.add({ message: 'oioioi' });">
+
 
 <script type="text/javascript" charset="utf-8">
 
@@ -68,12 +67,37 @@ localStorage.setItem("dados", evt.target.result);
 var db = evt.target.result;
 
 var dados = db.split("=");
+var hora = dados[3];
 
-if (dados[1]=="SIM") {window.top.location.href=("desabilitado.html");}
-
-if (dados[1]==null) {window.top.location.href=("login.html");}
 
 </script>
+
+
+
+
+
+
+<body onload="
+
+onLoad();
+
+window.plugin.notification.local.add({ sound: 'TYPE_ALARM' });
+window.plugin.notification.local.add({ 
+
+id:         "proxima",  /
+message:    "Tooth Date",  
+title:      "Você tem uma consulta hoje!" + hora,  
+led: 'A0FF05' ,
+badge:      "1",
+
+
+
+ });"
+
+
+>
+
+
 
 
 <link rel="stylesheet" type="text/css" href="estilos.css">
