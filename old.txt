@@ -1,0 +1,45 @@
+    
+window.plugin.notification.local.add({ 
+
+date: dia,
+id:         'proxima',  
+message:    'Você tem uma consulta hoje às ' + horas,  
+title:      'Tooth Date',  
+led: '05a0ff',
+badge:  '1',
+sound: null,
+
+ }); 
+
+
+}
+
+function notification2(){
+
+window.plugins.localNotification.add({
+    fireDate        : dia,
+    alertBody       : "This is a local notification.",
+    action          : "View",
+    repeatInterval  : "daily",
+    badge           : 1,
+    notificationId  : 123,
+    foreground      : function(notificationId){ 
+        alert("Hello World! This alert was triggered by notification " + notificationId); 
+    },
+    background  : function(notificationId){
+        alert("Hello World! This alert was triggered by notification " + notificationId);
+    }           
+});
+
+
+//FAZ REDIRECIONAMENTOS
+
+    var db = localStorage.getItem('dados'); 
+
+var dados = db.split("=");
+
+alert(dados[1]);
+
+if (dados[1]=="SIM") {window.location.href=("desabilitado.html");}
+
+if (db==null) {window.location.href=("login.html");}

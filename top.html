@@ -1,4 +1,4 @@
-
+<body onload="onLoad()">
 
 <script type="text/javascript" charset="utf-8">
 
@@ -55,47 +55,10 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
     }
 
     function fail(evt) {
-
    
  }
-    
-
-
-
-//FAZ ALERTAS
-
-
-var db = localStorage.getItem('dados');
-
-
-var dados = db.split("=");
-var time = dados[3];
-var hour = dados[3];
-
-var dia = time.charAt(4) + time.charAt(5) + "-" + time.charAt(1) + time.charAt(2) + "-" + time.charAt(7) + time.charAt(8) + time.charAt(9) + time.charAt(10); 
-
-alert (dia);
-
-var horas = hour.charAt(14) + hour.charAt(15) + hour.charAt(16) + hour.charAt(17) + hour.charAt(18); 
-
-function notification(){
-window.plugin.notification.local.add({ message:    'Você tem uma consulta hoje às'});
-
-
-}
-
-
-
-}
-
-
-<body onload="onLoad();notification();">
-
-
-
 
 </script>
-
 
 
 <link rel="stylesheet" type="text/css" href="estilos.css">
@@ -127,12 +90,12 @@ window.plugin.notification.local.add({ message:    'Você tem uma consulta hoje à
     url('fonts/tt0140m_.ttf') format('truetype'),
     color:white; font-weight:700" color="#FFFFFF">
 
-<font color="#FCFCFC"><span style="text-decoration: none">&nbsp;TOOTH DATE</span></font></div>
+<font color="#FCFCFC"><span style="text-decoration: none"><a href=notifications.html target=_top>TOOTH DATE</a></span></font></div>
 
 <div style=" position: absolute;z-index: 9999;"><a target="_top" href=index2.html><FONT size=6 color=WHITE><i class="pe-7s-home" style="padding-left:11;padding-top:17; padding-bottom:17; padding-right:15;"></i></font>
 </a></div>
 <FONT size=6 color=WHITE>
-<div style=" position: absolute;z-index: 9; width: 100%; text-align: right; "><a target="meio" href="menu.html"data-transition="slidedown"><FONT size=6 color=WHITE><i class="pe-7s-ribbon" style="padding-top:17; padding-bottom:17; padding-right:10; padding-left:13;"></i></a>
+<div style=" position: absolute;z-index: 9; width: 100%; text-align: right; left:0px; top:0px; height:32px"><a target="meio" href="menu.html"data-transition="slidedown"><FONT size=6 color=WHITE><i class="pe-7s-ribbon" style="padding-top:17; padding-bottom:17; padding-right:13; padding-left:13;"></i></a>
 </font></div>
 </body>
 
