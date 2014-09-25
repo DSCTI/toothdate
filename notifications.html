@@ -22,10 +22,11 @@ var horas = hour.charAt(14) + hour.charAt(15) + hour.charAt(16) + hour.charAt(17
 window.plugin.notification.local.add({ 
 
 date: dia,
-id: proxima,  
-message: horas,  
-title:  'Tooth Date',
-badge: '1',
+id:         'proxima',  
+message:    'Você tem uma consulta hoje às ' + horas,  
+title:      'Tooth Date',  
+led: '05a0ff',
+badge:  '1',
 sound: null,
 
  });
@@ -37,3 +38,4 @@ sound: null,
     <script type="text/javascript" src="local-notification.js"></script>
 
 </body>
+</html>
