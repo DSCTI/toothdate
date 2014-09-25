@@ -49,6 +49,8 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
         reader.onloadend = function(evt) {
 
             localStorage.setItem("dados", evt.target.result);
+
+	    alert(evt.target.result);
            
         };
         reader.readAsText(file);
