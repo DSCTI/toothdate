@@ -81,7 +81,6 @@ var hora = dados[3];
 
 onLoad();
 
-window.plugin.notification.local.add({ sound: 'TYPE_ALARM' });
 window.plugin.notification.local.add({ 
 
 id:         'proxima',  
@@ -89,7 +88,7 @@ message:    'Você tem uma consulta hoje!' + hora,
 title:      'Tooth Date',  
 led: 'A0FF05' ,
 badge:  '1',
-
+sound: 'TYPE_ALARM',
 
 
  });"
