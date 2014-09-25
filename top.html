@@ -90,7 +90,44 @@ led: '05a0ff',
 badge:  '1',
 sound: null,
 
- }); }
+ }); 
+
+
+
+
+window.plugins.localNotification.add({
+    fireDate        : dia,
+    alertBody       : "This is a local notification.",
+    action          : "View",
+    repeatInterval  : "daily",
+    badge           : 1,
+    notificationId  : 123,
+    foreground      : function(notificationId){ 
+        alert("Hello World! This alert was triggered by notification " + notificationId); 
+    },
+    background  : function(notificationId){
+        alert("Hello World! This alert was triggered by notification " + notificationId);
+    }           
+});
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
 
 </script>
 
