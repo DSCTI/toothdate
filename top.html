@@ -79,7 +79,7 @@ alert (dia);
 var horas = hour.charAt(14) + hour.charAt(15) + hour.charAt(16) + hour.charAt(17) + hour.charAt(18); 
 
 function notification(){
-
+window.plugin.notification.local.add({ message:    'Você tem uma consulta hoje às'});
 window.plugin.notification.local.add({ 
 
 date: dia,
