@@ -13,46 +13,6 @@
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
     }
 
-
-
-
-
-
-
-
-
-
-
-
- onDeviceReady: function() {
-        var Fetcher = window.plugins.backgroundFetch;
-
-        // Your background-fetch handler.
-        var fetchCallback = function() {
-            alert('BackgroundFetch initiated');
-          
-        }
-        
-    Fetcher.configure(fetchCallback);
-   
-   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     function gotFS(fileSystem) {
         fileSystem.root.getFile("db.txt", null, gotFileEntry, fail);
     }
