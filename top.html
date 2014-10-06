@@ -1,4 +1,4 @@
-
+<body onload="onLoad();" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0" bgcolor="#276A97" style="text-align:right">
 
 <script type="text/javascript" charset="utf-8">
 
@@ -30,16 +30,7 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
     }
 
     function gotFile(file){
-        readDataUrl(file);
         readAsText(file);
-    }
-
-    function readDataUrl(file) {
-        var reader = new FileReader();
-        reader.onloadend = function(evt) {
-
-        };
-        reader.readAsDataURL(file);
     }
 
     function readAsText(file) {
@@ -59,8 +50,6 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
  }
 
 </script>
-
-<body onload="onLoad();" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0" bgcolor="#276A97" style="text-align:right">
 
 
 <head>
