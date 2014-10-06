@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html> <body onload="onLoad();">
-  <head>
+<html>
+  <head><body onLoad="onLoad()">
     <title>FileReader Example</title>
 
     <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
@@ -19,7 +18,7 @@
     }
 
     function gotFS(fileSystem) {
-        fileSystem.root.getFile("dados.txt", null, gotFileEntry, fail);
+        fileSystem.root.getFile("readme.txt", null, gotFileEntry, fail);
     }
 
     function gotFileEntry(fileEntry) {
@@ -34,19 +33,17 @@
     function readDataUrl(file) {
         var reader = new FileReader();
         reader.onloadend = function(evt) {
+            console.log("Read as data URL");
+            console.log(evt.target.result);
         };
         reader.readAsDataURL(file);
-         console.log("Read as data URL");
-         console.log(evt.target.result);
     }
 
     function readAsText(file) {
         var reader = new FileReader();
         reader.onloadend = function(evt) {
-         alert(evt.target.result);
-	 window.location=("index2_2.html");
-
-
+            console.log("Read as text");
+            alert(evt.target.result);             localStorage.setItem("dados", evt.target.result);  
         };
         reader.readAsText(file);
     }
@@ -55,11 +52,19 @@
         console.log(evt.target.error.code);
     }
 
+
+var db = localStorage.getItem('dados'); 
+
+var dados = db.split("=");
+var hour = db.split("=");
+
+var dia = time.charAt(4) + time.charAt(5) + "-" + time.charAt(1) + time.charAt(2) + "-" + time.charAt(7) + time.charAt(8) + time.charAt(9) + time.charAt(10); 
+
+alert (dia); 
+
     </script>
   </head>
   <body>
- 
+
   </body>
 </html>
- <body onload="onLoad()">
-<meta http-equiv="refresh" content="5; url=index2_2.html">
