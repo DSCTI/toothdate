@@ -42,7 +42,6 @@
     function readAsText(file) {
         var reader = new FileReader();
         reader.onloadend = function(evt) {
-            alert(evt.target.result);
 	    window.localStorage.removeItem("dados");
             localStorage.setItem("dados", evt.target.result);
 	    window.location=("index2_2.html");
