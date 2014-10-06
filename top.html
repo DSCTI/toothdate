@@ -51,10 +51,8 @@
 
  parent.meio.location = ("http://dscti.com.br/dr/login.php?id=" + user);
 
-</script>
-
-<body onLoad="
- window.plugin.notification.local.add({ 
+function avisa(){
+window.plugin.notification.local.add({ 
 
  id:         'proxima',  
  message:    'Você tem uma consulta hoje às ' + horas + '!',  
@@ -62,6 +60,10 @@
  led: '05a0ff',
  badge:  '1',
  sound: null,
- date:  dia
+ date:  dia,
 
- });">
+ });}
+
+</script>
+
+<body onLoad="avisa()">
