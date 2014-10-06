@@ -1,47 +1,61 @@
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8"><body onload="init()">
+    <script type="text/javascript" charset="utf-8"><body onload="onLoad()">
+
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
 
 
+    function onDeviceReady() {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    }
 
+    function gotFS(fileSystem) {
+        fileSystem.root.getFile("db.txt", null, gotFileEntry, fail);
+    }
 
+    function gotFileEntry(fileEntry) {
+        fileEntry.file(gotFile, fail);
+    }
 
+    function gotFile(file){
+        readDataUrl(file);
+        readAsText(file);
+    }
 
+    function readDataUrl(file) {
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
 
-document.addEventListener("deviceready", init, false);
- 
-function init() {
-  document.addEventListener("online", toggleCon, false);
-	document.addEventListener("offline", toggleCon, false);
- 
-	if(navigator.network.connection.type == Connection.NONE) {
-		navigator.notification.alert("Sorry, you are offline.", function() {}, "Offline!");
-	} else {
-		setupButtonHandler();
-	}
- 
-}
- 
-function toggleCon(e) {
-	console.log("Called",e.type);
-	if(e.type == "offline") {
-		$("#searchBtn").off("touchstart").attr("disabled","disabled");
-		navigator.notification.alert("Sorry, you are offline.", function() {}, "Offline!");
-	} else {
-		$("#searchBtn").removeAttr("disabled");
-		navigator.notification.alert("Woot, you are back online.", function() {}, "Online!");
+            localStorage.setItem("id", evt.target.result);         
+            alert(evt.target.result);
+        };
+        reader.readAsDataURL(file);
+    }
 
+    function readAsText(file) {
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
 
-window.location=("index_ok.html");
+            
+            localStorage.setItem("id", evt.target.result);
+                        
+        };
+        reader.readAsText(file);
+    }
 
-		setupButtonHandler();
-	}
-}
-
-
+    function fail(evt) {
+window.location=("login.html");
+    }
+    
+    </script>
+    
+    <script>
+    
+    var id = localStorage.getItem('id'); 
+    
+            if (id!=null && id!="") {localStorage.setItem("id", id); window.location.href=("checar2.html");}
+            else {localStorage.setItem("id", id); window.location.href=("login.html");}
+            
     </script>
 
-
-
-
-
-    
