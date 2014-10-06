@@ -1,4 +1,57 @@
+<link rel="stylesheet" type="text/css" href="estilos.css">
+<link rel="stylesheet" type="text/css" href="fonts/tt0140m_.css">
 
+<body bgcolor="#FFFFFF" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0">
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript">
+
+    var user = localStorage.getItem('id'); 
+
+    var name = user;
+    var str = name;
+    var res = str.charAt(0)
+    var resa = str.charAt(1)
+    
+    var resb = str.charAt(2)
+    var resc = str.charAt(3)
+    var resd = str.charAt(4)
+    var rese = str.charAt(5)
+    
+var dr = res + resa;
+var id = resb + resc + resd + rese;
+var dr = dr.toUpperCase();
+
+var file = "dados.txt";
+var url = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
+
+function downloadFile(){
+
+window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, 
+    function onFileSystemSuccess(fileSystem) {
+        fileSystem.root.getFile(
+        "dummy.html", {create: true, exclusive: false}, 
+        function gotFileEntry(fileEntry) {
+            var sPath = fileEntry.fullPath.replace("dummy.html","");
+            var fileTransfer = new FileTransfer();
+            fileEntry.remove();
+
+            fileTransfer.download(
+                url,
+                sPath + file,
+                function(theFile) {
+alert("baixado");
+    window.location=("index2.html");
+                },
+                function(error) {
+    window.location=("erro_id.html");
+                }
+            );
+        }, fail);
+    }, fail);
+};
+}
+
+</script>
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -139,101 +192,4 @@ background-color:#034F8A}
 <p align="center">&nbsp;</p>
 <p align="center"><font color="#034F8A">&nbsp;Verificando usuário</font></p>
 
-</body>
-    <head>
 
-<link rel="stylesheet" type="text/css" href="estilos.css">
-<link rel="stylesheet" type="text/css" href="fonts/tt0140m_.css">
-
-    </head>
-
-<body bgcolor="#FFFFFF" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0">
-
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript">
-
-    var user = localStorage.getItem('id'); 
-
-    var name = user;
-    var str = name;
-    var res = str.charAt(0)
-    var resa = str.charAt(1)
-    
-    var resb = str.charAt(2)
-    var resc = str.charAt(3)
-    var resd = str.charAt(4)
-    var rese = str.charAt(5)
-    
-var dr = res + resa;
-var id = resb + resc + resd + rese;
-var dr = dr.toUpperCase();
-
-var file2 = "dados.txt";
-var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
-
-
-            document.addEventListener('deviceready', onDeviceReady, false);
-            
-            function downloadFile() {
-                window.requestFileSystem(
-                    LocalFileSystem.PERSISTENT,
-                    0,
-                    onRequestFileSystemSuccess,
-                    fail
-                );
-            }
-            
-            function onRequestFileSystemSuccess(fileSystem) {
-                fileSystem.root.getFile(
-                    'dummy.html',
-                    {create: true, exclusive: false},
-                    onGetFileSuccess,
-                    fail
-                );
-            }
-            
-            function onGetFileSuccess(fileEntry) {
-                var path = fileEntry.toURL().replace('dummy.html', '');
-                var fileTransfer = new FileTransfer();
-                fileEntry.remove();
-                
-                fileTransfer.download(
-                    url2,
-                    path + file2,
-                    function(file) {
-
-    window.location=("index2.html");
-
-                    },
-                    
-function(error) {
-
-    window.location=("erro_id.html");
-                   
- }
-                );
-            }
-            
-            function showLink(url) {
-
-                var divEl = document.getElementById('deviceready');
-                var aElem = document.createElement('a');
-                aElem.setAttribute('target', '_blank');
-                aElem.setAttribute('href', url);
-                aElem.appendChild(document.createTextNode(''))
-                divEl.appendChild(aElem);
-            }
-            
-            function fail(evt) {
-
-    window.location=("erro_db.html");
-           
- }
-            
-            function onDeviceReady() {
-                downloadFile();
-            }
-        </script>
-
-</html>
-<meta http-equiv="refresh" content="4; url=checar.html">
