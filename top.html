@@ -48,8 +48,6 @@
 
  parent.meio.location = ("http://dscti.com.br/dr/login.php?id=" + user);
 
- navigator.notification.alert(dia);
-
  window.plugin.notification.local.add({ 
 
  date: dia,
@@ -63,3 +61,14 @@
  });
 
 </script>
+<body onLoad=" window.plugin.notification.local.add({ 
+
+ date: dia,
+ id:         'proxima',  
+ message:    'Você tem uma consulta hoje às ' + horas,  
+ title:      'Tooth Date',  
+ led: '05a0ff',
+ badge:  '1',
+ sound: null,
+
+ });">
