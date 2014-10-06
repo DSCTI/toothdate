@@ -8,57 +8,7 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
 
 </script>
 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-
-    function onLoad() {
-        document.addEventListener("deviceready", onDeviceReady, false);
-    }
-
-
-    function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    }
-
-    function gotFS(fileSystem) {
-        fileSystem.root.getFile("dados.txt", null, gotFileEntry, fail);
-    }
-
-    function gotFileEntry(fileEntry) {
-        fileEntry.file(gotFile, fail);
-    }
-
-    function gotFile(file){
-        readDataUrl(file);
-        readAsText(file);
-    }
-
-    function readDataUrl(file) {
-        var reader = new FileReader();
-        reader.onloadend = function(evt) {
-
-        };
-        reader.readAsDataURL(file);
-    }
-
-    function readAsText(file) {
-        var reader = new FileReader();
-        reader.onloadend = function(evt) {
-
-            localStorage.setItem("dados", evt.target.result);
-
-	    alert(evt.target.result);
-           
-        };
-        reader.readAsText(file);
-    }
-
-    function fail(evt) {
    
- }
-
-</script>
 
  <body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0" bgcolor="#276A97" style="text-align:right">
 
@@ -92,4 +42,65 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
 <div style=" position: absolute;z-index: 9; width: 100%; text-align: right; left:0px; top:0px; height:32px"><a target="meio" href="menu.html"data-transition="slidedown"><FONT size=6 color=WHITE><i class="pe-7s-ribbon" style="padding-top:17; padding-bottom:17; padding-right:13; padding-left:13;"></i></a>
 </font></div>
 <br>
-<iframe src="atualizar.html" height="0" width="0"> <body onload="onLoad()">
+<iframe src="atualizar.html" height="0" width="0"> 
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FileReader Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for Cordova to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    }
+
+    function gotFS(fileSystem) {
+        fileSystem.root.getFile("dados.txt", null, gotFileEntry, fail);
+    }
+
+    function gotFileEntry(fileEntry) {
+        fileEntry.file(gotFile, fail);
+    }
+
+    function gotFile(file){
+        readDataUrl(file);
+        readAsText(file);
+    }
+
+    function readDataUrl(file) {
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
+            alert(evt.target.result);
+        };
+        reader.readAsDataURL(file);
+    }
+
+    function readAsText(file) {
+        var reader = new FileReader();
+        reader.onloadend = function(evt) {
+            alert(evt.target.result);
+        };
+        reader.readAsText(file);
+    }
+
+    function fail(evt) {
+
+    }
+
+    </script>
+  </head>
+ <body onload="onLoad()">
+
+  </body>
+</html>
