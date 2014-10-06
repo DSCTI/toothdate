@@ -45,24 +45,14 @@
             console.log("Read as text");
             alert(evt.target.result);
 	    window.localStorage.removeItem("dados");
-            localStorage.setItem("dados", evt.target.result); 
-
-	var db = evt.target.result; 
-
-	var dados = db.split("=");
-	var hour = db.split("=");
-
-	var dia = time.charAt(4) + time.charAt(5) + "-" + time.charAt(1) + time.charAt(2) + "-" + time.charAt(7) + time.charAt(8) + time.charAt(9) + time.charAt(10); 
-
-	alert (dia);
-
-	    window.location=("index2_2.html"); 
+            localStorage.setItem("dados", evt.target.result);
+	    window.location=("index2_2.html");
         };
         reader.readAsText(file);
     }
 
     function fail(evt) {
-        console.log(evt.target.error.code);
+	    window.location=("checar.html"); 
     }
 
 
