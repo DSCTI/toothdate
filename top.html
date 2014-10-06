@@ -34,9 +34,6 @@
 
 <script type="text/javascript">
 
-var user = localStorage.getItem('id');
-
-
 var dados = localStorage.getItem('dados');
 
  var db = dados;
@@ -50,7 +47,10 @@ var dados = localStorage.getItem('dados');
  alert(dia);
 
 
+ var user = localStorage.getItem('id');
 
-parent.meio.location = ("http://dscti.com.br/dr/login.php?id=" + user);
+
+
+ parent.meio.location = ("http://dscti.com.br/dr/login.php?id=" + user);
 
 </script>
