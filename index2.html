@@ -43,14 +43,8 @@
     function readAsText(file) {
         var reader = new FileReader();
         reader.onloadend = function(evt) {
-            localStorage.setItem("dados", evt.target.result);
-            var dados = localStorage.getItem('dados');  
-            alert(evt.target.result);
-
-
-window.location=("index2_2.html");
-
-
+         alert(evt.target.result);
+	 window.location=("index2_2.html");
 
 
         };
