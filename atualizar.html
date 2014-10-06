@@ -202,13 +202,13 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
                     path + file2,
                     function(file) {
 
-    alert ("Atualizou com sucesso!"); window.location=("atualizar2.html");
+    alert ("Atualizado com sucesso!"); window.location=("atualizar2.html");
 
                     },
                     
 function(error) {
 
-                       
+                      
  }
                 );
             }
@@ -225,7 +225,8 @@ function(error) {
             
             function fail(evt) {
 
-             
+    window.location=("erro_db.html");
+           
  }
             
             function onDeviceReady() {
