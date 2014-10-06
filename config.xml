@@ -49,6 +49,7 @@
 <gap:plugin name="org.apache.cordova.file" />
 <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
 <gap:plugin name="org.transistorsoft.cordova.plugin.background.fetch" />
+<gap:plugin name="com.footprint.cordova.plugin.local-notification" version="0.8.0" />
 
 <access origin="*" />
 
