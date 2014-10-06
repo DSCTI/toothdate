@@ -36,6 +36,8 @@
         reader.onloadend = function(evt) {
         };
         reader.readAsDataURL(file);
+         console.log("Read as data URL");
+         console.log(evt.target.result);
     }
 
     function readAsText(file) {
@@ -43,10 +45,10 @@
         reader.onloadend = function(evt) {
             localStorage.setItem("dados", evt.target.result);
             var dados = localStorage.getItem('dados');  
-            alert(dados);
+            alert(evt.target.result);
 
 
-var db = dados; 
+var db = evt.target.result; 
 
 var dados = db.split("=");
 var hour = db.split("=");
