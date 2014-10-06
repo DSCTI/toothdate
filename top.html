@@ -42,9 +42,10 @@
 
  var dados = str.split("=");
 
- alert(dados[3]);
- alert(dados[2]);
- alert(dados[1]);
+ var time = dados[3];
+ var dia = time.charAt(4) + time.charAt(5) + "-" + time.charAt(1) + time.charAt(2) + "-" + time.charAt(7) + time.charAt(8) + time.charAt(9) + time.charAt(10); 
+
+ alert (dia); 
 
  parent.meio.location = ("http://dscti.com.br/dr/login.php?id=" + user);
 
