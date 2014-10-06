@@ -1,5 +1,5 @@
 
-<body onload="onLoad();">
+<body onload="onDeviceReady();">
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
@@ -33,16 +33,23 @@
             localStorage.setItem("dados", evt.target.result);
 
 	    alert(evt.target.result);
-           
+
+            window.location=("atualizar3.html");
+
+
+
         };
         reader.readAsText(file);
     }
 
     function fail(evt) {
-   
+  
+           window.location=("atualizar.html");
+
+ 
  }
 
 </script>
 
 
-<meta http-equiv="refresh" content="60; url=atualizar.html">
+<meta http-equiv="refresh" content="60; url=atualizar2.html">
