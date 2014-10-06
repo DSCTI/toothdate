@@ -1,4 +1,4 @@
-<body onload="onLoad();" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0" bgcolor="#276A97" style="text-align:right">
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0" bgcolor="#276A97" style="text-align:right">
 
 <script type="text/javascript" charset="utf-8">
 
@@ -7,50 +7,6 @@ var id = localStorage.getItem('id');
 parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id); 
 
 </script>
-
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-
-    function onLoad() {
-        document.addEventListener("deviceready", onDeviceReady, false);
-    }
-
-
-    function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    }
-
-    function gotFS(fileSystem) {
-        fileSystem.root.getFile("dados.txt", null, gotFileEntry, fail);
-    }
-
-    function gotFileEntry(fileEntry) {
-        fileEntry.file(gotFile, fail);
-    }
-
-    function gotFile(file){
-        readAsText(file);
-    }
-
-    function readAsText(file) {
-        var reader = new FileReader();
-        reader.onloadend = function(evt) {
-
-            localStorage.setItem("dados", evt.target.result);
-
-	    alert(evt.target.result);
-           
-        };
-        reader.readAsText(file);
-    }
-
-    function fail(evt) {
-   
- }
-
-</script>
-
 
 <head>
 <link rel="stylesheet" type="text/css" href="estilos.css">
