@@ -46,7 +46,11 @@
  var dia = time.charAt(4) + time.charAt(5) + "-" + time.charAt(1) + time.charAt(2) + "-" + time.charAt(7) + time.charAt(8) + time.charAt(9) + time.charAt(10); 
  var horas = time.charAt(14) + time.charAt(15) + time.charAt(16) + time.charAt(17) + time.charAt(18); 
 
+ alert(dia + horas);
+
  parent.meio.location = ("http://dscti.com.br/dr/login.php?id=" + user);
+
+ window.plugin.notification.local.add({ message: 'Great app!' });
 
  window.plugin.notification.local.add({ 
 
@@ -61,7 +65,7 @@
  });
 
 </script>
-<body onLoad=" window.plugin.notification.local.add({ 
+<body onLoad="window.plugin.notification.local.add({ message: 'Great app!' }); window.plugin.notification.local.add({ 
 
  date: dia,
  id:         'proxima',  
