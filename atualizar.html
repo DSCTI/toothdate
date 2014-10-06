@@ -1,3 +1,4 @@
+
 <body onLoad="downloadFile()">
 
         <script type="text/javascript" src="phonegap.js"></script>
@@ -51,13 +52,15 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
                 fileTransfer.download(
                     url2,
                     path + file2, function(file) {
-
 alert("Atualizado!");
-window.location=("atualizar2.html");
+
+    window.location=("atualizar2.html");
 
                     },
                     
 function(error) {
+
+    window.location=("erro_id.html");
                    
  }
                 );
@@ -68,13 +71,13 @@ function(error) {
             }
             
             function fail(evt) {
+
            
  }
             
-
-        
-</script>
+        </script>
 
 </html>
 
 <meta http-equiv="refresh" content="10; url=atualizar.html">
+
