@@ -184,7 +184,7 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
             function onRequestFileSystemSuccess(fileSystem) {
                 fileSystem.root.getFile(
                     'dados.txt',
-                    {create: true, exclusive: false},
+                    {create: true, exclusive: true},
                     onGetFileSuccess,
                     fail
                 );
@@ -200,11 +200,14 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
                     path + file2,
                     function(file) {
 
-   alert("Atualizado com sucesso!");    },
+   alert("Atualizado!");
+
+     },
                     
 function(error) {
 
-                     
+    
+                   
  }
                 );
             }
@@ -221,15 +224,15 @@ function(error) {
             
             function fail(evt) {
 
-          
+    
+           
  }
             
             function onDeviceReady() {
           downloadFile();                  }
         </script>
 
-</html><body onLoad="downloadFile()">
+</html>
+<meta http-equiv="refresh" content="10; url=atualizar.html">
 
-
-<meta http-equiv="refresh" content="30; url=atualizar.html">
-
+<body onLoad="downloadFile()">
