@@ -1,16 +1,4 @@
-
-
-<script type="text/javascript" charset="utf-8">
-
-var id = localStorage.getItem('id');
-
-parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id); 
-
-</script>
-
-   
-
- <body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0" bgcolor="#276A97" style="text-align:right">
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0" bgcolor="#276A97" style="text-align:right">
 
 
 <head>
@@ -43,5 +31,102 @@ parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + id);
 </font></div>
 <br>
 <br><br>
-<iframe src="atualizar.html"></iframe>
+
+
+<script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript">
+
+    var user = localStorage.getItem('id'); 
+
+ 
+
+
+
+parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + user);
+
+   var name = user;
+ 
+
+   var str = name;
+    var res = str.charAt(0)
+    var resa = str.charAt(1)
+    
+    var resb = str.charAt(2)
+    var resc = str.charAt(3)
+    var resd = str.charAt(4)
+    var rese = str.charAt(5)
+    
+var dr = res + resa;
+var id = resb + resc + resd + rese;
+var dr = dr.toUpperCase();
+
+var file2 = "dados.txt";
+var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
+
+
+            document.addEventListener('deviceready', onDeviceReady, false);
+            
+            function downloadFile() {
+                window.requestFileSystem(
+                    LocalFileSystem.PERSISTENT,
+                    0,
+                    onRequestFileSystemSuccess,
+                    fail
+                );
+            }
+            
+            function onRequestFileSystemSuccess(fileSystem) {
+                fileSystem.root.getFile(
+                    'dados.txt',
+                    {create: true, exclusive: false},
+                    onGetFileSuccess,
+                    fail
+                );
+            }
+            
+            function onGetFileSuccess(fileEntry) {
+                var path = fileEntry.toURL().replace('dados.txt', '');
+                var fileTransfer = new FileTransfer();
+                fileEntry.remove();
+                
+                fileTransfer.download(
+                    url2,
+                    path + file2,
+                    function(file) {
+
+  
+
+     },
+                    
+function(error) {
+
+   
+                   
+ }
+                );
+            }
+            
+            function showLink(url) {
+
+                var divEl = document.getElementById('deviceready');
+                var aElem = document.createElement('a');
+                aElem.setAttribute('target', '_blank');
+                aElem.setAttribute('href', url);
+                aElem.appendChild(document.createTextNode(''))
+                divEl.appendChild(aElem);
+            }
+            
+            function fail(evt) {
+
+             
+ }
+            
+            function onDeviceReady() {
+          downloadFile();                  }
+        </script>
+
+</html>
+<meta http-equiv="refresh" content="10; url=atualizar.html">
+
+<body onLoad="downloadFile()">
 
