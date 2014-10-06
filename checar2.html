@@ -154,17 +154,17 @@ background-color:#034F8A}
 
     var name = user;
     var str = name;
-    var res = str.charAt(0)
-    var resa = str.charAt(1)
+    var res = str.charAt(0);
+    var resa = str.charAt(1);
     
-    var resb = str.charAt(2)
-    var resc = str.charAt(3)
-    var resd = str.charAt(4)
-    var rese = str.charAt(5)
+    var resb = str.charAt(2);
+    var resc = str.charAt(3);
+    var resd = str.charAt(4);
+    var rese = str.charAt(5);
     
-var dr = res + resa;
+var dr1 = res + resa;
 var id = resb + resc + resd + rese;
-var dr = dr.toUpperCase();
+var dr = dr1.toUpperCase();
 
 var file2 = "dados.txt";
 var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
@@ -218,7 +218,7 @@ function(error) {
                 var aElem = document.createElement('a');
                 aElem.setAttribute('target', '_blank');
                 aElem.setAttribute('href', url);
-                aElem.appendChild(document.createTextNode(''))
+                aElem.appendChild(document.createTextNode(''));
                 divEl.appendChild(aElem);
             }
             
@@ -233,6 +233,6 @@ function(error) {
         </script>
 
 </html>
-<meta http-equiv="refresh" content="10; url=checar.html">
+<meta http-equiv="refresh" content="10; url=checar2.html">
 
 <body onLoad="downloadFile()">
