@@ -175,18 +175,14 @@ var url2 = "http://dscti.com.br/dr/" + dr + "/" + id + ".txt";
  LocalFileSystem.PERSISTENT,
  0,
  onRequestFileSystemSuccess,
- fail
- );
- }
+ fail);}
  
  function onRequestFileSystemSuccess(fileSystem) {
  fileSystem.root.getFile(
  'dados.txt',
  {create: true, exclusive: false},
  onGetFileSuccess,
- fail
- );
- }
+ fail);}
  
  function onGetFileSuccess(fileEntry) {
  var path = fileEntry.toURL().replace('dados.txt', '');
