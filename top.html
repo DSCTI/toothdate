@@ -11,7 +11,7 @@
 <div id="title" class="animated flipInX" style=" position: absolute;
  
   padding-top:26;
-  z-index: 2; width: 100%; text-align: center;
+  z-index: 2;width: 100%;text-align: center;
 ">
 
 <font style="
@@ -20,36 +20,37 @@
  src: url('fonts/tt0140m_.eot?') format('eot'), 
     url('fonts/tt0140m_.woff') format('woff'), 
     url('fonts/tt0140m_.ttf') format('truetype'),
-    color:white; font-weight:700" color="#FFFFFF">
+    color:white;font-weight:700" color="#FFFFFF">
 
 <font color="#FCFCFC">TOOTH DATE</font></div>
 
-<div style=" position: absolute;z-index: 9999;"><a target="_top" href=checar2.html><FONT size=6 color=WHITE><i class="pe-7s-home" style="padding-left:11;padding-top:17; padding-bottom:17; padding-right:15;"></i></font>
+<div style=" position: absolute;z-index: 9999;"><a target="_top" href=checar2.html><FONT size=6 color=WHITE><i class="pe-7s-home" style="padding-left:11;padding-top:17;padding-bottom:17;padding-right:15;"></i></font>
 </a></div>
 <FONT size=6 color=WHITE>
-<div style=" position: absolute;z-index: 9; width: 100%; text-align: right; left:0px; top:0px; height:32px"><a target="meio" href="menu.html"data-transition="slidedown"><FONT size=6 color=WHITE><i class="pe-7s-ribbon" style="padding-top:17; padding-bottom:17; padding-right:13; padding-left:13;"></i></a>
+<div style=" position: absolute;z-index: 9;width: 100%;text-align: right;left:0px;top:0px;height:32px"><a target="meio" href="menu.html"data-transition="slidedown"><FONT size=6 color=WHITE><i class="pe-7s-ribbon" style="padding-top:17;padding-bottom:17;padding-right:13;padding-left:13;"></i></a>
 </font></div>
 <br>
 <br><br>
 
 <script type="text/javascript">
 
-var user = localStorage.getItem('id'); 
+var user = localStorage.getItem('id');
 
- 
+
 var dados = localStorage.getItem('dados');
 
-	var db = dados; 
+ var db = dados;
+ var dado = db.split("=");
+ var time = dado(3);
 
-	var dado = db.split("=");
-	var time = dado(3);
+ alert(time);
 
-	var dia = time.charAt(4) + time.charAt(5) + "-" + time.charAt(1) + time.charAt(2) + "-" + time.charAt(7) + time.charAt(8) + time.charAt(9) + time.charAt(10); 
+ var dia = time.charAt(4) + time.charAt(5) + "-" + time.charAt(1) + time.charAt(2) + "-" + time.charAt(7) + time.charAt(8) + time.charAt(9) + time.charAt(10);
 
-	alert (dia);
-
+ alert(dia);
 
 
-parent.meio.location=("http://dscti.com.br/dr/login.php?id=" + user);
+
+parent.meio.location = ("http://dscti.com.br/dr/login.php?id=" + user);
 
 </script>
