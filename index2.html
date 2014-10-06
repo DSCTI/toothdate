@@ -44,6 +44,7 @@
         reader.onloadend = function(evt) {
             console.log("Read as text");
             alert(evt.target.result);
+	    window.localStorage.removeItem("dados");
             localStorage.setItem("dados", evt.target.result); 
 	    window.location=("index2_2.html"); 
         };
